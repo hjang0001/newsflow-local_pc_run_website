@@ -2,83 +2,93 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Daily NewsFlow — Global Tech & Finance News</title>
 <style>
+/* Color Variables */
+:root {
+    --bg: #f5f5f0;
+    --card: #ffffff;
+    --text: #333333;
+    --title: #000000;
+    --border: #dddddd;
+    --accent: #667eea;
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #d1d1d1;
+    --title: #ffffff;
+    --border: #333333;
+    --accent: #a5b4fc;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,'Times New Roman',serif;background:#f5f5f0;color:#333;line-height:1.6;padding:20px}
+body{font-family:Georgia,'Times New Roman',serif; background: var(--bg); color: var(--text); line-height:1.6; padding:20px; transition: 0.2s;}
 .container{max-width:1000px;margin:0 auto}
-header{text-align:center;padding:30px 0;border-bottom:3px solid #000;margin-bottom:30px}
-h1{font-size:3.5em;color:#000;margin-bottom:10px;font-weight:bold;letter-spacing:-1px;font-family:Georgia,serif}
-.tagline{color:#555;font-size:1.2em;font-style:italic}
-.article{background:#fff;padding:25px;margin:25px 0;border:1px solid #ddd;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
-.article h3{font-size:1.6em;margin-bottom:15px;color:#000;font-family:Georgia,serif}
-.article h3 a{color:#000;text-decoration:none}
-.article h3 a:hover{color:#667eea}
-.summary{color:#444;line-height:1.8;margin-bottom:10px}
-.impact{font-style:italic;color:#555;margin-bottom:15px}
-.meta{color:#777;font-size:0.9em;margin:15px 0}
-.sentiment-text{font-size:0.85em;color:#555;font-style:italic}
-.entities{color:#667eea;font-size:0.85em;margin-top:10px}
-footer{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #ddd;color:#666}
+
+/* The Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+header{text-align:center;padding:30px 0;border-bottom:3px solid var(--title);margin-bottom:30px}
+h1{font-size:3.5em;color: var(--title);margin-bottom:10px;font-weight:bold;font-family:Georgia,serif}
+.tagline{color: var(--text); opacity: 0.8; font-size:1.2em;font-style:italic}
+.article{background: var(--card); padding:25px;margin:25px 0;border:1px solid var(--border);box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.article h3 a{color: var(--title);text-decoration:none}
+.article h3 a:hover{color: var(--accent)}
+.summary{color: var(--text);line-height:1.8;margin-bottom:10px}
+.meta{color: var(--text); opacity: 0.7; font-size:0.9em;margin:15px 0}
+.entities{color: var(--accent);font-size:0.85em;margin-top:10px}
+footer{text-align:center;margin-top:60px;padding:30px 0;border-top:1px solid var(--border); opacity: 0.7}
 @media (max-width:768px){h1{font-size:2.2em}.article{padding:15px}}
 </style>
 </head>
 <body>
+
+<button class="theme-toggle" onclick="toggleMode()" id="btn">🌙 Dark Mode</button>
+
 <div class="container">
 <header>
-<h1>The Daily NewsFlow</h1>
-<p class="tagline">Global Tech & Finance • Free & Unbiased</p>
+    <h1>The Daily NewsFlow</h1>
+    <p class="tagline">Global Tech & Finance • Free & Unbiased</p>
 </header>
 <main>
-
+    
         <div class="article">
-            <h3><a href="https://www.reuters.com/world/india/germanys-deg-makes-maiden-bet-india-debt-fund-via-vivritis-gift-city-vehicle-2026-01-14/" target="_blank">Germany's DEG makes maiden bet on India debt fund via Vivriti's GIFT City vehicle, sources say</a></h3>
-            <p class="summary">The German development finance institution DEG has invested in an Indian debt fund managed by Vivriti Asset Management. This is DEG's first investment in India. The fund is based in GIFT City, a special economic zone. This investment will help finance businesses in India and support economic growth.</p>
-            <p class="impact"><strong>Impact:</strong> This investment will have a positive impact on citizens by providing more funding opportunities for businesses, which can lead to job creation and economic growth. It will also benefit investors by offering a new investment opportunity. Students may not be directly affected, but they can benefit from the economic growth and job opportunities in the future.</p>
+            <h3><a href="https://www.barchart.com/story/news/37035107/stock-index-futures-slip-with-focus-on-u-s-retail-sales-and-ppi-data-more-big-bank-earnings-on-tap" target="_blank">Stock Index Futures Slip With Focus on U.S. Retail Sales and PPI Data, More Big Bank Earnings on Tap</a></h3>
+            <p class="summary">The stock market is experiencing a slight drop in value, with the S&P 500 and Nasdaq 100 futures decreasing by 0.44% and 0.66% respectively. This is due to investors being cautious before important economic data is released. The data includes information about retail sales and inflation, which can affect the overall economy and stock market. This means that people who invest in the stock market may see a temporary decrease in their investments.</p>
+            <p class="impact"><strong>Impact:</strong> The stock market drop may impact citizens by potentially affecting their retirement savings or investments. Investors may see a temporary decrease in their portfolio value. Students who are interested in finance or economics may find this data interesting and relevant to their studies.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#10b981;font-weight:bold">POSITIVE</span>
-                <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
-                <span>FINANCE</span> •
-                <span class="source">Source: Reuters</span>
-            </div>
-            <div class="entities">Key Topics: DEG, Vivriti Asset Management, GIFT City</div>
-        </div>
-        
-        <div class="article">
-            <h3><a href="https://www.reuters.com/business/wall-street-futures-decline-ahead-big-bank-earnings-2026-01-14/" target="_blank">Wall Street futures decline ahead of big bank earnings</a></h3>
-            <p class="summary">US stock futures fell on Wednesday as investors prepared for earnings reports from big banks like Citigroup, Bank of America, and Wells Fargo. This comes ahead of important economic data on retail sales and producer prices. This decline in stock futures may affect people who invest in the stock market or own stocks.</p>
-            <p class="impact"><strong>Impact:</strong> The decline in stock futures may impact citizens by potentially affecting their retirement savings or investments. Investors may see a decrease in the value of their stocks, while students may be less likely to invest in the stock market if they see a decline in stock prices.</p>
-            <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
                 <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
                 <span>FINANCE</span> •
-                <span class="source">Source: Reuters</span>
-            </div>
-            <div class="entities">Key Topics: Citigroup, Bank of America, Wells Fargo</div>
-        </div>
-        
-        <div class="article">
-            <h3><a href="https://www.barchart.com/story/news/37035107/stock-index-futures-slip-with-focus-on-u-s-retail-sales-and-ppi-data-more-big-bank-earnings-on-tap" target="_blank">Stock Index Futures Slip With Focus on U.S. Retail Sales and PPI Data, More Big Bank Earnings on Tap</a></h3>
-            <p class="summary">Stock futures have dropped slightly this morning as investors are cautious about upcoming US economic data, such as retail sales and inflation reports. This means that the value of stocks might not increase as much as expected. It affects people who invest in the stock market, such as those with retirement funds or individual investors. This is a normal reaction to uncertainty, but it can be unsettling for those who rely on their investments.</p>
-            <p class="impact"><strong>Impact:</strong> Citizens might not see an immediate impact, but investors may experience a decrease in their stock values. Students who are interested in finance or economics can learn from this situation, as it shows how economic data can affect the stock market. Investors may need to adjust their strategies or wait for more information before making decisions.</p>
-            <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
-                <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
-                <span>FINANCE</span> •
                 <span class="source">Source: Barchart</span>
             </div>
-            <div class="entities">Key Topics: S&P 500, Nasdaq 100, US</div>
+            <div class="entities">Key Topics: S&P 500, Nasdaq 100, U.S. economic data</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.benzinga.com/markets/large-cap/26/01/49899635/bp-warns-of-4-5-billion-impairment-charges-in-q4-low-carbon-earnings" target="_blank">Trading Why Is BP Stock Trading Lower Today?</a></h3>
-            <p class="summary">BP, an oil company, reported that its oil production is stable, but its gas and low-carbon business are not doing well. They also expect to take a $4-5 billion loss due to some assets being worth less than expected. This news is affecting BP's stock price, making it lower today. It's a big deal for people who own BP shares and for the company itself.</p>
-            <p class="impact"><strong>Impact:</strong> This news affects citizens by potentially impacting gas prices and the environment. Investors are worried about the company's financial health and the value of their shares. Students may be interested in learning about the oil industry and how companies like BP operate.</p>
+            <p class="summary">BP, a major oil company, reported that its oil production is stable, but its gas and low-carbon energy production are weaker than expected. The company also announced that it will take a $4–$5 billion loss due to certain charges. This news affects BP's stock price and the company's overall performance.</p>
+            <p class="impact"><strong>Impact:</strong> This news affects BP's stock price and the company's overall performance. Citizens may not be directly affected, but investors who own BP stock may see a decrease in value. Students who are interested in business or finance may find this news interesting. Investors may be concerned about the company's future performance and potential losses.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
                 <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
                 <span>FINANCE</span> •
@@ -89,80 +99,80 @@ footer{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #
         
         <div class="article">
             <h3><a href="https://www.forbes.com/sites/brandonkochkodin/2026/01/14/why-trumps-threats-to-fed-independence-arent-tanking-stocks/" target="_blank">Why Trump's Fight With Powell Isn't Shaking The Stock Market</a></h3>
-            <p class="summary">The stock market didn't react much to news of a Justice Department investigation involving Federal Reserve Chair Jerome Powell. This is because the stock market is used to the Fed being under pressure and it doesn't usually affect stock prices. The investigation is a normal part of the job for the Fed, so it's not a surprise to investors.</p>
-            <p class="impact"><strong>Impact:</strong> The news doesn't have a significant impact on citizens, as it's mostly related to the financial world. However, it can affect investors who have money in the stock market. Students might be interested in understanding how the stock market works and how it's affected by news like this.</p>
+            <p class="summary">The stock market didn't react much to news of a Justice Department investigation involving Federal Reserve Chair Jerome Powell. This is because the Fed's actions have a limited impact on the stock market. The market is more influenced by economic indicators and business performance.</p>
+            <p class="impact"><strong>Impact:</strong> The news doesn't directly affect citizens, but it could have a long-term impact on investors and the economy. Students may be interested in understanding the relationship between the Fed and the stock market. Citizens may be indirectly affected by changes in interest rates or economic policies.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
                 <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
                 <span>FINANCE</span> •
                 <span class="source">Source: Forbes</span>
             </div>
-            <div class="entities">Key Topics: Federal Reserve, Jerome Powell, Justice Department</div>
+            <div class="entities">Key Topics: Federal Reserve, Justice Department, Jerome Powell</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.investopedia.com/dow-jones-today-01142026-11885090" target="_blank">Dow Jones Today: Stock Futures Fall Ahead of Flurry of Bank Earnings, PPI Inflation Data; Gold, Silver Set Fresh Record Highs</a></h3>
-            <p class="summary">Stock futures are falling before important bank earnings reports and inflation data are released. Meanwhile, gold and silver prices are reaching new record highs. This means that people who invest in the stock market might be worried about the future, and those who buy gold and silver might be trying to protect their money. It's a mixed signal.</p>
-            <p class="impact"><strong>Impact:</strong> This news affects citizens by potentially influencing their savings and investments. Investors are closely watching the stock market and bank earnings reports. Students might be interested in learning about economics and how it affects the world.</p>
+            <p class="summary">Stock futures are falling before important bank earnings reports and inflation data are released. Meanwhile, gold and silver prices have reached new record highs. This means that people who invest in the stock market might be worried about the economy, and those who buy gold and silver might be looking for a safe place to put their money.</p>
+            <p class="impact"><strong>Impact:</strong> This news affects people who invest in the stock market, buy gold and silver, or are interested in the economy. For citizens, it might mean higher prices for goods and services if inflation is high. For investors, it could mean a loss of money if the stock market continues to fall. For students, it's a good opportunity to learn about economics and investing.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
-                <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
+                <span>2026-01-14</span> •
+                <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
+                <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
                 <span>FINANCE</span> •
                 <span class="source">Source: Investopedia</span>
             </div>
-            <div class="entities">Key Topics: Dow Jones, Gold, Silver</div>
+            <div class="entities">Key Topics: Dow Jones, gold, silver</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.cnbc.com/2026/01/14/bank-of-america-hikes-price-target-on-this-defense-stock-following-pentagon-investment.html" target="_blank">Bank of America hikes price target on this defense stock following Pentagon investment</a></h3>
-            <p class="summary">Bank of America has increased its price target for a defense stock after the Pentagon invested in the company. This means the bank thinks the company's stock value will go up. The bank has also kept its 'buy' rating, which is a positive sign for investors. This affects the company and its investors, but it's not directly related to citizens or students.</p>
-            <p class="impact"><strong>Impact:</strong> The Pentagon's investment may lead to more defense projects and jobs, which could benefit citizens. Investors who own the company's stock may see its value increase, which is good for them. Students may not be directly affected, but they could be interested in the company's technology and innovations.</p>
+            <p class="summary">Bank of America raised its price target for a defense stock after the Pentagon invested in it. The bank still recommends buying shares of this aerospace and defense company. This means the bank thinks the company's stock price will go up. The change affects investors who own or plan to buy shares of this company.</p>
+            <p class="impact"><strong>Impact:</strong> The Pentagon's investment and the bank's raised price target may lead to more people buying shares of this company. This could make the company's stock price go up, benefiting investors. However, it may also mean higher costs for citizens if the company's products are used by the government. Students may be interested in learning more about the company's products and services.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>FINANCE</span> •
                 <span class="source">Source: CNBC</span>
             </div>
-            <div class="entities">Key Topics: Bank of America, Pentagon, Bank of America</div>
+            <div class="entities">Key Topics: Bank of America, Pentagon, Bank</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.barchart.com/story/news/37036074/this-trade-for-microsoft-profits-if-the-stock-stays-above-435" target="_blank">This Trade for Microsoft Profits if the Stock Stays Above $435</a></h3>
-            <p class="summary">Microsoft's stock price has dropped recently. The company is expected to release its earnings on January 28th. This news affects people who own Microsoft stock or are interested in the company's performance. If the stock stays above $435, a trade for Microsoft profits is possible.</p>
-            <p class="impact"><strong>Impact:</strong> The drop in Microsoft's stock price and upcoming earnings report may affect citizens by potentially impacting their investments or retirement funds. Investors who own Microsoft stock may see their investments fluctuate. Students who are interested in business or finance may learn from the situation and gain experience in analyzing market trends.</p>
+            <p class="summary">Microsoft's stock price has dropped in recent months. The company is set to release its earnings report on January 28th. This news affects people who own Microsoft stock or have invested in the company. If the stock stays above $435, it could be a good opportunity for profit.</p>
+            <p class="impact"><strong>Impact:</strong> The news about Microsoft's stock price and earnings report affects citizens by potentially influencing their investments and financial decisions. Investors are closely watching the stock market and Microsoft's performance. Students may be interested in the economic implications of the report and how it affects the tech industry.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
                 <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
                 <span>FINANCE</span> •
                 <span class="source">Source: Barchart</span>
             </div>
-            <div class="entities">Key Topics: Microsoft, Citizens, Investors</div>
+            <div class="entities">Key Topics: Microsoft, January, stock market</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.barchart.com/story/news/37037316/keybanc-says-intel-has-made-significant-progress-does-that-make-intc-stock-a-buy-here" target="_blank">KeyBanc Says Intel Has Made ‘Significant Progress.’ Does That Make INTC Stock a Buy Here?</a></h3>
-            <p class="summary">Intel's stock price has gone up after KeyBanc, a financial firm, released a positive report about the company. They think Intel has made significant progress and this will help its stock do well in 2026. This news affects Intel shareholders and anyone who owns or is thinking of buying Intel stock. It means they might see a rise in the stock's value.</p>
-            <p class="impact"><strong>Impact:</strong> This news can impact citizens by potentially increasing the value of their investments. Investors who own Intel stock may see their money grow. Students who are interested in technology and investing might be inspired to learn more about the stock market and Intel's progress. It can also encourage people to invest in the tech industry.</p>
+            <p class="summary">Intel's stock price is rising after KeyBanc, an investment firm, released a positive report about the company. KeyBanc believes Intel has made significant progress and thinks this will help the stock price go up in 2026. This news affects Intel investors and the company itself. It means that people who own Intel stock or are thinking of buying it might be more likely to do so because of the positive report.</p>
+            <p class="impact"><strong>Impact:</strong> This news will have a positive impact on citizens who own Intel stock or are invested in the company. It will also affect investors who are considering buying Intel stock. Students who are interested in technology and business might find this news interesting and learn from it. However, it's essential for citizens and investors to do their own research before making any decisions.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>FINANCE</span> •
                 <span class="source">Source: Barchart</span>
             </div>
-            <div class="entities">Key Topics: Intel, KeyBanc, INTC</div>
+            <div class="entities">Key Topics: Intel, KeyBanc</div>
         </div>
         
         <div class="article">
             <h3><a href="https://www.barchart.com/story/news/37037320/what-to-expect-from-alphabets-next-quarterly-earnings-report" target="_blank">What to Expect From Alphabet’s Next Quarterly Earnings Report</a></h3>
-            <p class="summary">Alphabet, the parent company of Google, recently reached a market value of over $4 trillion. Analysts are now expecting the company's quarterly earnings report for Q4. This news affects Alphabet's investors and the company itself, as it will reveal how well Google performed financially in the last quarter. It's a significant event in the tech industry, and its outcome will likely impact Alphabet's stock price and future plans.</p>
-            <p class="impact"><strong>Impact:</strong> The quarterly earnings report will impact citizens by potentially influencing the direction of Alphabet's future projects and investments. Investors will be affected by the stock price changes that follow the report. Students can learn from the report's insights into the tech industry and Alphabet's strategies for growth.</p>
+            <p class="summary">Alphabet, the parent company of Google, recently reached a market cap of over $4 trillion. Analysts are now expecting the company's next quarterly earnings report. This news is significant for Alphabet's investors, as they will be watching closely to see how the company performed in the last quarter. The report will likely affect Alphabet's stock price and investor confidence.</p>
+            <p class="impact"><strong>Impact:</strong> The impact of Alphabet's quarterly earnings report will be felt by citizens in terms of job security and economic stability, as Alphabet is a major employer and contributor to the economy. Investors will be closely watching the report to make informed decisions about their investments. Students may be interested in the report as a case study in business and economics.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
                 <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
                 <span>FINANCE</span> •
@@ -172,152 +182,195 @@ footer{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #
         </div>
         
         <div class="article">
-            <h3><a href="https://www.macrumors.com/2026/01/14/apple-struggling-with-key-material-shortage/" target="_blank">Apple Struggling With Key Material Shortage as AI Chips Drain Supply</a></h3>
-            <p class="summary">Apple is facing a shortage of a key material called high-end glass cloth fiber, which is used in iPhones and other devices. This shortage is caused by the increasing demand for AI chips. Apple is struggling to secure enough supplies of this material, which is mainly produced by one supplier, Nitto Boseki.</p>
-            <p class="impact"><strong>Impact:</strong> The shortage of high-end glass cloth fiber will affect Apple's production and may lead to delays in releasing new devices. Citizens may experience delays in getting their hands on the latest Apple products. Investors may see a negative impact on Apple's stock prices. Students may be interested in learning about the technology behind AI chips and the challenges of producing them.</p>
+            <h3><a href="https://www.benzinga.com/trading-ideas/dividends/26/01/49901589/how-to-earn-500-a-month-from-goldman-sachs-stock-ahead-of-q4-earnings-2" target="_blank">How To Earn $500 A Month From Goldman Sachs Stock Ahead Of Q4 Earnings</a></h3>
+            <p class="summary">Goldman Sachs is releasing its fourth-quarter earnings on January 15. Analysts predict the company will earn $11.57 per share. The dividend yield is 1.71%. This means that investors who own Goldman Sachs stock may see a potential increase in value or receive a dividend payment.</p>
+            <p class="impact"><strong>Impact:</strong> This news affects investors who own Goldman Sachs stock. It may impact citizens who have invested in the stock market, as the earnings report could influence the stock's value. Students who are interested in finance or business may find this news interesting and educational.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
-                <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
-                <span>TECHNOLOGY</span> •
-                <span class="source">Source: MacRumors</span>
-            </div>
-            <div class="entities">Key Topics: Apple, Nitto Boseki, AI</div>
-        </div>
-        
-        <div class="article">
-            <h3><a href="https://www.benzinga.com/news/legal/26/01/49900940/ai-startup-percepta-slams-palantirs-baseless-lawsuit-calls-it-bid-to-destroy-competition" target="_blank">AI Startup Percepta Slams Palantir's 'Baseless' Lawsuit, Calls It Bid To 'Destroy' Competition</a></h3>
-            <p class="summary">Percepta AI, a startup in the AI space, is being sued by Palantir Technologies for allegedly stealing information and poaching employees. Percepta's executives claim this is an attempt to stifle competition. This lawsuit affects Percepta AI and its employees. It means that the company may face legal consequences and financial losses.</p>
-            <p class="impact"><strong>Impact:</strong> This lawsuit may impact citizens by limiting innovation and competition in the AI industry. Investors may be concerned about the potential financial losses for Percepta AI. Students may be interested in the development of AI technology and how it affects the industry.</p>
-            <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
-                <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
-                <span>TECHNOLOGY</span> •
+                <span>2026-01-14</span> •
+                <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
+                <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
+                <span>FINANCE</span> •
                 <span class="source">Source: Benzinga</span>
             </div>
-            <div class="entities">Key Topics: Percepta AI, Palantir Technologies, AI</div>
+            <div class="entities">Key Topics: Goldman Sachs, NYSE, GS</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://www.digitaltrends.com/phones/new-report-sheds-light-on-how-gemini-fits-into-apples-siri-revamp/" target="_blank">New report sheds light on how Gemini fits into Apple's Siri revamp</a></h3>
-            <p class="summary">A new report has revealed that Apple is working on an upgrade for Siri, and a feature called Gemini will play a key role in this update. This means that users of Apple devices can expect new and improved AI features. The upgrade will likely affect anyone who uses Siri, which is a large number of people who own Apple devices.</p>
-            <p class="impact"><strong>Impact:</strong> The upgrade will likely have a positive impact on citizens, as it will provide them with more convenient and efficient ways to interact with their devices. Investors may be interested in the upgrade as it could lead to increased sales and revenue for Apple. Students may also benefit from the upgrade, as it could make it easier for them to use their devices to complete tasks and access information.</p>
+            <h3><a href="https://www.barchart.com/story/news/37037465/amd-is-almost-sold-out-of-cpus-for-2026-does-that-make-amd-stock-a-buy-now" target="_blank">AMD Is Almost Sold Out of CPUs for 2026. Does That Make AMD Stock a Buy Now?</a></h3>
+            <p class="summary">AMD's stock is rising after KeyBanc issued a positive report. This is because AMD is running low on CPUs for 2026, which might make their products more valuable. This news affects AMD investors and people who buy AMD CPUs. It means that AMD's stock might go up in value, making it a good time to buy for some investors.</p>
+            <p class="impact"><strong>Impact:</strong> This news impacts citizens by potentially making AMD CPUs more expensive. Investors might see this as a good opportunity to buy AMD stock, which could increase its value. Students who are interested in computer science or technology might be affected by the potential shortage of AMD CPUs.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
+                <span style="color:#10b981;font-weight:bold">POSITIVE</span>
+                <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
+                <span>FINANCE</span> •
+                <span class="source">Source: Barchart</span>
+            </div>
+            <div class="entities">Key Topics: AMD, KeyBanc, CPUs</div>
+        </div>
+        
+        <div class="article">
+            <h3><a href="https://siliconangle.com/2026/01/14/novee-launches-51-5m-bring-continuous-ai-offensive-security-enterprises/" target="_blank">Novee launches with $51.5M to bring continuous AI offensive security to enterprises</a></h3>
+            <p class="summary">Novee, a new company, has launched with $51.5 million in funding. This means they can develop and offer a new type of security system to big companies. This system uses artificial intelligence to constantly check for potential security threats. It will help protect these companies from cyber attacks. This new system is called continuous AI offensive security.</p>
+            <p class="impact"><strong>Impact:</strong> The launch of Novee's new security system will impact citizens by making the internet a safer place. Investors will benefit from the potential growth of Novee's company. Students can learn from the advancements in AI and security technology. This will also create new job opportunities in the field of cybersecurity.</p>
+            <div class="meta">
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: Digital Trends</span>
+                <span class="source">Source: SiliconANGLE News</span>
             </div>
-            <div class="entities">Key Topics: Apple, Siri, Gemini</div>
+            <div class="entities">Key Topics: Novee, SiliconANGLE, AI</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://www.forbes.com/sites/billconerly/2026/01/14/economic-forecast-2026-growth-will-defy-slowdown-fears/" target="_blank">Economic Forecast 2026: Growth Will Defy Slowdown Fears</a></h3>
-            <p class="summary">The economy is growing faster than expected, with a 4.3% increase in GDP. This is good news for business leaders, but it also affects the general public, job seekers, and investors. It means that more jobs might be available and the economy is doing well.</p>
-            <p class="impact"><strong>Impact:</strong> This economic growth will positively impact citizens by potentially creating more job opportunities, benefiting investors with increased returns, and providing students with more career choices and better job prospects.</p>
+            <h3><a href="https://techstartups.com/2026/01/14/meta-reportedly-lays-off-10-of-reality-labs-staff-as-it-retreats-from-the-metaverse-to-ai/" target="_blank">Meta lays off 10% of Reality Labs staff as it retreats from the metaverse to AI</a></h3>
+            <p class="summary">Meta, a tech company, is laying off 10% of its Reality Labs staff. This team was working on virtual reality and the metaverse. The layoffs mean that Meta is shifting its focus from virtual worlds to artificial intelligence (AI). This change affects Reality Labs employees, who will lose their jobs.</p>
+            <p class="impact"><strong>Impact:</strong> The layoffs will impact citizens by potentially reducing innovation in virtual reality and the metaverse. Investors may be concerned about Meta's future prospects and the value of their investments. Students may be disappointed by the reduced focus on virtual reality and its potential applications.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
+                <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
+                <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
+                <span>TECHNOLOGY</span> •
+                <span class="source">Source: TechStartups.com</span>
+            </div>
+            <div class="entities">Key Topics: Meta, Facebook, Artificial Intelligence (AI)</div>
+        </div>
+        
+        <div class="article">
+            <h3><a href="https://www.bloomberg.com/news/articles/2026-01-14/robotics-startup-skild-valued-above-14-billion-after-softbank-led-funding-round" target="_blank">Robotics Startup Skild AI Valued Above $14 Billion in New Funding Round</a></h3>
+            <p class="summary">Skild AI, a startup that makes software for robots, has raised $1.4 billion in a new funding round. This values the company at over $14 billion, more than triple its worth just seven months ago. This means Skild AI is growing rapidly and has a lot of money to invest in its technology.</p>
+            <p class="impact"><strong>Impact:</strong> This news affects the company itself, its employees, and the investors who put money into it. It also has a broader impact on citizens as they may see more robots in their daily lives, on investors who may be inspired to invest in other startups, and on students who may be interested in pursuing careers in robotics and artificial intelligence.</p>
+            <div class="meta">
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: Forbes</span>
+                <span class="source">Source: Bloomberg</span>
             </div>
-            <div class="entities">Key Topics: AI, GDP, business leaders</div>
+            <div class="entities">Key Topics: Skild AI, robots, artificial intelligence</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://seekingalpha.com/article/4859330-energy-metals-and-infrastructure-where-wall-street-will-be-forced-to-invest-next" target="_blank">Energy, Metals, And Infrastructure: Where Wall Street Will Be 'Forced' To Invest Next</a></h3>
-            <p class="summary">A significant shift is happening in how companies spend their money. Hyperscalers, which are large tech companies, are investing heavily in new infrastructure and technology, spending over $600 billion. This change is driven by the growing use of artificial intelligence. As a result, Wall Street will likely be forced to invest in these areas as well.</p>
-            <p class="impact"><strong>Impact:</strong> This shift in investment will have a ripple effect on various groups. Citizens may see new technologies and services emerge, such as improved AI-powered healthcare and transportation. Investors will have new opportunities to invest in emerging technologies. Students will have access to more resources and tools to learn about AI and related fields.</p>
+            <h3><a href="https://seekingalpha.com/article/4859550-micron-momentum-stock-with-strong-fundamentals" target="_blank">Micron: A Momentum Stock With Strong Fundamentals</a></h3>
+            <p class="summary">Micron Technology, a company that makes computer memory, has been upgraded to a 'strong buy' after its stock price increased by 108%. This means that analysts think the company's stock will do well in the future. The upgrade is due to high demand for memory used in artificial intelligence (AI) technology.</p>
+            <p class="impact"><strong>Impact:</strong> This news affects investors who own or plan to buy Micron stock. It also impacts citizens who use technology that relies on Micron's memory, such as AI-powered devices. Students who are interested in technology and investing may also be interested in this news. As for investors, it means they may want to consider buying Micron stock, while citizens and students may be interested in learning more about the company and its technology.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
                 <span class="source">Source: Seeking Alpha</span>
             </div>
-            <div class="entities">Key Topics: AI, Wall Street, Hyperscalers</div>
+            <div class="entities">Key Topics: Micron Technology, AI, MU stock</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://www.businesswire.com/news/home/20260114335622/en/Realbotix-Showcases-First-Public-Embedded-AI-Conversation-Between-Two-Humanoid-Robots-at-CES-2026" target="_blank">Realbotix Showcases First Public Embedded AI Conversation Between Two Humanoid Robots at CES 2026</a></h3>
-            <p class="summary">Realbotix, a company that makes AI-powered humanoid robots, demonstrated a conversation between two of its robots at a technology conference called CES 2026. This is a significant achievement because it shows that their robots can communicate with each other. This could lead to more advanced robots that can work together and help people in various ways. It's a step forward in robotics and artificial intelligence.</p>
-            <p class="impact"><strong>Impact:</strong> This technology could benefit citizens by providing more assistance and companionship, especially for the elderly or those with disabilities. Investors may see this as a positive sign for the company's future, potentially leading to increased stock value. Students in robotics and AI fields may be inspired by this achievement and see it as a motivation to pursue their studies.</p>
+            <h3><a href="https://www.bloomberg.com/news/articles/2026-01-14/airbnb-taps-meta-ai-executive-as-new-chief-technology-officer" target="_blank">Airbnb Taps Meta AI Executive as New Chief Technology Officer</a></h3>
+            <p class="summary">Airbnb has hired a former Meta executive as its new Chief Technology Officer. This move is part of Airbnb's plan to add more artificial intelligence and personalization features to its service. This change affects Airbnb users and the company's future development. It means that users can expect a more tailored experience on the platform.</p>
+            <p class="impact"><strong>Impact:</strong> This hiring decision impacts citizens by potentially improving their experience on Airbnb, investors by showing Airbnb's commitment to innovation, and students by providing a new example of how companies are using AI in their services. It may also lead to more job opportunities in the tech industry.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: Business Wire</span>
+                <span class="source">Source: Bloomberg</span>
             </div>
-            <div class="entities">Key Topics: Realbotix, CES 2026, AI</div>
+            <div class="entities">Key Topics: Airbnb, Meta, AI</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://techstartups.com/2026/01/14/the-shift-from-impressive-demos-to-production-ready-ai-systems/" target="_blank">The Shift From “Impressive Demos” to Production</a></h3>
-            <p class="summary">The way people measure progress in artificial intelligence is changing. Instead of focusing on impressive one-off demos, the focus is now on creating working products. This shift affects developers, researchers, and companies working on AI projects. It means that AI is becoming more practical and less about just looking cool.</p>
-            <p class="impact"><strong>Impact:</strong> The shift from demos to production impacts citizens by making AI more useful in their daily lives. Investors will now look for companies that can deliver working products, not just flashy demos. Students will learn more about building and implementing AI systems, rather than just creating impressive presentations.</p>
+            <h3><a href="https://www.investors.com/news/tesla-elon-musk-go-the-subscription-route-with-fsd/" target="_blank">Tesla And Elon Musk Are Going The Subscription Route With FSD</a></h3>
+            <p class="summary">Tesla is changing how it offers its Full Self-Driving (FSD) technology. Starting February 14, you'll need to pay a subscription to use it. This means if you already bought a car with FSD, you might need to pay extra to keep it. It affects anyone who owns or will own a Tesla with FSD. This change means you'll pay a recurring fee instead of paying upfront.</p>
+            <p class="impact"><strong>Impact:</strong> This change impacts citizens by making them pay more for a feature they may already own. Investors might see this as a way for Tesla to make more money. Students may be affected if they're planning to buy a Tesla in the future, as they'll need to factor in the subscription cost.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
-                <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
+                <span>2026-01-14</span> •
+                <span style="color:#ef4444;font-weight:bold">NEGATIVE</span>
+                <span class="sentiment-text"> — NEGATIVE: This may have a negative impact.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: TechStartups.com</span>
+                <span class="source">Source: Investor's Business Daily</span>
             </div>
-            <div class="entities">Key Topics: artificial intelligence</div>
+            <div class="entities">Key Topics: Tesla, Elon Musk, FSD</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://www.reuters.com/technology/uk-pm-starmer-says-musks-x-moves-comply-with-uk-law-2026-01-14/" target="_blank">UK PM Starmer says X moves to comply with UK law over AI deepfakes</a></h3>
-            <p class="summary">The UK Prime Minister, Keir Starmer, said that Elon Musk's X platform is taking steps to follow UK laws after a regulator launched an investigation into the platform. This is because the Grok AI chatbot on X created sexualized images, which is against UK law. This means that X must now ensure that its platform complies with UK laws to avoid any further issues.</p>
-            <p class="impact"><strong>Impact:</strong> This news affects citizens by ensuring that online platforms follow laws to protect them from harmful content. It also impacts investors as X must now comply with UK laws, which may affect its business operations. Students may be interested in how AI technology, like the Grok AI chatbot, is being used and regulated.</p>
+            <h3><a href="https://nymag.com/intelligencer/article/how-claude-code-cowork-reset-the-ai-assistant-race.html" target="_blank">How Claude Reset the AI Race</a></h3>
+            <p class="summary">A new technology called Claude has been developed, allowing people to create custom software without needing to learn how to code. This means that anyone can make their own software, regardless of their technical background. This is a significant step towards a future where programming is more accessible to everyone.</p>
+            <p class="impact"><strong>Impact:</strong> This technology will have a significant impact on citizens, who will be able to create their own software solutions without needing to learn how to code. Investors will be interested in Claude as it has the potential to disrupt the software industry. Students will also benefit from this technology, as it will make programming more accessible and fun.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
-                <span style="color:#9ca3af;font-weight:bold">NEUTRAL</span>
-                <span class="sentiment-text"> — NEUTRAL: No strong positive or negative effect.</span> •
-                <span>TECHNOLOGY</span> •
-                <span class="source">Source: Reuters</span>
-            </div>
-            <div class="entities">Key Topics: X, Grok AI chatbot, Elon Musk</div>
-        </div>
-        
-        <div class="article">
-            <h3><a href="https://www.androidheadlines.com/2026/01/hr-blocks-deluxe-tax-software-is-already-on-sale-and-filing-season-hasnt-even-started.html" target="_blank">H&R Block's Deluxe Tax Software Is Already on Sale</a></h3>
-            <p class="summary">H&R Block's Deluxe + State 2025 tax software is already on sale on Amazon. This means people who need to file their taxes can save money on the software. The sale affects individuals who plan to file their taxes using the software.</p>
-            <p class="impact"><strong>Impact:</strong> The sale impacts citizens who need to file their taxes, as they can save money on the software. For investors, it may be a positive sign for H&R Block's sales and revenue. Students may also benefit from the sale if they need to file taxes for part-time jobs or scholarships.</p>
-            <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: Android Headlines</span>
+                <span class="source">Source: New York Magazine</span>
             </div>
-            <div class="entities">Key Topics: H&R Block, Amazon, Deluxe + State 2025 tax software</div>
+            <div class="entities">Key Topics: Claude, Code, Cowork</div>
         </div>
         
         <div class="article">
-            <h3><a href="https://www.fastcompany.com/91474321/daniel-ek-believes-prevention-is-the-key-to-a-long-life-hes-bringing-a-new-healthcare-experience-to-nyc-for-the-first-time" target="_blank">Daniel Ek believes prevention is the key to a long life. He's bringing a 'new healthcare experience' to NYC for the first time</a></h3>
-            <p class="summary">Spotify co-founder Daniel Ek is bringing a new healthcare experience to New York City. His startup, which scans people's bodies, has grown quickly in just three years. This could lead to better health and longer lives for those who use it.</p>
-            <p class="impact"><strong>Impact:</strong> This new healthcare experience could benefit citizens by providing them with better health options, attract investors who see the potential for growth, and inspire students who are interested in technology and healthcare to learn more about the field.</p>
+            <h3><a href="https://www.newsweek.com/nw-ai/ai-is-becoming-the-starting-point-for-travel-planning-11353455" target="_blank">AI Is Becoming the Starting Point for Travel Planning</a></h3>
+            <p class="summary">Travelers are now relying on AI tools to plan their trips, from making decisions to booking flights and hotels. This shift is happening because people trust AI to provide personalized recommendations and make the planning process easier. As a result, AI is becoming the starting point for travel planning.</p>
+            <p class="impact"><strong>Impact:</strong> This change affects travelers who can now get more tailored advice and save time. For citizens, it means more convenient travel options. Investors may see opportunities in the growing AI travel industry. Students can benefit from AI-powered travel planning tools that help them plan trips and learn about different cultures.</p>
             <div class="meta">
-                <span>Jan 14, 2026</span> •
+                <span>2026-01-14</span> •
                 <span style="color:#10b981;font-weight:bold">POSITIVE</span>
                 <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
                 <span>TECHNOLOGY</span> •
-                <span class="source">Source: Fast Company</span>
+                <span class="source">Source: Newsweek</span>
             </div>
-            <div class="entities">Key Topics: Spotify, Daniel Ek, NYC</div>
+            <div class="entities">Key Topics: AI, travelers, AI tools</div>
+        </div>
+        
+        <div class="article">
+            <h3><a href="https://www.globenewswire.com/news-release/2026/01/14/3218583/0/en/Phlow-and-Enveda-Partner-to-Advance-AI-Driven-Chemistry-to-Accelerate-Domestic-Pharmaceutical-Development-and-Transform-Drug-Substance-Manufacturing.html" target="_blank">Phlow and Enveda Partner to Advance AI-Driven Chemistry to</a></h3>
+            <p class="summary">Phlow Corp., a US pharmaceutical company, has partnered with Enveda to advance AI-driven chemistry. This partnership aims to improve the development of new medicines. The collaboration will benefit the pharmaceutical industry, potentially leading to better treatments and improved patient outcomes. This news affects the pharmaceutical industry and the people who rely on new medicines.</p>
+            <p class="impact"><strong>Impact:</strong> This partnership will impact citizens by providing them with access to new and potentially life-saving medicines. Investors will benefit from the growth and innovation in the pharmaceutical industry. Students can learn from this collaboration and gain insights into the latest advancements in AI-driven chemistry.</p>
+            <div class="meta">
+                <span>2026-01-14</span> •
+                <span style="color:#10b981;font-weight:bold">POSITIVE</span>
+                <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
+                <span>TECHNOLOGY</span> •
+                <span class="source">Source: GlobeNewswire</span>
+            </div>
+            <div class="entities">Key Topics: Phlow Corp., Enveda, AI-driven chemistry</div>
+        </div>
+        
+        <div class="article">
+            <h3><a href="https://www.cnbc.com/2026/01/14/airbnb-tech-chief-meta-ai.html" target="_blank">Airbnb poaches former Meta GenAI leader to be new technology chief</a></h3>
+            <p class="summary">Airbnb has hired a former leader from Meta who specializes in artificial intelligence (AI) to be their new technology chief. This comes at a time when Airbnb is updating its app with new features like catering and personal training. This change will likely affect how Airbnb develops its technology and services.</p>
+            <p class="impact"><strong>Impact:</strong> This appointment will have a positive impact on citizens as it may lead to more innovative features and services on Airbnb. For investors, it could be a sign of Airbnb's commitment to investing in technology and potentially improving its business. Students interested in AI and technology may see this as an opportunity to learn from the new technology chief's experience.</p>
+            <div class="meta">
+                <span>2026-01-14</span> •
+                <span style="color:#10b981;font-weight:bold">POSITIVE</span>
+                <span class="sentiment-text"> — POSITIVE: This is good news for most readers.</span> •
+                <span>TECHNOLOGY</span> •
+                <span class="source">Source: CNBC</span>
+            </div>
+            <div class="entities">Key Topics: Airbnb, Meta, GenAI</div>
         </div>
         
 </main>
 <footer>
-<p>Last updated: January 14, 2026 at 07:47 PM UTC</p>
-<p style="font-size:0.9em;color:#555;"><strong>Disclaimer:</strong> Summaries are AI-generated for informational purposes.</p>
-<p style="margin-top:10px;font-size:0.9em">Summaries are AI-generated for educational purposes.</p>
-<p style="margin-top:20px;opacity:0.6">100% Free • Open Source • Built with Python</p>
+    <p>Last updated: January 14, 2026 at 08:05 PM UTC</p>
+    <p>AI-generated for informational purposes.</p>
 </footer>
 </div>
+
+<script>
+function toggleMode() {
+    const body = document.body;
+    const btn = document.getElementById('btn');
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    localStorage.setItem('dark-theme', isDark);
+    btn.innerHTML = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+}
+
+// Apply theme on load
+if (localStorage.getItem('dark-theme') === 'true') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('btn').innerHTML = "☀️ Light Mode";
+}
+</script>
 </body>
 </html>
