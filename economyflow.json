@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-01-29T17:04:38.904024+00:00",
-  "last_updated_human": "2026-01-29 12:04:38 UTC",
+  "timestamp": "2026-01-29T18:29:33.622959+00:00",
+  "last_updated_human": "2026-01-29 13:29:33 UTC",
   "us_economy": {
     "gdp_growth": 1.08,
     "gdp_growth_prev": 0.95,
@@ -15,6 +15,9 @@
     "total_employment": 160448.0,
     "avg_hourly_earnings": 37.02
   },
+  "commodities": {},
+  "economic_calendar": [],
+  "market_indexes": {},
   "fx_rates": {
     "EUR": 0.836,
     "GBP": 0.725,
@@ -360,17 +363,18 @@
     "recession_risk_level": "VERY LOW"
   },
   "ai": {
-    "connected_summary": "The US economy is experiencing a moderate growth phase, with a 1.08% GDP growth rate and a low unemployment rate of 4.4%. However, inflation remains a concern at 2.7%, and the yield curve is slightly positive, indicating a moderate risk of recession. The global economy is also showing signs of growth, with several countries experiencing high GDP growth rates.",
+    "connected_summary": "The US economy is experiencing a moderate growth phase, with a 1.08% GDP growth rate and a 4.4% unemployment rate. The yield curve is positive, indicating a normal interest rate environment. However, inflation remains a concern at 2.7%. The global economy is also growing, with the top economies experiencing moderate growth. The recession risk is low, but the yield curve and inflation rates suggest caution.",
     "what_matters_today": [
-      "The US yield curve is slightly positive, indicating a moderate risk of recession.",
-      "The US unemployment rate is low at 4.4%, suggesting a strong labor market.",
-      "Inflation remains a concern at 2.7%, which may lead to interest rate hikes."
+      "The yield curve is positive, indicating a normal interest rate environment, which supports moderate growth.",
+      "Inflation remains a concern at 2.7%, which may lead to higher interest rates and slower growth.",
+      "The global economy is experiencing moderate growth, with the top economies growing at a rate of 1.08%."
     ],
     "what_to_do_next": [
-      "Policymakers should focus on maintaining a stable economic environment by adjusting interest rates and fiscal policies to control inflation.",
-      "Business leaders should prepare for potential economic slowdown by diversifying their supply chains and investing in research and development.",
-      "Governments should invest in education and training programs to address labor market shortages and maintain economic growth."
+      "Policy makers should focus on maintaining a stable interest rate environment to support moderate growth.",
+      "Business leaders should prepare for potential inflationary pressures by adjusting pricing and production strategies.",
+      "Policymakers should also consider implementing policies to address income inequality and support low-income households."
     ],
-    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with a slight risk of recession due to the positive yield curve. The global economy is also expected to experience growth, with several countries showing high GDP growth rates. However, inflation remains a concern, and policymakers will need to balance economic growth with price stability."
+    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the yield curve remaining positive. However, inflationary pressures may increase, leading to higher interest rates and slower growth. The global economy is expected to continue growing, with the top economies experiencing moderate growth. We recommend that policymakers focus on maintaining a stable interest rate environment and addressing income inequality.",
+    "market_pulse": "The positive yield curve and moderate growth suggest a stable macro environment, which may lead to increased investment in commodities and indexes related to growth and infrastructure development."
   }
 }
