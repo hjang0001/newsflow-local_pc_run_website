@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-01-29T00:44:38.721505+00:00",
+  "us_economy": {
+    "gdp_growth": 1.08,
+    "unemployment": 4.4,
+    "interest_rate": 3.72,
+    "yield_curve": 0.7
+  },
+  "fx": {
+    "EUR": 0.836,
+    "GBP": 0.726,
+    "JPY": 152.9,
+    "CNY": 6.97,
+    "INR": 91.65
+  },
+  "recession": {
+    "risk_score": 0,
+    "status": "LOW"
+  },
+  "derived_signals": {
+    "yield_curve_state": "positive"
+  },
+  "ai": {
+    "connected_summary": "The US economy is experiencing moderate growth, with a 1.08% GDP growth rate and an unemployment rate of 4.4%. The interest rate remains stable at 3.72%, and the yield curve is non-inverted, indicating a positive slope. The EUR and JPY are relatively stable against the USD, while the GBP and INR are experiencing slight depreciation. Overall, the macro environment is stable, with a low recession risk.",
+    "what_matters_today": [
+      "US GDP growth rate remains above 1%.",
+      "Unemployment rate holds steady at 4.4%.",
+      "Interest rate remains stable at 3.72%."
+    ],
+    "what_to_do_next": [
+      "Monitor the yield curve for signs of inversion.",
+      "Assess the impact of stable interest rates on investment decisions.",
+      "Evaluate the potential for further EUR and JPY stability against the USD."
+    ],
+    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to maintain moderate growth, with the interest rate remaining stable. The yield curve is expected to remain non-inverted, supporting a positive economic outlook. However, we will closely monitor the EUR and JPY for any signs of significant depreciation against the USD."
+  }
+}
