@@ -6,7 +6,6 @@
 <title>EconomyFlow</title>
 
 <style>
-/* --- SAME DESIGN SYSTEM AS NEWSFLOW --- */
 :root {
   --bg:#f4f1ea; --card:#fff; --text:#2d2d2d; --title:#1a1a1a;
   --border:#d1d1d1; --highlight:#667eea;
@@ -57,12 +56,11 @@ h1{font-size:3rem;letter-spacing:-1.5px}
   color:var(--highlight);
   border-radius:4px;
   cursor:pointer;
-  text-decoration: none;
 }
-.nav-link{left:0;}
+.nav-link{left:0;text-decoration:none}
 .theme-btn{right:0;color:var(--text)}
 
-/* AI INTELLIGENCE BOX */
+/* AI BOX */
 #global-intelligence-box{
   background:var(--card);
   border-left:8px solid var(--highlight);
@@ -75,31 +73,32 @@ h1{font-size:3rem;letter-spacing:-1.5px}
   font-size:1.2rem;
   font-weight:bold;
   color:var(--highlight);
-  margin-bottom:5px;
 }
 .ai-sub{
-  font-family:sans-serif; font-size:.9rem; opacity:.7; margin-bottom:15px; font-style:italic;
+  font-family:sans-serif;
+  font-size:.9rem;
+  opacity:.7;
+  margin-bottom:15px;
 }
 .impact{
   background:rgba(0,0,0,.03);
-  padding:15px; margin-top:15px;
+  padding:15px;
+  margin-top:15px;
   border-left:4px solid var(--highlight);
-  font-family:sans-serif; font-size:0.95rem;
+  font-family:sans-serif;
 }
 .impact ul{margin-top:8px;padding-left:20px}
 
-/* GRID LAYOUT */
+/* GRID */
 #data-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:30px;
 }
-
-/* CARDS */
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  padding:20px;
+  padding:22px;
   box-shadow:0 2px 4px rgba(0,0,0,.05);
 }
 .card h3{
@@ -108,238 +107,157 @@ h1{font-size:3rem;letter-spacing:-1.5px}
   letter-spacing:1px;
   color:var(--highlight);
   margin-bottom:15px;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 10px;
 }
 
-/* METRICS & TABLES */
+/* METRICS */
 .metric-row{
-  display:flex; justify-content:space-between;
-  padding:8px 0; border-bottom:1px solid var(--border);
-  font-family:sans-serif; font-size:0.95rem;
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-family:sans-serif;
 }
 .metric-row:last-child{border-bottom:none}
-.metric-val{ font-family:monospace; font-weight:bold; font-size:1.1rem; }
-.sub-val { font-size: 0.8rem; opacity: 0.7; font-weight: normal; margin-left: 5px; }
+.metric-val{
+  font-family:monospace;
+  font-weight:bold;
+  font-size:1.05rem;
+}
 
-/* MINI TABLES FOR GLOBAL DATA */
-.mini-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 0.9rem; }
-.mini-table td { padding: 6px 0; border-bottom: 1px solid var(--border); }
-.mini-table td:last-child { text-align: right; font-family: monospace; font-weight: bold; }
-.rank-num { color: var(--highlight); font-weight: bold; margin-right: 8px; }
-
-/* RECESSION BADGE */
+/* BADGES */
 .risk-badge{
-  display:inline-block; padding:5px 10px; border-radius:4px;
-  font-family:sans-serif; font-size:.8rem; font-weight:bold;
-  margin-top: 5px;
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:4px;
+  font-family:sans-serif;
+  font-size:.8rem;
+  font-weight:bold;
 }
 .risk-low{background:#d1fae5;color:#065f46}
 .risk-moderate{background:#fef3c7;color:#92400e}
 .risk-high{background:#fee2e2;color:#991b1b}
-.risk-very-low{background:#d1fae5;color:#065f46}
-.risk-critical{background:#fee2e2;color:#991b1b}
 
-footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-serif; font-size:.8rem; opacity:.6; border-top:1px solid var(--border); }
+footer{
+  margin-top:50px;
+  padding-top:20px;
+  text-align:center;
+  font-family:sans-serif;
+  font-size:.8rem;
+  opacity:.6;
+  border-top:1px solid var(--border);
+}
 </style>
 </head>
 
 <body>
 <div class="container">
 <header>
-  <a href="index.html" class="nav-link">← Back to News</a>
+  <a href="index.html" class="nav-link">← Back</a>
   <h1>EconomyFlow</h1>
-  <div class="subtitle">Macro Signals & Global Intelligence</div>
-  <div id="timestamp">Loading data...</div>
+  <div class="subtitle">Macro Signals & Global FX Intelligence</div>
+  <div id="timestamp">Loading…</div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
 </header>
 
 <div id="global-intelligence-box">
-  <div class="ai-title">🤖 AI Analyst Outlook</div>
-  <div class="ai-sub">Synthesized from Real-Time GDP, Labor & FX Data</div>
-  <div id="ai-summary" style="font-size:1.1rem; margin-bottom:15px;">Loading analysis...</div>
+  <div class="ai-title">🤖 AI Macro Outlook</div>
+  <div class="ai-sub">GDP · Labor · Rates · FX</div>
+  <div id="ai-summary"></div>
 
   <div class="impact" style="border-left-color:var(--success)">
-    <strong>✅ What Matters Today</strong>
+    <strong>What Matters Today</strong>
     <ul id="matters-list"></ul>
   </div>
 
-  <div class="impact">
-    <strong>💡 Recommended Actions</strong>
-    <ul id="action-list"></ul>
+  <div class="impact" style="border-left-color:var(--warning)">
+    <strong>Strategic Outlook (3–6 Months)</strong>
+    <p id="outlook-text"></p>
   </div>
 
-  <div class="impact" style="border-left-color:var(--warning)">
-    <strong>🔭 Strategic Outlook (3–6 Months)</strong>
-    <p id="outlook-text" style="margin-top:5px"></p>
+  <div class="impact">
+    <strong>Recommended Actions</strong>
+    <ul id="action-list"></ul>
   </div>
 </div>
 
 <div id="data-grid">
-  
   <div class="card">
-    <h3>🇺🇸 U.S. Economy</h3>
-    <div id="us-stats">Loading...</div>
+    <h3>🇺🇸 U.S. Macro</h3>
+    <div id="us-stats"></div>
   </div>
 
   <div class="card">
-    <h3>👷 U.S. Labor Market</h3>
-    <div id="labor-stats">Loading...</div>
-  </div>
-
-  <div class="card">
-    <h3>📉 Recession Model</h3>
-    <div style="text-align:center; padding:15px 0;">
-      <div id="risk-score" style="font-size:3rem;font-weight:bold; line-height:1">--</div>
-      <div id="risk-status" class="risk-badge">Calculating...</div>
-      <p id="risk-reason" style="margin-top:10px; font-size:0.85rem; opacity:0.8; font-family:sans-serif; font-style:italic;">--</p>
+    <h3>📉 Recession Risk</h3>
+    <div style="text-align:center">
+      <div id="risk-score" style="font-size:3rem;font-weight:bold">—</div>
+      <div id="risk-status" class="risk-badge">—</div>
     </div>
   </div>
 
   <div class="card">
-    <h3>🌍 Top Economies (GDP)</h3>
-    <div id="global-gdp">Loading...</div>
-  </div>
-
-  <div class="card">
-    <h3>💼 Best Job Markets (Unemp.)</h3>
-    <div id="global-jobs">Loading...</div>
-  </div>
-
-  <div class="card">
     <h3>💱 FX (vs USD)</h3>
-    <div id="fx-stats">Loading...</div>
+    <div id="fx-stats"></div>
   </div>
-
 </div>
 </div>
 
-<footer>© 2026 EconomyFlow · NewsFlow Intelligence</footer>
+<footer>© 2026 NewsFlow AI</footer>
 
 <script>
-// 1. THEME LOGIC
-const themeBtn = document.getElementById('themeBtn');
-function toggleTheme(){
-  document.body.classList.toggle('dark-mode');
-  const d = document.body.classList.contains('dark-mode');
-  localStorage.setItem('pref-theme', d);
-  themeBtn.innerText = d ? "Light Mode" : "Dark Mode";
-}
-if(localStorage.getItem('pref-theme')==="true"){
-  document.body.classList.add('dark-mode');
-  themeBtn.innerText = "Light Mode";
-}
+  // 1. Theme Logic
+  const themeBtn = document.getElementById('themeBtn');
+  function toggleTheme(){
+    document.body.classList.toggle('dark-mode');
+    const d = document.body.classList.contains('dark-mode');
+    localStorage.setItem('pref-theme', d);
+    themeBtn.innerText = d ? "Light Mode" : "Dark Mode";
+  }
+  if(localStorage.getItem('pref-theme')==="true"){
+    document.body.classList.add('dark-mode');
+    themeBtn.innerText = "Light Mode";
+  }
 
-// 2. DATA RENDERING WITH CACHE-BUSTING
-let loadTimeout = setTimeout(() => {
-  document.getElementById('ai-summary').innerText = "⚠️ Data loading timeout. Please refresh or check back later.";
-}, 10000);
+  // 2. Data Logic
+  fetch("economyflow.json")
+    .then(r => r.json())
+    .then(d => {
+      // Helper to safely get elements
+      const get = (id) => document.getElementById(id);
 
-fetch(`economyflow.json?t=${Date.now()}`)
-  .then(r => r.json())
-  .then(d => {
-    clearTimeout(loadTimeout);
-    
-    const get = (id) => document.getElementById(id);
+      get('timestamp').innerText = "UPDATED: " + new Date(d.timestamp).toLocaleString();
+      get('ai-summary').innerText = d.ai.connected_summary;
+      get('outlook-text').innerText = d.ai.strategic_outlook;
 
-    // Timestamp
-    get('timestamp').innerText = "UPDATED: " + d.last_updated_human;
+      get('matters-list').innerHTML = d.ai.what_matters_today.map(x => `<li>${x}</li>`).join("");
+      get('action-list').innerHTML = d.ai.what_to_do_next.map(x => `<li>${x}</li>`).join("");
 
-    // AI Section
-    if(d.ai) {
-        get('ai-summary').innerText = d.ai.connected_summary;
-        get('matters-list').innerHTML = d.ai.what_matters_today.map(x=>`<li>${x}</li>`).join("");
-        get('action-list').innerHTML = d.ai.what_to_do_next.map(x=>`<li>${x}</li>`).join("");
-        get('outlook-text').innerText = d.ai.strategic_outlook;
-    } else {
-        get('ai-summary').innerText = "AI Analysis pending (will appear on next update)...";
-    }
+      // US Macro: Added Yield Curve State (Inverted/Positive)
+      get('us-stats').innerHTML = `
+        <div class="metric-row"><span>GDP Growth</span><span class="metric-val">${d.us_economy.gdp_growth}%</span></div>
+        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${d.us_economy.unemployment}%</span></div>
+        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${d.us_economy.interest_rate}%</span></div>
+        <div class="metric-row">
+            <span>Yield Curve</span>
+            <span class="metric-val">
+                ${d.us_economy.yield_curve} 
+                <span style="font-size:0.7em; opacity:0.7; font-weight:normal">(${d.derived_signals.yield_curve_state})</span>
+            </span>
+        </div>
+      `;
 
-    // US Economy
-    get('us-stats').innerHTML = `
-      <div class="metric-row"><span>GDP Growth</span><span class="metric-val">${d.us_economy.gdp_growth}% <span class="sub-val">(prev: ${d.us_economy.gdp_growth_prev}%)</span></span></div>
-      <div class="metric-row"><span>Inflation</span><span class="metric-val">${d.us_economy.inflation}%</span></div>
-      <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${d.us_economy.interest_rate}%</span></div>
-      <div class="metric-row">
-        <span>Yield Curve</span>
-        <span class="metric-val">
-          ${d.us_economy.yield_curve}% 
-          <span class="sub-val">(${d.derived_signals.yield_curve_state === "inverted" ? "⚠️ Inverted" : "✅ Normal"})</span>
-        </span>
-      </div>
-      <div class="metric-row"><span>Consumer Sentiment</span><span class="metric-val">${d.us_economy.consumer_sentiment || 'N/A'}</span></div>
-    `;
+      get('risk-score').innerText = d.recession.risk_score;
+      const rStat = get('risk-status');
+      rStat.innerText = d.recession.status;
+      rStat.className = `risk-badge risk-${d.recession.status.toLowerCase()}`;
 
-    // US Labor (Safe fallbacks)
-    get('labor-stats').innerHTML = `
-      <div class="metric-row">
-         <span>Unemployment</span>
-         <span class="metric-val">
-           ${d.us_economy.unemployment}% 
-           <span class="sub-val">(prev: ${d.us_economy.unemployment_prev}%)</span>
-         </span>
-      </div>
-      <div class="metric-row">
-        <span>Total Jobs</span>
-        <span class="metric-val">${d.us_labor?.total_employment ? (d.us_labor.total_employment/1000).toFixed(1) + 'M' : 'N/A'}</span>
-      </div>
-      <div class="metric-row">
-        <span>Avg Hourly Pay</span>
-        <span class="metric-val">${d.us_labor?.avg_hourly_earnings ? '$' + d.us_labor.avg_hourly_earnings : 'N/A'}</span>
-      </div>
-    `;
-
-    // Recession
-    const r = d.recession_analysis;
-    get('risk-score').innerText = r.risk_score;
-    get('risk-reason').innerText = r.reason;
-    const rBadge = get('risk-status');
-    rBadge.innerText = r.status;
-    rBadge.className = `risk-badge risk-${r.status.toLowerCase().replace(/ /g, '-')}`;
-
-    // Global GDP
-    const badWords = ["income", "dividend", "total", "only", "members", "asia", "union", "area", "euro", "world", "situations", "ida", "ibrd", "classification"];
-    const topEcons = d.global.top_economies.filter(c => 
-        !badWords.some(w => c.country.toLowerCase().includes(w))
-    ).slice(0, 5);
-
-    if (topEcons.length === 0) {
-        get('global-gdp').innerHTML = `<p style="text-align:center; opacity:0.6; padding:20px;">Loading global data...</p>`;
-    } else {
-        get('global-gdp').innerHTML = `<table class="mini-table">` + 
-          topEcons.map((c, i) => `<tr><td><span class="rank-num">#${i+1}</span> ${c.country}</td><td>$${(c.gdp_billions/1000).toFixed(1)}T</td></tr>`).join("") + 
-          `</table>`;
-    }
-
-    // Global Jobs
-    const topJobs = d.global.best_for_jobs.filter(c => 
-        !badWords.some(w => c.country.toLowerCase().includes(w))
-    ).slice(0, 5);
-
-    if (topJobs.length === 0) {
-        get('global-jobs').innerHTML = `<p style="text-align:center; opacity:0.6; padding:20px;">Loading job data...</p>`;
-    } else {
-        get('global-jobs').innerHTML = `<table class="mini-table">` + 
-          topJobs.map((c, i) => `<tr><td><span class="rank-num">#${i+1}</span> ${c.country}</td><td>${c.unemployment_rate.toFixed(1)}%</td></tr>`).join("") + 
-          `</table>`;
-    }
-
-    // FX
-    if (d.fx_rates && Object.keys(d.fx_rates).length > 0) {
-        get('fx-stats').innerHTML = Object.entries(d.fx_rates).map(([k,v]) => 
-          `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`
-        ).join("");
-    } else {
-        get('fx-stats').innerHTML = `<p style="text-align:center; opacity:0.6; padding:20px;">FX data unavailable</p>`;
-    }
-
-  })
-  .catch(e => {
-      clearTimeout(loadTimeout);
-      console.error(e);
-      document.getElementById('ai-summary').innerText = "❌ Error loading data. Ensure economyflow.json exists and is valid.";
-  });
+      get('fx-stats').innerHTML = Object.entries(d.fx)
+        .map(([k,v]) => `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`)
+        .join("");
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById('timestamp').innerText = "Error loading data.";
+    });
 </script>
 </body>
 </html>
