@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EconomyFlow</title>
+
+<style>
+:root {
+  --bg:#f4f1ea; --card:#fff; --text:#2d2d2d; --title:#1a1a1a;
+  --border:#d1d1d1; --highlight:#667eea;
+  --success:#16a34a; --warning:#f59e0b; --danger:#dc2626;
+}
+body.dark-mode {
+  --bg:#1a202c; --card:#2d3748; --text:#e2e8f0;
+  --title:#fff; --border:#4a5568; --highlight:#63b3ed;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,serif;
+  background:var(--bg);
+  color:var(--text);
+  padding:20px;
+  line-height:1.6;
+}
+.container{max-width:1200px;margin:auto}
+
+/* HEADER */
+header{
+  text-align:center;
+  border-bottom:4px double var(--title);
+  padding-bottom:20px;
+  margin-bottom:30px;
+  position:relative;
+}
+h1{font-size:3rem;letter-spacing:-1.5px}
+.subtitle{
+  font-family:sans-serif;
+  font-weight:700;
+  color:var(--highlight);
+}
+#timestamp{
+  font-family:sans-serif;
+  font-size:.8rem;
+  opacity:.6;
+  margin-top:6px;
+}
+.nav-link,.theme-btn{
+  position:absolute;top:0;
+  font-family:sans-serif;
+  font-size:.85rem;
+  font-weight:bold;
+  padding:6px 12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--highlight);
+  border-radius:4px;
+  cursor:pointer;
+}
+.nav-link{left:0;text-decoration:none}
+.theme-btn{right:0;color:var(--text)}
+
+/* AI BOX */
+#global-intelligence-box{
+  background:var(--card);
+  border-left:8px solid var(--highlight);
+  padding:25px;
+  margin-bottom:35px;
+  box-shadow:0 4px 8px rgba(0,0,0,.05);
+}
+.ai-title{
+  font-family:sans-serif;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:var(--highlight);
+}
+.ai-sub{
+  font-family:sans-serif;
+  font-size:.9rem;
+  opacity:.7;
+  margin-bottom:15px;
+}
+.impact{
+  background:rgba(0,0,0,.03);
+  padding:15px;
+  margin-top:15px;
+  border-left:4px solid var(--highlight);
+  font-family:sans-serif;
+}
+.impact ul{margin-top:8px;padding-left:20px}
+
+/* GRID */
+#data-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:22px;
+  box-shadow:0 2px 4px rgba(0,0,0,.05);
+}
+.card h3{
+  font-family:sans-serif;
+  font-size:.9rem;
+  letter-spacing:1px;
+  color:var(--highlight);
+  margin-bottom:15px;
+}
+
+/* METRICS */
+.metric-row{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-family:sans-serif;
+}
+.metric-row:last-child{border-bottom:none}
+.metric-val{
+  font-family:monospace;
+  font-weight:bold;
+  font-size:1.05rem;
+}
+
+/* BADGES */
+.risk-badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:4px;
+  font-family:sans-serif;
+  font-size:.8rem;
+  font-weight:bold;
+}
+.risk-low{background:#d1fae5;color:#065f46}
+.risk-moderate{background:#fef3c7;color:#92400e}
+.risk-high{background:#fee2e2;color:#991b1b}
+
+footer{
+  margin-top:50px;
+  padding-top:20px;
+  text-align:center;
+  font-family:sans-serif;
+  font-size:.8rem;
+  opacity:.6;
+  border-top:1px solid var(--border);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<header>
+  <a href="index.html" class="nav-link">← Back</a>
+  <h1>EconomyFlow</h1>
+  <div class="subtitle">Macro Signals & Global FX Intelligence</div>
+  <div id="timestamp">Loading…</div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+</header>
+
+<div id="global-intelligence-box">
+  <div class="ai-title">🤖 AI Macro Outlook</div>
+  <div class="ai-sub">GDP · Labor · Rates · FX</div>
+  <div id="ai-summary"></div>
+
+  <div class="impact" style="border-left-color:var(--success)">
+    <strong>What Matters Today</strong>
+    <ul id="matters-list"></ul>
+  </div>
+
+  <div class="impact" style="border-left-color:var(--warning)">
+    <strong>Strategic Outlook (3–6 Months)</strong>
+    <p id="outlook-text"></p>
+  </div>
+
+  <div class="impact">
+    <strong>Recommended Actions</strong>
+    <ul id="action-list"></ul>
+  </div>
+</div>
+
+<div id="data-grid">
+  <div class="card">
+    <h3>🇺🇸 U.S. Macro</h3>
+    <div id="us-stats"></div>
+  </div>
+
+  <div class="card">
+    <h3>📉 Recession Risk</h3>
+    <div style="text-align:center">
+      <div id="risk-score" style="font-size:3rem;font-weight:bold">—</div>
+      <div id="risk-status" class="risk-badge">—</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>💱 FX (vs USD)</h3>
+    <div id="fx-stats"></div>
+  </div>
+</div>
+</div>
+
+<footer>© 2026 NewsFlow AI</footer>
+
+<script>
+  // 1. Theme Logic
+  const themeBtn = document.getElementById('themeBtn');
+  function toggleTheme(){
+    document.body.classList.toggle('dark-mode');
+    const d = document.body.classList.contains('dark-mode');
+    localStorage.setItem('pref-theme', d);
+    themeBtn.innerText = d ? "Light Mode" : "Dark Mode";
+  }
+  if(localStorage.getItem('pref-theme')==="true"){
+    document.body.classList.add('dark-mode');
+    themeBtn.innerText = "Light Mode";
+  }
+
+  // 2. Data Logic
+  fetch("economyflow.json")
+    .then(r => r.json())
+    .then(d => {
+      // Helper to safely get elements
+      const get = (id) => document.getElementById(id);
+
+      get('timestamp').innerText = "UPDATED: " + new Date(d.timestamp).toLocaleString();
+      get('ai-summary').innerText = d.ai.connected_summary;
+      get('outlook-text').innerText = d.ai.strategic_outlook;
+
+      get('matters-list').innerHTML = d.ai.what_matters_today.map(x => `<li>${x}</li>`).join("");
+      get('action-list').innerHTML = d.ai.what_to_do_next.map(x => `<li>${x}</li>`).join("");
+
+      // US Macro: Added Yield Curve State (Inverted/Positive)
+      get('us-stats').innerHTML = `
+        <div class="metric-row"><span>GDP Growth</span><span class="metric-val">${d.us_economy.gdp_growth}%</span></div>
+        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${d.us_economy.unemployment}%</span></div>
+        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${d.us_economy.interest_rate}%</span></div>
+        <div class="metric-row">
+            <span>Yield Curve</span>
+            <span class="metric-val">
+                ${d.us_economy.yield_curve} 
+                <span style="font-size:0.7em; opacity:0.7; font-weight:normal">(${d.derived_signals.yield_curve_state})</span>
+            </span>
+        </div>
+      `;
+
+      get('risk-score').innerText = d.recession.risk_score;
+      const rStat = get('risk-status');
+      rStat.innerText = d.recession.status;
+      rStat.className = `risk-badge risk-${d.recession.status.toLowerCase()}`;
+
+      get('fx-stats').innerHTML = Object.entries(d.fx)
+        .map(([k,v]) => `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`)
+        .join("");
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById('timestamp').innerText = "Error loading data.";
+    });
+</script>
+</body>
+</html>
