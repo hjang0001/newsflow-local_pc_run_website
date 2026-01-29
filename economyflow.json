@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-01-29T16:34:42.941711+00:00",
-  "last_updated_human": "2026-01-29 11:34:42 UTC",
+  "timestamp": "2026-01-29T16:49:01.798100+00:00",
+  "last_updated_human": "2026-01-29 11:49:01 UTC",
   "us_economy": {
     "gdp_growth": 1.08,
     "gdp_growth_prev": 0.95,
@@ -47,6 +47,7 @@
         "country_code": "USA",
         "gdp": 27292170793214.4,
         "gdp_per_capita": 81032.0,
+        "unemployment_rate": 3.638,
         "gdp_billions": 27292.2
       },
       {
@@ -75,6 +76,7 @@
         "country_code": "EAR",
         "gdp": 14933453330998.3,
         "gdp_per_capita": 4253.0,
+        "unemployment_rate": 4.93601458241511,
         "gdp_billions": 14933.5
       },
       {
@@ -82,6 +84,7 @@
         "country_code": "TLA",
         "gdp": 6591336702938.76,
         "gdp_per_capita": 10261.0,
+        "unemployment_rate": 6.12260187424979,
         "gdp_billions": 6591.3
       },
       {
@@ -89,6 +92,7 @@
         "country_code": "LAC",
         "gdp": 6014673692976.05,
         "gdp_per_capita": 10196.0,
+        "unemployment_rate": 5.98306480851736,
         "gdp_billions": 6014.7
       },
       {
@@ -96,6 +100,7 @@
         "country_code": "TEC",
         "gdp": 5562782514647.52,
         "gdp_per_capita": 12130.0,
+        "unemployment_rate": 5.04769253075588,
         "gdp_billions": 5562.8
       },
       {
@@ -110,6 +115,7 @@
         "country_code": "DEU",
         "gdp": 4562207532490.28,
         "gdp_per_capita": 54777.0,
+        "unemployment_rate": 3.071,
         "gdp_billions": 4562.2
       },
       {
@@ -117,6 +123,7 @@
         "country_code": "JPN",
         "gdp": 4213167237905.83,
         "gdp_per_capita": 33836.0,
+        "unemployment_rate": 2.574,
         "gdp_billions": 4213.2
       },
       {
@@ -124,6 +131,7 @@
         "country_code": "TSA",
         "gdp": 4210302249458.65,
         "gdp_per_capita": 2532.0,
+        "unemployment_rate": 4.08616429409204,
         "gdp_billions": 4210.3
       },
       {
@@ -131,6 +139,7 @@
         "country_code": "IND",
         "gdp": 3638489096033.86,
         "gdp_per_capita": 2530.0,
+        "unemployment_rate": 4.172,
         "gdp_billions": 3638.5
       },
       {
@@ -138,6 +147,7 @@
         "country_code": "GBR",
         "gdp": 3420796653789.08,
         "gdp_per_capita": 49944.0,
+        "unemployment_rate": 4.025,
         "gdp_billions": 3420.8
       },
       {
@@ -145,6 +155,7 @@
         "country_code": "FRA",
         "gdp": 3056250648138.29,
         "gdp_per_capita": 44700.0,
+        "unemployment_rate": 7.335,
         "gdp_billions": 3056.3
       },
       {
@@ -152,6 +163,7 @@
         "country_code": "ITA",
         "gdp": 2316727999333.18,
         "gdp_per_capita": 39277.0,
+        "unemployment_rate": 7.627,
         "gdp_billions": 2316.7
       },
       {
@@ -159,6 +171,7 @@
         "country_code": "CEB",
         "gdp": 2273205742208.3,
         "gdp_per_capita": 22690.0,
+        "unemployment_rate": 4.01230416616797,
         "gdp_billions": 2273.2
       },
       {
@@ -166,6 +179,7 @@
         "country_code": "BRA",
         "gdp": 2191131869706.02,
         "gdp_per_capita": 10378.0,
+        "unemployment_rate": 7.947,
         "gdp_billions": 2191.1
       },
       {
@@ -173,10 +187,172 @@
         "country_code": "CAN",
         "gdp": 2173339670064.33,
         "gdp_per_capita": 54220.0,
+        "unemployment_rate": 5.415,
         "gdp_billions": 2173.3
       }
     ],
-    "best_for_jobs": []
+    "best_for_jobs": [
+      {
+        "country": "Cambodia",
+        "country_code": "KHM",
+        "gdp": 42335646895.7984,
+        "gdp_per_capita": 2430.0,
+        "unemployment_rate": 0.256,
+        "gdp_billions": 42.3
+      },
+      {
+        "country": "Thailand",
+        "country_code": "THA",
+        "gdp": 515906283940.933,
+        "gdp_per_capita": 7195.0,
+        "unemployment_rate": 0.733,
+        "gdp_billions": 515.9
+      },
+      {
+        "country": "Moldova",
+        "country_code": "MDA",
+        "gdp": 16711906746.2133,
+        "gdp_per_capita": 6800.0,
+        "unemployment_rate": 1.57,
+        "gdp_billions": 16.7
+      },
+      {
+        "country": "Viet Nam",
+        "country_code": "VNM",
+        "gdp": 433857681378.291,
+        "gdp_per_capita": 4323.0,
+        "unemployment_rate": 1.645,
+        "gdp_billions": 433.9
+      },
+      {
+        "country": "Tonga",
+        "country_code": "TON",
+        "gdp": 591139749.44287,
+        "gdp_per_capita": 5652.0,
+        "unemployment_rate": 1.652,
+        "gdp_billions": 0.6
+      },
+      {
+        "country": "Palau",
+        "country_code": "PLW",
+        "gdp": 276733062.744141,
+        "gdp_per_capita": 15611.0,
+        "unemployment_rate": 2.091,
+        "gdp_billions": 0.3
+      },
+      {
+        "country": "United Arab Emirates",
+        "country_code": "ARE",
+        "gdp": 522622191967.325,
+        "gdp_per_capita": 49851.0,
+        "unemployment_rate": 2.151,
+        "gdp_billions": 522.6
+      },
+      {
+        "country": "Guatemala",
+        "country_code": "GTM",
+        "gdp": 104368755054.601,
+        "gdp_per_capita": 5758.0,
+        "unemployment_rate": 2.344,
+        "gdp_billions": 104.4
+      },
+      {
+        "country": "Philippines",
+        "country_code": "PHL",
+        "gdp": 437055627244.424,
+        "gdp_per_capita": 3804.0,
+        "unemployment_rate": 2.409,
+        "gdp_billions": 437.1
+      },
+      {
+        "country": "Japan",
+        "country_code": "JPN",
+        "gdp": 4213167237905.83,
+        "gdp_per_capita": 33836.0,
+        "unemployment_rate": 2.574,
+        "gdp_billions": 4213.2
+      },
+      {
+        "country": "Czechia",
+        "country_code": "CZE",
+        "gdp": 345059295659.911,
+        "gdp_per_capita": 31762.0,
+        "unemployment_rate": 2.579,
+        "gdp_billions": 345.1
+      },
+      {
+        "country": "Korea, Rep.",
+        "country_code": "KOR",
+        "gdp": 1844800934391.54,
+        "gdp_per_capita": 35674.0,
+        "unemployment_rate": 2.675,
+        "gdp_billions": 1844.8
+      },
+      {
+        "country": "Mexico",
+        "country_code": "MEX",
+        "gdp": 1798317581486.88,
+        "gdp_per_capita": 13861.0,
+        "unemployment_rate": 2.704,
+        "gdp_billions": 1798.3
+      },
+      {
+        "country": "Poland",
+        "country_code": "POL",
+        "gdp": 812451193396.143,
+        "gdp_per_capita": 22145.0,
+        "unemployment_rate": 2.743,
+        "gdp_billions": 812.5
+      },
+      {
+        "country": "Kiribati",
+        "country_code": "KIR",
+        "gdp": 288610747.738991,
+        "gdp_per_capita": 2178.0,
+        "unemployment_rate": 2.786,
+        "gdp_billions": 0.3
+      },
+      {
+        "country": "Seychelles",
+        "country_code": "SYC",
+        "gdp": 2187379754.66167,
+        "gdp_per_capita": 18263.0,
+        "unemployment_rate": 2.934,
+        "gdp_billions": 2.2
+      },
+      {
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "gdp": 52340206946.4544,
+        "gdp_per_capita": 4275.0,
+        "unemployment_rate": 2.948,
+        "gdp_billions": 52.3
+      },
+      {
+        "country": "Hong Kong SAR, China",
+        "country_code": "HKG",
+        "gdp": 381043026173.935,
+        "gdp_per_capita": 50562.0,
+        "unemployment_rate": 2.949,
+        "gdp_billions": 381.0
+      },
+      {
+        "country": "El Salvador",
+        "country_code": "SLV",
+        "gdp": 33853940000,
+        "gdp_per_capita": 5365.0,
+        "unemployment_rate": 2.982,
+        "gdp_billions": 33.9
+      },
+      {
+        "country": "Jamaica",
+        "country_code": "JAM",
+        "gdp": 21418804319.6395,
+        "gdp_per_capita": 7542.0,
+        "unemployment_rate": 3.022,
+        "gdp_billions": 21.4
+      }
+    ]
   },
   "derived_signals": {
     "yield_curve_state": "positive",
@@ -184,17 +360,17 @@
     "recession_risk_level": "VERY LOW"
   },
   "ai": {
-    "connected_summary": "The US economy is experiencing a moderate growth phase, driven by a low unemployment rate and stable inflation. However, the yield curve is slightly positive, indicating a normal interest rate environment. The global economy is diverse, with some regions experiencing high growth rates, while others face challenges. The overall recession risk remains low, but policymakers should be cautious of potential inflationary pressures.",
+    "connected_summary": "The US economy is experiencing a moderate growth phase, with a 1.08% GDP growth rate and a 4.4% unemployment rate. The yield curve is positive, indicating a normal interest rate environment. However, inflation remains a concern at 2.7%, and the Federal Reserve may need to adjust interest rates to maintain price stability. The global economy is also growing, with the top economies experiencing moderate growth rates. The overall macroeconomic picture suggests a stable, albeit slow, growth environment.",
     "what_matters_today": [
-      "The US unemployment rate has decreased to 4.4%, indicating a strong labor market.",
-      "The yield curve is slightly positive, indicating a normal interest rate environment.",
-      "The global economy is experiencing a diverse growth phase, with some regions facing challenges."
+      "The US yield curve is positive, indicating a normal interest rate environment.",
+      "The US GDP growth rate is 1.08%, indicating a moderate growth phase.",
+      "Inflation remains a concern at 2.7%, potentially requiring interest rate adjustments."
     ],
     "what_to_do_next": [
-      "Policymakers should focus on maintaining a stable interest rate environment to support economic growth.",
-      "Business leaders should prioritize investing in human capital to address labor market shortages.",
-      "Governments should implement policies to address potential inflationary pressures and maintain economic stability."
+      "Policymakers should focus on maintaining price stability by adjusting interest rates if necessary.",
+      "Business leaders should prioritize investment in productivity-enhancing technologies to drive growth.",
+      "Operators should prepare for potential interest rate changes by adjusting their cash flow management strategies."
     ],
-    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, driven by a strong labor market and stable inflation. However, policymakers should be cautious of potential inflationary pressures and maintain a stable interest rate environment. The global economy is expected to remain diverse, with some regions experiencing high growth rates and others facing challenges."
+    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the yield curve remaining positive. However, inflation may remain a concern, and policymakers may need to adjust interest rates to maintain price stability. The global economy is also expected to grow, with the top economies experiencing moderate growth rates. We recommend that business leaders and policymakers prioritize investment in productivity-enhancing technologies and maintain a flexible monetary policy to support growth."
   }
 }
