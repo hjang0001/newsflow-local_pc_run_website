@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-01-31T09:03:40.523127+00:00",
-  "last_updated_human": "2026-01-31 04:03:40 UTC",
+  "timestamp": "2026-01-31T09:14:15.049398+00:00",
+  "last_updated_human": "2026-01-31 04:14:15 UTC",
   "us_economy": {
     "gdp_growth": 1.08,
     "gdp_growth_prev": 0.95,
@@ -27,6 +27,11 @@
     "Crude Oil": {
       "price": 60.46,
       "change": -0.4,
+      "trend": "down"
+    },
+    "Gold": {
+      "price": 444.95,
+      "change": -10.27,
       "trend": "down"
     }
   },
@@ -581,20 +586,5 @@
     "yield_curve_state": "positive",
     "in_recession": false,
     "recession_risk_level": "VERY LOW"
-  },
-  "ai": {
-    "connected_summary": "The US economy is experiencing a moderate growth phase, with a 1.08% GDP growth rate and a 4.4% unemployment rate. The yield curve is positive, indicating a normal interest rate environment. However, inflation remains a concern, with a 2.7% rate. The global economy is also showing signs of growth, with the top economies experiencing moderate expansion. The labor market is strong, with average hourly earnings increasing by 37.02. The overall macro environment is characterized by a low recession risk level.",
-    "what_matters_today": [
-      "The yield curve is positive, indicating a normal interest rate environment, which supports moderate growth.",
-      "The labor market is strong, with average hourly earnings increasing by 37.02, indicating a tight labor market.",
-      "Inflation remains a concern, with a 2.7% rate, which may lead to further rate hikes."
-    ],
-    "what_to_do_next": [
-      "Policymakers should focus on maintaining a moderate growth environment by adjusting interest rates and fiscal policies.",
-      "Business leaders should prioritize investing in human capital and innovation to drive productivity growth.",
-      "Governments should implement policies to address inflation concerns and ensure a stable economic environment."
-    ],
-    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the yield curve remaining positive. The labor market will remain strong, with average hourly earnings continuing to increase. However, inflation concerns may lead to further rate hikes, which may slow down growth. The global economy will also experience moderate expansion, with the top economies continuing to grow.",
-    "market_pulse": "The positive yield curve and strong labor market are supporting a moderate growth environment, while inflation concerns may lead to further rate hikes, which may slow down growth."
   }
 }
