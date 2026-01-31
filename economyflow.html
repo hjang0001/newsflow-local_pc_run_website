@@ -141,12 +141,55 @@ h1{font-size:3rem;letter-spacing:-1.5px}
 .risk-very-low{background:#d1fae5;color:#065f46}
 .risk-critical{background:#fee2e2;color:#991b1b}
 
-/* FX PAGINATION */
-.fx-pagination { margin-top:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:sans-serif; font-size:.85rem; }
-.fx-pagination button { padding:6px 14px; border:1px solid var(--border); background:var(--card); color:var(--text); border-radius:4px; cursor:pointer; font-weight:bold; }
-.fx-pagination button:hover { background:var(--highlight); color:#fff; border-color:var(--highlight); }
-.fx-pagination button:disabled { opacity:.5; cursor:not-allowed; }
-.fx-pagination .fx-page-info { opacity:.8; }
+/* GLOBAL SEARCH */
+#global-search-wrap { margin-bottom: 20px; }
+#global-search { width: 100%; max-width: 500px; margin: 0 auto; display: block; padding: 12px 16px; font-size: 1rem; border: 2px solid var(--border); border-radius: 8px; background: var(--card); color: var(--text); }
+#global-search::placeholder { opacity: .7; }
+#global-search:focus { outline: none; border-color: var(--highlight); }
+.search-highlight { background: rgba(102, 126, 234, 0.25) !important; border-radius: 4px; }
+
+/* TOOLTIPS */
+.tooltip-wrap { position: relative; display: inline-block; }
+.tooltip-icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: var(--highlight); color: #fff; font-size: 10px; font-weight: bold; cursor: help; margin-left: 4px; vertical-align: middle; }
+.tooltip-icon:hover + .tooltip-text { opacity: 1; visibility: visible; }
+.tooltip-text { position: absolute; left: 0; bottom: 100%; margin-bottom: 4px; padding: 8px 10px; background: var(--title); color: #fff; font-size: 0.75rem; font-family: sans-serif; border-radius: 6px; white-space: nowrap; max-width: 220px; white-space: normal; opacity: 0; visibility: hidden; transition: opacity .15s, visibility .15s; z-index: 10; pointer-events: none; }
+
+/* TREND INDICATORS */
+.trend-up { color: var(--success); font-weight: bold; }
+.trend-down { color: var(--danger); font-weight: bold; }
+.trend-stable { color: var(--text); opacity: .9; }
+.trend-desc { font-size: 0.8rem; margin-left: 4px; }
+
+/* RANK CIRCLE (Top Economies) */
+.rank-circle { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 26px; border-radius: 50%; background: var(--highlight); color: #fff; font-weight: bold; font-size: 0.85rem; margin-right: 8px; }
+.rank-change-up { color: var(--success); font-weight: bold; font-size: 0.85rem; margin-left: 4px; }
+
+/* FX TILE */
+.fx-base-label { font-size: 0.85rem; opacity: .85; margin-bottom: 10px; }
+.fx-filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; align-items: center; }
+.fx-filter-bar input { padding: 6px 10px; border: 1px solid var(--border); border-radius: 4px; background: var(--card); color: var(--text); font-size: 0.9rem; flex: 1; min-width: 140px; }
+.fx-filter-bar select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 4px; background: var(--card); color: var(--text); font-size: 0.9rem; }
+.fx-row { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-family: sans-serif; font-size: 0.95rem; }
+.fx-row:last-child { border-bottom: none; }
+.fx-flag { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1; margin-right: 10px; flex-shrink: 0; }
+.fx-name { flex: 1; }
+.fx-val { font-family: monospace; font-weight: bold; }
+#fx-list { max-height: 320px; overflow-y: auto; }
+#fx-list.view-all { max-height: 70vh; }
+.fx-view-all-wrap { margin-top: 10px; text-align: center; }
+.fx-view-all-wrap button { padding: 8px 20px; border: 1px solid var(--border); background: var(--card); color: var(--highlight); border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
+.fx-view-all-wrap button:hover { background: var(--highlight); color: #fff; }
+
+/* INDEXES TIMEFRAME TOGGLE */
+.index-timeframe { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.index-timeframe button { padding: 6px 12px; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
+.index-timeframe button.active { background: var(--highlight); color: #fff; border-color: var(--highlight); }
+
+/* ECONOMIES TABLE */
+.economies-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 0.9rem; }
+.economies-table th { text-align: left; padding: 8px 0; border-bottom: 2px solid var(--border); color: var(--highlight); }
+.economies-table td { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.economies-table td.num { text-align: right; font-family: monospace; font-weight: bold; }
 
 footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-serif; font-size:.8rem; opacity:.6; border-top:1px solid var(--border); }
 </style>
@@ -161,6 +204,10 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
   <div id="timestamp">Loading data...</div>
   <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
 </header>
+
+<div id="global-search-wrap" class="container">
+  <input type="text" id="global-search" placeholder="Search by country or code (e.g., India or INR)…" aria-label="Global search">
+</div>
 
 <div id="global-intelligence-box">
   <div class="ai-title">🤖 AI Macro Outlook</div>
@@ -224,7 +271,7 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
     <div id="calendar-stats">Loading...</div>
   </div>
 
-  <div class="card">
+  <div class="card" id="card-economies">
     <h3>🌍 Top Economies</h3>
     <div id="global-gdp">Loading...</div>
   </div>
@@ -234,10 +281,19 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
     <div id="global-jobs">Loading...</div>
   </div>
 
-  <div class="card card-fx">
-    <h3>💱 FX (vs USD)</h3>
-    <div id="fx-stats">Loading...</div>
-    <div id="fx-pagination" class="fx-pagination"></div>
+  <div class="card card-fx" id="card-fx">
+    <h3>💱 Currencies</h3>
+    <p class="fx-base-label">Base: 1 U.S. Dollar (USD)</p>
+    <div class="fx-filter-bar">
+      <input type="text" id="fx-search" placeholder="Search by country or code (e.g., India or INR)" aria-label="FX search">
+      <select id="fx-sort" aria-label="Sort FX">
+        <option value="az">A–Z</option>
+        <option value="high">Value: High to Low</option>
+        <option value="low">Value: Low to High</option>
+      </select>
+    </div>
+    <div id="fx-list">Loading...</div>
+    <div id="fx-view-all-wrap" class="fx-view-all-wrap"></div>
   </div>
 
 </div>
@@ -246,7 +302,7 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
 <footer>© 2026 NewsFlow AI</footer>
 
 <script>
-// 1. THEME LOGIC
+// 1. THEME
 const themeBtn = document.getElementById('themeBtn');
 function toggleTheme(){
   document.body.classList.toggle('dark-mode');
@@ -254,28 +310,80 @@ function toggleTheme(){
   localStorage.setItem('pref-theme', d);
   themeBtn.innerText = d ? "Light Mode" : "Dark Mode";
 }
-if(localStorage.getItem('pref-theme')==="true"){
-  document.body.classList.add('dark-mode');
-  themeBtn.innerText = "Light Mode";
-}
+if(localStorage.getItem('pref-theme')==="true"){ document.body.classList.add('dark-mode'); themeBtn.innerText = "Light Mode"; }
 
-// 2. HELPER FUNCTION
 const get = (id) => document.getElementById(id);
 
-// 3. BETTER AGGREGATE FILTER (Client-side backup)
-const BAD_KEYWORDS = [
-  'dividend', 'income', 'ibrd', 'ida', 'oecd', 'excluding', ' countries',
-  'east asia', 'europe', 'latin america', 'caribbean', 'middle east',
-  'north africa', 'south asia', 'sub-saharan', 'pacific', 'central asia',
-  'arab', 'euro', 'union', 'baltics', 'afghanistan', 'pakistan', 'central europe'
-];
+// 2. CURRENCY CODE -> Full name + flag (for FX human-readable display and search)
+const CURRENCY_MAP = {
+  AED:{n:"UAE Dirham",c:"United Arab Emirates",f:"🇦🇪"},AFN:{n:"Afghan Afghani",c:"Afghanistan",f:"🇦🇫"},
+  ALL:{n:"Albanian Lek",c:"Albania",f:"🇦🇱"},AMD:{n:"Armenian Dram",c:"Armenia",f:"🇦🇲"},
+  AOA:{n:"Angolan Kwanza",c:"Angola",f:"🇦🇴"},ARS:{n:"Argentine Peso",c:"Argentina",f:"🇦🇷"},
+  AUD:{n:"Australian Dollar",c:"Australia",f:"🇦🇺"},AZN:{n:"Azerbaijani Manat",c:"Azerbaijan",f:"🇦🇿"},
+  BAM:{n:"Bosnia-Herzegovina Mark",c:"Bosnia and Herzegovina",f:"🇧🇦"},BBD:{n:"Barbadian Dollar",c:"Barbados",f:"🇧🇧"},
+  BDT:{n:"Bangladeshi Taka",c:"Bangladesh",f:"🇧🇩"},BGN:{n:"Bulgarian Lev",c:"Bulgaria",f:"🇧🇬"},
+  BHD:{n:"Bahraini Dinar",c:"Bahrain",f:"🇧🇭"},BIF:{n:"Burundian Franc",c:"Burundi",f:"🇧🇮"},
+  BND:{n:"Brunei Dollar",c:"Brunei",f:"🇧🇳"},BOB:{n:"Bolivian Boliviano",c:"Bolivia",f:"🇧🇴"},
+  BRL:{n:"Brazilian Real",c:"Brazil",f:"🇧🇷"},BSD:{n:"Bahamian Dollar",c:"Bahamas",f:"🇧🇸"},
+  BWP:{n:"Botswana Pula",c:"Botswana",f:"🇧🇼"},BYN:{n:"Belarusian Ruble",c:"Belarus",f:"🇧🇾"},
+  BZD:{n:"Belize Dollar",c:"Belize",f:"🇧🇿"},CAD:{n:"Canadian Dollar",c:"Canada",f:"🇨🇦"},
+  CHF:{n:"Swiss Franc",c:"Switzerland",f:"🇨🇭"},CLP:{n:"Chilean Peso",c:"Chile",f:"🇨🇱"},
+  CNY:{n:"Chinese Yuan",c:"China",f:"🇨🇳"},COP:{n:"Colombian Peso",c:"Colombia",f:"🇨🇴"},
+  CRC:{n:"Costa Rican Colón",c:"Costa Rica",f:"🇨🇷"},CUP:{n:"Cuban Peso",c:"Cuba",f:"🇨🇺"},
+  CZK:{n:"Czech Koruna",c:"Czech Republic",f:"🇨🇿"},DKK:{n:"Danish Krone",c:"Denmark",f:"🇩🇰"},
+  DOP:{n:"Dominican Peso",c:"Dominican Republic",f:"🇩🇴"},DZD:{n:"Algerian Dinar",c:"Algeria",f:"🇩🇿"},
+  EGP:{n:"Egyptian Pound",c:"Egypt",f:"🇪🇬"},EUR:{n:"Euro",c:"Eurozone",f:"🇪🇺"},
+  GBP:{n:"British Pound",c:"United Kingdom",f:"🇬🇧"},GEL:{n:"Georgian Lari",c:"Georgia",f:"🇬🇪"},
+  GHS:{n:"Ghanaian Cedi",c:"Ghana",f:"🇬🇭"},GMD:{n:"Gambian Dalasi",c:"Gambia",f:"🇬🇲"},
+  GNF:{n:"Guinean Franc",c:"Guinea",f:"🇬🇳"},GTQ:{n:"Guatemalan Quetzal",c:"Guatemala",f:"🇬🇹"},
+  HKD:{n:"Hong Kong Dollar",c:"Hong Kong",f:"🇭🇰"},HNL:{n:"Honduran Lempira",c:"Honduras",f:"🇭🇳"},
+  HRK:{n:"Croatian Kuna",c:"Croatia",f:"🇭🇷"},HTG:{n:"Haitian Gourde",c:"Haiti",f:"🇭🇹"},
+  HUF:{n:"Hungarian Forint",c:"Hungary",f:"🇭🇺"},IDR:{n:"Indonesian Rupiah",c:"Indonesia",f:"🇮🇩"},
+  ILS:{n:"Israeli Shekel",c:"Israel",f:"🇮🇱"},INR:{n:"Indian Rupee",c:"India",f:"🇮🇳"},
+  IQD:{n:"Iraqi Dinar",c:"Iraq",f:"🇮🇶"},IRR:{n:"Iranian Rial",c:"Iran",f:"🇮🇷"},
+  ISK:{n:"Icelandic Króna",c:"Iceland",f:"🇮🇸"},JMD:{n:"Jamaican Dollar",c:"Jamaica",f:"🇯🇲"},
+  JOD:{n:"Jordanian Dinar",c:"Jordan",f:"🇯🇴"},JPY:{n:"Japanese Yen",c:"Japan",f:"🇯🇵"},
+  KES:{n:"Kenyan Shilling",c:"Kenya",f:"🇰🇪"},KGS:{n:"Kyrgyzstani Som",c:"Kyrgyzstan",f:"🇰🇬"},
+  KHR:{n:"Cambodian Riel",c:"Cambodia",f:"🇰🇭"},KRW:{n:"South Korean Won",c:"South Korea",f:"🇰🇷"},
+  KWD:{n:"Kuwaiti Dinar",c:"Kuwait",f:"🇰🇼"},KZT:{n:"Kazakhstani Tenge",c:"Kazakhstan",f:"🇰🇿"},
+  LAK:{n:"Lao Kip",c:"Laos",f:"🇱🇦"},LBP:{n:"Lebanese Pound",c:"Lebanon",f:"🇱🇧"},
+  LKR:{n:"Sri Lankan Rupee",c:"Sri Lanka",f:"🇱🇰"},MAD:{n:"Moroccan Dirham",c:"Morocco",f:"🇲🇦"},
+  MDL:{n:"Moldovan Leu",c:"Moldova",f:"🇲🇩"},MXN:{n:"Mexican Peso",c:"Mexico",f:"🇲🇽"},
+  MYR:{n:"Malaysian Ringgit",c:"Malaysia",f:"🇲🇾"},NGN:{n:"Nigerian Naira",c:"Nigeria",f:"🇳🇬"},
+  NIO:{n:"Nicaraguan Córdoba",c:"Nicaragua",f:"🇳🇮"},NOK:{n:"Norwegian Krone",c:"Norway",f:"🇳🇴"},
+  NPR:{n:"Nepalese Rupee",c:"Nepal",f:"🇳🇵"},NZD:{n:"New Zealand Dollar",c:"New Zealand",f:"🇳🇿"},
+  OMR:{n:"Omani Rial",c:"Oman",f:"🇴🇲"},PAB:{n:"Panamanian Balboa",c:"Panama",f:"🇵🇦"},
+  PEN:{n:"Peruvian Sol",c:"Peru",f:"🇵🇪"},PHP:{n:"Philippine Peso",c:"Philippines",f:"🇵🇭"},
+  PKR:{n:"Pakistani Rupee",c:"Pakistan",f:"🇵🇰"},PLN:{n:"Polish Złoty",c:"Poland",f:"🇵🇱"},
+  PYG:{n:"Paraguayan Guaraní",c:"Paraguay",f:"🇵🇾"},QAR:{n:"Qatari Riyal",c:"Qatar",f:"🇶🇦"},
+  RON:{n:"Romanian Leu",c:"Romania",f:"🇷🇴"},RSD:{n:"Serbian Dinar",c:"Serbia",f:"🇷🇸"},
+  RUB:{n:"Russian Ruble",c:"Russia",f:"🇷🇺"},RWF:{n:"Rwandan Franc",c:"Rwanda",f:"🇷🇼"},
+  SAR:{n:"Saudi Riyal",c:"Saudi Arabia",f:"🇸🇦"},SEK:{n:"Swedish Krona",c:"Sweden",f:"🇸🇪"},
+  SGD:{n:"Singapore Dollar",c:"Singapore",f:"🇸🇬"},THB:{n:"Thai Baht",c:"Thailand",f:"🇹🇭"},
+  TND:{n:"Tunisian Dinar",c:"Tunisia",f:"🇹🇳"},TRY:{n:"Turkish Lira",c:"Turkey",f:"🇹🇷"},
+  TWD:{n:"Taiwan Dollar",c:"Taiwan",f:"🇹🇼"},TZS:{n:"Tanzanian Shilling",c:"Tanzania",f:"🇹🇿"},
+  UAH:{n:"Ukrainian Hryvnia",c:"Ukraine",f:"🇺🇦"},UGX:{n:"Ugandan Shilling",c:"Uganda",f:"🇺🇬"},
+  USD:{n:"US Dollar",c:"United States",f:"🇺🇸"},UYU:{n:"Uruguayan Peso",c:"Uruguay",f:"🇺🇾"},
+  UZS:{n:"Uzbekistani Som",c:"Uzbekistan",f:"🇺🇿"},VND:{n:"Vietnamese Dong",c:"Vietnam",f:"🇻🇳"},
+  XAF:{n:"Central African CFA Franc",c:"CEMAC",f:"🇲🇱"},XCD:{n:"East Caribbean Dollar",c:"Caribbean",f:"🇦🇬"},
+  ZAR:{n:"South African Rand",c:"South Africa",f:"🇿🇦"},ZMW:{n:"Zambian Kwacha",c:"Zambia",f:"🇿🇲"}
+};
+function getCurrencyInfo(code){ const c = CURRENCY_MAP[code]; return c ? { name: c.n, country: c.c, flag: c.f } : { name: code, country: '', flag: '💱' }; }
+function currencyMatchesSearch(code, q){ if(!q) return true; const info = getCurrencyInfo(code); const s = q.toLowerCase(); return code.toLowerCase().includes(s) || info.name.toLowerCase().includes(s) || info.country.toLowerCase().includes(s); }
 
-function isRealCountry(name) {
-  const nameLower = name.toLowerCase();
-  return !BAD_KEYWORDS.some(keyword => nameLower.includes(keyword)) &&
-         !name.includes('&') && 
-         !name.includes('(');
-}
+// 3. TOOLTIP TEXTS
+const TOOLTIPS = {
+  yield_curve: "Spread between 10-year and 2-year Treasury yields. Negative (inverted) often precedes recession.",
+  jolts: "Job Openings and Labor Turnover Survey: number of unfilled jobs. Indicates labor market tightness.",
+  gdp_growth: "Quarter-over-quarter real GDP growth. Two negative quarters in a row = technical recession.",
+  unemployment: "Share of labor force without a job, seeking work.",
+  inflation: "Year-over-year change in Consumer Price Index (CPI).",
+  consumer_sentiment: "University of Michigan index of how confident households feel about the economy."
+};
+
+// 4. AGGREGATE FILTER (client-side backup)
+const BAD_KEYWORDS = ['dividend','income','ibrd','ida','oecd','excluding',' countries','east asia','europe','latin america','caribbean','middle east','north africa','south asia','sub-saharan','pacific','central asia','arab','euro','union','baltics','afghanistan','pakistan','central europe'];
+function isRealCountry(name){ const n = name.toLowerCase(); return !BAD_KEYWORDS.some(k => n.includes(k)) && !name.includes('&') && !name.includes('('); }
 
 // 4. DATA LOADING WITH DETAILED ERROR REPORTING
 console.log('Starting data fetch...');
@@ -313,28 +421,32 @@ fetch(`economyflow.json?t=${Date.now()}`)
         console.warn('No AI data in JSON');
     }
 
-    // US Economy — GDP rolling window, inflation, consumer sentiment
+    // US Macro — contextual labels, trend arrows, tooltips
     if (d.us_economy) {
       const u = d.us_economy;
       const gq = u.gdp_growth_q || [];
-      const gqStr = gq.length >= 4 ? `Q-3: ${gq[0]}%  Q-2: ${gq[1]}%  Q-1: ${gq[2]}%  Q0: ${gq[3]}%` : (u.gdp_growth != null ? `Q0: ${u.gdp_growth}%` : '—');
-      const deltaQoq = u.gdp_growth_delta_qoq != null ? `Δ QoQ: ${u.gdp_growth_delta_qoq >= 0 ? '+' : ''}${u.gdp_growth_delta_qoq}` : '';
-      const trend = u.gdp_growth_3q_trend ? `  3Q trend: ${u.gdp_growth_3q_trend}` : '';
+      const gqStr = gq.length >= 4 ? `Q-3: ${gq[0]}% · Q-2: ${gq[1]}% · Q-1: ${gq[2]}% · Q0: ${gq[3]}%` : (u.gdp_growth != null ? `Q0: ${u.gdp_growth}%` : '—');
+      const trend3q = u.gdp_growth_3q_trend;
+      const trend3qClass = trend3q === 'accelerating' ? 'trend-up' : (trend3q === 'decelerating' ? 'trend-down' : 'trend-stable');
+      const trend3qLabel = trend3q === 'accelerating' ? '↑ Improving' : (trend3q === 'decelerating' ? '↓ Weakening' : '→ Stable');
+      const unemp = u.unemployment; const unempPrev = u.unemployment_prev;
+      const unempDir = (unemp != null && unempPrev != null) ? (unemp < unempPrev ? 'Down from ' + unempPrev + '% last month' : (unemp > unempPrev ? 'Up from ' + unempPrev + '% last month' : 'Unchanged from ' + unempPrev + '%')) : '';
+      const unempTrend = (unemp != null && unempPrev != null) ? (unemp < unempPrev ? '<span class="trend-up">↓ Improving</span>' : (unemp > unempPrev ? '<span class="trend-down">↑ Weakening</span>' : '<span class="trend-stable">→ Stable</span>')) : '';
+      const tt = (key) => { const t = TOOLTIPS[key]; return t ? `<span class="tooltip-wrap"><span class="tooltip-icon" aria-hidden="true">i</span><span class="tooltip-text">${t}</span></span>` : ''; };
       get('us-stats').innerHTML = `
-        <div class="metric-row"><span>GDP growth (%)</span><span class="metric-val">${gqStr}</span></div>
-        <div class="metric-row"><span>Δ QoQ / 3Q trend</span><span class="metric-val">${deltaQoq}${trend}</span></div>
-        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${u.unemployment ?? '--'}% <span class="sub-val">prev ${u.unemployment_prev ?? '--'}%</span></span></div>
-        <div class="metric-row"><span>Inflation (annual)</span><span class="metric-val">${u.inflation ?? '--'}%</span></div>
-        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${u.interest_rate ?? '--'}%</span></div>
-        <div class="metric-row"><span>Yield Curve (10Y-2Y)</span><span class="metric-val">${u.yield_curve ?? '--'}% <span class="sub-val">(${d.derived_signals?.yield_curve_state || 'unknown'})</span></span></div>
-        <div class="metric-row"><span>Consumer Sentiment</span><span class="metric-val">${u.consumer_sentiment ?? '--'}</span></div>
+        <div class="metric-row"><span>GDP growth (quarterly)</span><span class="metric-val">${gqStr}</span></div>
+        <div class="metric-row"><span>3-quarter trend</span><span class="metric-val ${trend3qClass}">${trend3qLabel}</span></div>
+        <div class="metric-row"><span>Unemployment ${tt('unemployment')}</span><span class="metric-val">Current: ${unemp ?? '—'}% <span class="sub-val">(${unempDir})</span> ${unempTrend}</span></div>
+        <div class="metric-row"><span>Inflation (annual) ${tt('inflation')}</span><span class="metric-val">${u.inflation ?? '—'}%</span></div>
+        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${u.interest_rate ?? '—'}%</span></div>
+        <div class="metric-row"><span>Yield Curve (10Y-2Y) ${tt('yield_curve')}</span><span class="metric-val">${u.yield_curve ?? '—'}% <span class="sub-val">(${d.derived_signals?.yield_curve_state || 'unknown'})</span></span></div>
+        <div class="metric-row"><span>Consumer Sentiment ${tt('consumer_sentiment')}</span><span class="metric-val">${u.consumer_sentiment ?? '—'}</span></div>
       `;
     } else {
       get('us-stats').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
-      console.error('No us_economy data');
     }
 
-    // US Labor — current / prev / Δ / 3M avg (supports both object and scalar)
+    // US Labor — contextual labels, trend indicators, JOLTS tooltip
     const BLS_LABELS = {
       total_employment: 'Total Employment (thous.)',
       avg_hourly_earnings: 'Avg Hourly Earnings',
@@ -343,7 +455,7 @@ fetch(`economyflow.json?t=${Date.now()}`)
       professional_employment: 'Professional Services',
       leisure_employment: 'Leisure/Hospitality',
       avg_weekly_hours: 'Avg Weekly Hours',
-      job_openings: 'Job Openings (JOLTS)',
+      job_openings: 'Job Openings',
       retail_hourly_earnings: 'Retail Hourly Earnings',
       financial_hourly_earnings: 'Financial Hourly Earnings'
     };
@@ -352,11 +464,14 @@ fetch(`economyflow.json?t=${Date.now()}`)
       for (const [key, label] of Object.entries(BLS_LABELS)) {
         const v = d.us_labor[key];
         if (v == null) continue;
+        const joltTip = key === 'job_openings' ? `<span class="tooltip-wrap"><span class="tooltip-icon" aria-hidden="true">i</span><span class="tooltip-text">${TOOLTIPS.jolts}</span></span>` : '';
         if (typeof v === 'object' && v.current != null) {
-          const cur = v.current; const prev = v.prev; const dAbs = v.delta_abs; const dPct = v.delta_pct; const threeM = v.change_3m_avg_pct;
-          const pctStr = dPct != null ? ` (${dPct >= 0 ? '+' : ''}${dPct}%)` : '';
-          const threeMStr = threeM != null ? `  3M avg: ${threeM >= 0 ? '+' : ''}${threeM}%` : '';
-          rows.push(`<div class="metric-row"><span>${label}</span><span class="metric-val">${typeof cur === 'number' && cur > 1000 ? cur.toLocaleString('en-US', {maximumFractionDigits:0}) : cur} <span class="sub-val">prev ${prev ?? '—'}  Δ ${dAbs != null ? (dAbs >= 0 ? '+' : '') + dAbs : '—'}${pctStr}${threeMStr}</span></span></div>`);
+          const cur = v.current; const prev = v.prev; const dPct = v.delta_pct;
+          const dir = (prev != null && dPct != null) ? (dPct > 0 ? 'Up from last month' : dPct < 0 ? 'Down from last month' : 'Unchanged') : '';
+          const trendClass = dPct != null ? (dPct > 0 ? 'trend-up' : (dPct < 0 ? 'trend-down' : 'trend-stable')) : '';
+          const trendLabel = dPct != null ? (dPct > 0 ? '↑ Improving' : (dPct < 0 ? '↓ Weakening' : '→ Stable')) : '';
+          const curFmt = typeof cur === 'number' && cur > 1000 ? cur.toLocaleString('en-US', {maximumFractionDigits:0}) : cur;
+          rows.push(`<div class="metric-row"><span>${label} ${joltTip}</span><span class="metric-val">Current: ${curFmt} <span class="sub-val">(${dir})</span> <span class="${trendClass}">${trendLabel}</span></span></div>`);
         } else {
           rows.push(`<div class="metric-row"><span>${label}</span><span class="metric-val">${v}</span></div>`);
         }
@@ -364,7 +479,6 @@ fetch(`economyflow.json?t=${Date.now()}`)
       get('labor-stats').innerHTML = rows.length ? rows.join('') : '<p style="opacity:0.6">No labor data</p>';
     } else {
       get('labor-stats').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
-      console.error('No us_labor data');
     }
 
     // Recession
@@ -379,10 +493,15 @@ fetch(`economyflow.json?t=${Date.now()}`)
       console.error('No recession_analysis data');
     }
 
-    // Commodities — unit, price, prev, change
+    // Commodities — human-readable units: USD per Ounce (Gold), Price per Barrel (Crude)
     if (d.commodities && Object.keys(d.commodities).length > 0) {
+      const unitLabel = (name, unit) => {
+        if (name.toLowerCase().includes('gold')) return 'USD per Ounce';
+        if (name.toLowerCase().includes('crude') || name.toLowerCase().includes('oil')) return 'Price per Barrel';
+        return unit || '';
+      };
       get('commodities-stats').innerHTML = Object.entries(d.commodities).map(([name, o]) => {
-        const unit = o.unit || ''; const price = o.price; const prev = o.prev; const ch = o.change;
+        const unit = unitLabel(name, o.unit); const price = o.price; const prev = o.prev; const ch = o.change;
         const chStr = ch != null ? ` Δ ${ch >= 0 ? '+' : ''}${ch}%` : '';
         return `<div class="metric-row"><span>${name} (${unit})</span><span class="metric-val">${price ?? '—'} <span class="sub-val">prev ${prev ?? '—'}${chStr}</span></span></div>`;
       }).join('');
@@ -390,14 +509,30 @@ fetch(`economyflow.json?t=${Date.now()}`)
       get('commodities-stats').innerHTML = '<p style="opacity:0.6">No commodities data</p>';
     }
 
-    // Market Indexes — price, 30D ago, Δ 30D
+    // Market Indexes — 1D / 1W / 1M timeframe toggle
     if (d.market_indexes && Object.keys(d.market_indexes).length > 0) {
-      get('indexes-stats').innerHTML = Object.entries(d.market_indexes).map(([name, o]) => {
-        const price = o.price; const p30 = o.price_30d_ago; const c30 = o.change_30d;
-        const c30Str = c30 != null ? ` Δ 30D: ${c30 >= 0 ? '+' : ''}${c30}%` : '';
-        return `<div class="metric-row"><span>${name}</span><span class="metric-val">${price ?? '—'} <span class="sub-val">30D ago ${p30 ?? '—'}${c30Str}</span></span></div>`;
-      }).join('');
+      const indexesData = d.market_indexes;
+      const tfDiv = get('index-timeframe');
+      tfDiv.innerHTML = '<button type="button" data-tf="1d">1D</button><button type="button" data-tf="7d">1W</button><button type="button" data-tf="30d" class="active">1M</button>';
+      function renderIndexes(tf) {
+        const key = tf === '1d' ? 'change_1d' : (tf === '7d' ? 'change_7d' : 'change_30d');
+        const label = tf === '1d' ? '1 day' : (tf === '7d' ? '1 week' : '1 month');
+        get('indexes-stats').innerHTML = Object.entries(indexesData).map(([name, o]) => {
+          const price = o.price; const ch = o[key];
+          const chStr = ch != null ? ` Δ ${label}: ${ch >= 0 ? '+' : ''}${ch}%` : '';
+          return `<div class="metric-row"><span>${name}</span><span class="metric-val">${price ?? '—'} <span class="sub-val">${chStr}</span></span></div>`;
+        }).join('');
+      }
+      tfDiv.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          tfDiv.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderIndexes(btn.dataset.tf);
+        });
+      });
+      renderIndexes('30d');
     } else {
+      get('index-timeframe').innerHTML = '';
       get('indexes-stats').innerHTML = '<p style="opacity:0.6">No index data</p>';
     }
 
@@ -410,16 +545,24 @@ fetch(`economyflow.json?t=${Date.now()}`)
       get('calendar-stats').innerHTML = '<p style="opacity:0.6">No calendar data</p>';
     }
 
-    // Global GDP — YoY, rank change, WITH FILTERING
+    // Top Economies — table: Rank (circle), Country, GDP (USD), Annual Growth; green +1 if moved up
     if (d.global && d.global.top_economies) {
-      const realCountries = d.global.top_economies.filter(c => isRealCountry(c.country)).slice(0, 8);
+      const realCountries = d.global.top_economies.filter(c => isRealCountry(c.country)).slice(0, 10);
       if (realCountries.length > 0) {
-        get('global-gdp').innerHTML = `<table class="mini-table">` + realCountries.map((c, i) => {
-          const g = c.gdp_billions; const yoy = c.gdp_yoy_pct; const dr = c.gdp_delta_rank;
-          const rankChg = dr != null && dr !== 0 ? ` Δrank ${dr > 0 ? '+' : ''}${dr}` : ' rank stable';
-          const yoyStr = yoy != null ? ` Δ YoY ${yoy >= 0 ? '+' : ''}${yoy}%` : '';
-          return `<tr><td><span class="rank-num">#${(c.gdp_rank || i+1)}</span> ${c.country}</td><td>$${g != null ? (g/1000).toFixed(1) : '—'}T ${yoyStr} ${rankChg}</td></tr>`;
-        }).join("") + `</table>`;
+        get('global-gdp').innerHTML = `
+          <table class="economies-table" id="economies-table">
+            <thead><tr><th>Rank</th><th>Country</th><th class="num">GDP (USD)</th><th class="num">Annual Growth</th></tr></thead>
+            <tbody>
+              ${realCountries.map((c, i) => {
+                const rank = c.gdp_rank || i + 1; const dr = c.gdp_delta_rank;
+                const rankChgHtml = (dr != null && dr > 0) ? ` <span class="rank-change-up">+${dr}</span>` : '';
+                const g = c.gdp_billions; const yoy = c.gdp_yoy_pct;
+                const gStr = g != null ? `$${(g/1000).toFixed(1)}T` : '—';
+                const yoyStr = yoy != null ? `${yoy >= 0 ? '+' : ''}${yoy}%` : '—';
+                return `<tr data-country="${(c.country || '').toLowerCase()}" data-code=""><td><span class="rank-circle">${rank}</span>${rankChgHtml}</td><td>${c.country}</td><td class="num">${gStr}</td><td class="num">${yoyStr}</td></tr>`;
+              }).join('')}
+            </tbody>
+          </table>`;
       } else {
         get('global-gdp').innerHTML = '<p style="opacity:0.6; text-align:center">No real countries found</p>';
       }
@@ -427,15 +570,23 @@ fetch(`economyflow.json?t=${Date.now()}`)
       get('global-gdp').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
     }
 
-    // Global Jobs — unemployment, Δ, Δ rank, WITH FILTERING
+    // Best Job Markets — table with rank circle, optional green +1
     if (d.global && d.global.best_for_jobs) {
-      const realJobCountries = d.global.best_for_jobs.filter(c => isRealCountry(c.country) && c.unemployment_rate != null).slice(0, 8);
+      const realJobCountries = d.global.best_for_jobs.filter(c => isRealCountry(c.country) && c.unemployment_rate != null).slice(0, 10);
       if (realJobCountries.length > 0) {
-        get('global-jobs').innerHTML = `<table class="mini-table">` + realJobCountries.map((c, i) => {
-          const u = c.unemployment_rate; const dU = c.unemployment_delta; const dr = c.unemployment_delta_rank;
-          const dStr = dU != null ? ` Δ ${dU >= 0 ? '+' : ''}${dU}` : ''; const rankChg = dr != null && dr !== 0 ? ` Δrank ${dr > 0 ? '+' : ''}${dr}` : ' stable';
-          return `<tr><td><span class="rank-num">#${c.unemployment_rank || (i+1)}</span> ${c.country}</td><td>${u.toFixed(1)}% ${dStr} ${rankChg}</td></tr>`;
-        }).join("") + `</table>`;
+        get('global-jobs').innerHTML = `
+          <table class="economies-table">
+            <thead><tr><th>Rank</th><th>Country</th><th class="num">Unemployment</th><th class="num">Change</th></tr></thead>
+            <tbody>
+              ${realJobCountries.map((c, i) => {
+                const rank = c.unemployment_rank || i + 1; const dr = c.unemployment_delta_rank;
+                const rankChgHtml = (dr != null && dr > 0) ? ` <span class="rank-change-up">+${dr}</span>` : '';
+                const u = c.unemployment_rate; const dU = c.unemployment_delta;
+                const dStr = dU != null ? `${dU >= 0 ? '+' : ''}${dU}` : '—';
+                return `<tr data-country="${(c.country||'').toLowerCase()}"><td><span class="rank-circle">${rank}</span>${rankChgHtml}</td><td>${c.country}</td><td class="num">${u.toFixed(1)}%</td><td class="num">${dStr}</td></tr>`;
+              }).join('')}
+            </tbody>
+          </table>`;
       } else {
         get('global-jobs').innerHTML = '<p style="opacity:0.6; text-align:center">No job data</p>';
       }
@@ -443,30 +594,59 @@ fetch(`economyflow.json?t=${Date.now()}`)
       get('global-jobs').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
     }
 
-    // FX — paginated (10 per page)
-    const FX_PAGE_SIZE = 10;
+    // FX — full names, flags, filter/sort, View All (no pagination)
     if (d.fx_rates && Object.keys(d.fx_rates).length > 0) {
-      const fxEntries = Object.entries(d.fx_rates);
-      let fxPage = 0;
-      const totalFxPages = Math.ceil(fxEntries.length / FX_PAGE_SIZE);
-      function renderFxPage() {
-        const start = fxPage * FX_PAGE_SIZE;
-        const slice = fxEntries.slice(start, start + FX_PAGE_SIZE);
-        get('fx-stats').innerHTML = slice.map(([k,v]) => `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`).join("");
-        const pag = get('fx-pagination');
-        pag.innerHTML = `
-          <button type="button" ${fxPage === 0 ? 'disabled' : ''} onclick="window.prevFxPage()">← Prev</button>
-          <span class="fx-page-info">Page ${fxPage + 1} of ${totalFxPages} (${fxEntries.length} pairs)</span>
-          <button type="button" ${fxPage >= totalFxPages - 1 ? 'disabled' : ''} onclick="window.nextFxPage()">Next →</button>
-        `;
+      const fxAll = Object.entries(d.fx_rates).map(([code, val]) => ({ code, val, ...getCurrencyInfo(code) }));
+      const fxListEl = get('fx-list');
+      let fxViewAll = false;
+      function renderFx() {
+        const q = (get('fx-search').value || '').trim();
+        const sortBy = get('fx-sort').value;
+        let list = fxAll.filter(x => currencyMatchesSearch(x.code, q));
+        if (sortBy === 'high') list = list.slice().sort((a, b) => (b.val - a.val));
+        else if (sortBy === 'low') list = list.slice().sort((a, b) => (a.val - b.val));
+        else list = list.slice().sort((a, b) => a.code.localeCompare(b.code));
+        const display = fxViewAll ? list : list.slice(0, 10);
+        fxListEl.innerHTML = display.map((x) => {
+          const code = x.code; const val = x.val; const name = x.name || code; const flag = x.flag; const country = (x.country || '').toLowerCase();
+          const searchAttr = `data-code="${code}" data-name="${(name||'').toLowerCase()}" data-country="${country}"`;
+          return `<div class="fx-row" ${searchAttr}><span class="fx-flag">${flag}</span><span class="fx-name">${code} – ${name}</span><span class="fx-val">${val}</span></div>`;
+        }).join('');
+        fxListEl.classList.toggle('view-all', fxViewAll);
+        const wrap = get('fx-view-all-wrap');
+        if (list.length > 10) {
+          wrap.innerHTML = `<button type="button" id="fx-view-all-btn">${fxViewAll ? 'Show less' : 'View All (' + list.length + ')'}</button>`;
+          wrap.querySelector('button').onclick = () => { fxViewAll = !fxViewAll; renderFx(); };
+        } else wrap.innerHTML = '';
       }
-      window.prevFxPage = () => { if (fxPage > 0) { fxPage--; renderFxPage(); } };
-      window.nextFxPage = () => { if (fxPage < totalFxPages - 1) { fxPage++; renderFxPage(); } };
-      renderFxPage();
+      get('fx-search').oninput = () => renderFx();
+      get('fx-sort').onchange = () => renderFx();
+      window.renderFx = renderFx;
+      renderFx();
     } else {
-      get('fx-stats').innerHTML = '<p style="opacity:0.6">FX data unavailable</p>';
-      get('fx-pagination').innerHTML = '';
+      get('fx-list').innerHTML = '<p style="opacity:0.6">FX data unavailable</p>';
+      get('fx-view-all-wrap').innerHTML = '';
     }
+
+    // Global search — filter FX by same query, show all matches, then highlight Top Economies + FX rows
+    const globalSearchEl = get('global-search');
+    globalSearchEl.oninput = function() {
+      const q = (this.value || '').trim();
+      const qLower = q.toLowerCase();
+      if (window.renderFx) {
+        get('fx-search').value = q;
+        window.renderFx();
+      }
+      document.querySelectorAll('.fx-row, #economies-table tbody tr, #jobs-table tbody tr').forEach(el => {
+        const code = (el.getAttribute('data-code') || '').toLowerCase();
+        const name = (el.getAttribute('data-name') || '').toLowerCase();
+        const country = (el.getAttribute('data-country') || '').toLowerCase();
+        const text = (el.textContent || '').toLowerCase();
+        const match = qLower && (code.includes(qLower) || name.includes(qLower) || country.includes(qLower) || text.includes(qLower));
+        el.classList.toggle('search-highlight', !!match);
+        if (match && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    };
 
     console.log('✅ All data loaded successfully');
 
