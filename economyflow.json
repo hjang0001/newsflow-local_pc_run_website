@@ -1,15 +1,13 @@
 {
-  "timestamp": "2026-01-30T19:59:58.629852+00:00",
-  "last_updated_human": "2026-01-30 14:59:58 UTC",
+  "timestamp": "2026-01-31T06:36:56.803630+00:00",
+  "last_updated_human": "2026-01-31 06:36:56 UTC",
   "us_economy": {
-    "gdp_growth": 1.08,
-    "gdp_growth_prev": 0.95,
-    "unemployment": 4.4,
-    "unemployment_prev": 4.5,
-    "inflation": 2.7,
-    "interest_rate": 3.72,
-    "yield_curve": 0.71,
-    "consumer_sentiment": 52.9
+    "gdp_growth": 0,
+    "gdp_growth_prev": 0,
+    "unemployment": 0,
+    "inflation": 0,
+    "interest_rate": 0,
+    "yield_curve": 0
   },
   "us_labor": {
     "total_employment": 160448.0,
@@ -19,22 +17,22 @@
   "economic_calendar": [],
   "market_indexes": {},
   "fx_rates": {
-    "EUR": 0.836,
-    "GBP": 0.724,
-    "JPY": 153.14,
-    "CNY": 6.95,
-    "INR": 91.94,
-    "CAD": 1.35,
-    "AUD": 1.42,
-    "CHF": 0.766,
-    "MXN": 17.22,
-    "BRL": 5.19
+    "EUR": 0.841,
+    "GBP": 0.729,
+    "JPY": 154.38,
+    "CNY": 6.96,
+    "INR": 91.91,
+    "CAD": 1.36,
+    "AUD": 1.43,
+    "CHF": 0.771,
+    "MXN": 17.38,
+    "BRL": 5.2
   },
   "recession_analysis": {
-    "risk_score": 10,
+    "risk_score": 0,
     "status": "VERY LOW",
     "in_recession": false,
-    "reason": "Low confidence (52.9)"
+    "reason": "All indicators healthy"
   },
   "global": {
     "top_economies": [
@@ -361,20 +359,5 @@
     "yield_curve_state": "positive",
     "in_recession": false,
     "recession_risk_level": "VERY LOW"
-  },
-  "ai": {
-    "connected_summary": "The US economy is experiencing moderate growth, with a 1.08% GDP growth rate and a 4.4% unemployment rate. The yield curve is positive, indicating a normal interest rate environment. However, inflation remains a concern at 2.7%. The global economy is also growing, with the top economies experiencing moderate growth. The recession risk level is VERY LOW, but the global economic calendar is relatively quiet.",
-    "what_matters_today": [
-      "The positive yield curve indicates a normal interest rate environment, which is supportive of economic growth.",
-      "The moderate growth in the US economy, with a 1.08% GDP growth rate, is a key signal for business leaders and policymakers.",
-      "The inflation rate of 2.7% remains a concern and may require policy attention to prevent overheating."
-    ],
-    "what_to_do_next": [
-      "Policymakers should focus on maintaining a stable economic environment, with a focus on inflation control.",
-      "Business leaders should prioritize investment in productivity-enhancing technologies to support moderate growth.",
-      "Operators should prepare for potential changes in interest rates and inflation expectations."
-    ],
-    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the yield curve remaining positive. However, inflation may remain a concern, and policymakers may need to take action to prevent overheating. The global economy is also expected to grow, with the top economies experiencing moderate growth.",
-    "market_pulse": "The positive yield curve and moderate growth in the US economy are supportive of commodities and indexes, with a potential increase in demand for raw materials and industrial production."
   }
 }
