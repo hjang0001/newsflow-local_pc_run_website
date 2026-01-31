@@ -141,6 +141,13 @@ h1{font-size:3rem;letter-spacing:-1.5px}
 .risk-very-low{background:#d1fae5;color:#065f46}
 .risk-critical{background:#fee2e2;color:#991b1b}
 
+/* FX PAGINATION */
+.fx-pagination { margin-top:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:sans-serif; font-size:.85rem; }
+.fx-pagination button { padding:6px 14px; border:1px solid var(--border); background:var(--card); color:var(--text); border-radius:4px; cursor:pointer; font-weight:bold; }
+.fx-pagination button:hover { background:var(--highlight); color:#fff; border-color:var(--highlight); }
+.fx-pagination button:disabled { opacity:.5; cursor:not-allowed; }
+.fx-pagination .fx-page-info { opacity:.8; }
+
 footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-serif; font-size:.8rem; opacity:.6; border-top:1px solid var(--border); }
 </style>
 </head>
@@ -174,6 +181,11 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
     <strong>Recommended Actions</strong>
     <ul id="action-list"></ul>
   </div>
+
+  <div class="impact" id="market-pulse-box" style="display:none;">
+    <strong>Market Pulse</strong>
+    <p id="market-pulse-text" style="margin-top:5px"></p>
+  </div>
 </div>
 
 <div id="data-grid">
@@ -198,6 +210,21 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
   </div>
 
   <div class="card">
+    <h3>🛢️ Commodities</h3>
+    <div id="commodities-stats">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Market Indexes</h3>
+    <div id="indexes-stats">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h3>📅 Economic Calendar</h3>
+    <div id="calendar-stats">Loading...</div>
+  </div>
+
+  <div class="card">
     <h3>🌍 Top Economies</h3>
     <div id="global-gdp">Loading...</div>
   </div>
@@ -207,9 +234,10 @@ footer{ margin-top:50px; padding-top:20px; text-align:center; font-family:sans-s
     <div id="global-jobs">Loading...</div>
   </div>
 
-  <div class="card">
+  <div class="card card-fx">
     <h3>💱 FX (vs USD)</h3>
     <div id="fx-stats">Loading...</div>
+    <div id="fx-pagination" class="fx-pagination"></div>
   </div>
 
 </div>
@@ -272,34 +300,68 @@ fetch(`economyflow.json?t=${Date.now()}`)
         get('matters-list').innerHTML = (d.ai.what_matters_today || []).map(x=>`<li>${x}</li>`).join("") || '<li>No data</li>';
         get('action-list').innerHTML = (d.ai.what_to_do_next || []).map(x=>`<li>${x}</li>`).join("") || '<li>No actions</li>';
         get('outlook-text').innerText = d.ai.strategic_outlook || 'No outlook available';
+        const mp = d.ai.market_pulse;
+        if (mp) {
+          get('market-pulse-text').innerText = mp;
+          get('market-pulse-box').style.display = 'block';
+        } else {
+          get('market-pulse-box').style.display = 'none';
+        }
     } else {
         get('ai-summary').innerText = "AI analysis unavailable";
+        get('market-pulse-box').style.display = 'none';
         console.warn('No AI data in JSON');
     }
 
-    // US Economy
+    // US Economy — GDP rolling window, inflation, consumer sentiment
     if (d.us_economy) {
+      const u = d.us_economy;
+      const gq = u.gdp_growth_q || [];
+      const gqStr = gq.length >= 4 ? `Q-3: ${gq[0]}%  Q-2: ${gq[1]}%  Q-1: ${gq[2]}%  Q0: ${gq[3]}%` : (u.gdp_growth != null ? `Q0: ${u.gdp_growth}%` : '—');
+      const deltaQoq = u.gdp_growth_delta_qoq != null ? `Δ QoQ: ${u.gdp_growth_delta_qoq >= 0 ? '+' : ''}${u.gdp_growth_delta_qoq}` : '';
+      const trend = u.gdp_growth_3q_trend ? `  3Q trend: ${u.gdp_growth_3q_trend}` : '';
       get('us-stats').innerHTML = `
-        <div class="metric-row"><span>GDP Growth</span><span class="metric-val">${d.us_economy.gdp_growth || '--'}%</span></div>
-        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${d.us_economy.unemployment || '--'}%</span></div>
-        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${d.us_economy.interest_rate || '--'}%</span></div>
-        <div class="metric-row"><span>Yield Curve</span><span class="metric-val">${d.us_economy.yield_curve || '--'} <span class="sub-val">(${d.derived_signals?.yield_curve_state || 'unknown'})</span></span></div>
+        <div class="metric-row"><span>GDP growth (%)</span><span class="metric-val">${gqStr}</span></div>
+        <div class="metric-row"><span>Δ QoQ / 3Q trend</span><span class="metric-val">${deltaQoq}${trend}</span></div>
+        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${u.unemployment ?? '--'}% <span class="sub-val">prev ${u.unemployment_prev ?? '--'}%</span></span></div>
+        <div class="metric-row"><span>Inflation (annual)</span><span class="metric-val">${u.inflation ?? '--'}%</span></div>
+        <div class="metric-row"><span>Interest Rate</span><span class="metric-val">${u.interest_rate ?? '--'}%</span></div>
+        <div class="metric-row"><span>Yield Curve (10Y-2Y)</span><span class="metric-val">${u.yield_curve ?? '--'}% <span class="sub-val">(${d.derived_signals?.yield_curve_state || 'unknown'})</span></span></div>
+        <div class="metric-row"><span>Consumer Sentiment</span><span class="metric-val">${u.consumer_sentiment ?? '--'}</span></div>
       `;
     } else {
       get('us-stats').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
       console.error('No us_economy data');
     }
 
-    // US Labor
+    // US Labor — current / prev / Δ / 3M avg (supports both object and scalar)
+    const BLS_LABELS = {
+      total_employment: 'Total Employment (thous.)',
+      avg_hourly_earnings: 'Avg Hourly Earnings',
+      financial_employment: 'Financial Activities',
+      trade_transport_employment: 'Trade/Transportation',
+      professional_employment: 'Professional Services',
+      leisure_employment: 'Leisure/Hospitality',
+      avg_weekly_hours: 'Avg Weekly Hours',
+      job_openings: 'Job Openings (JOLTS)',
+      retail_hourly_earnings: 'Retail Hourly Earnings',
+      financial_hourly_earnings: 'Financial Hourly Earnings'
+    };
     if (d.us_labor) {
-      const employment = d.us_labor.total_employment ? (d.us_labor.total_employment/1000).toFixed(1) + 'M' : 'N/A';
-      const wages = d.us_labor.avg_hourly_earnings ? '$' + d.us_labor.avg_hourly_earnings : 'N/A';
-      
-      get('labor-stats').innerHTML = `
-        <div class="metric-row"><span>Unemployment</span><span class="metric-val">${d.us_economy?.unemployment || '--'}%</span></div>
-        <div class="metric-row"><span>Total Jobs</span><span class="metric-val">${employment}</span></div>
-        <div class="metric-row"><span>Avg Hourly Pay</span><span class="metric-val">${wages}</span></div>
-      `;
+      const rows = [];
+      for (const [key, label] of Object.entries(BLS_LABELS)) {
+        const v = d.us_labor[key];
+        if (v == null) continue;
+        if (typeof v === 'object' && v.current != null) {
+          const cur = v.current; const prev = v.prev; const dAbs = v.delta_abs; const dPct = v.delta_pct; const threeM = v.change_3m_avg_pct;
+          const pctStr = dPct != null ? ` (${dPct >= 0 ? '+' : ''}${dPct}%)` : '';
+          const threeMStr = threeM != null ? `  3M avg: ${threeM >= 0 ? '+' : ''}${threeM}%` : '';
+          rows.push(`<div class="metric-row"><span>${label}</span><span class="metric-val">${typeof cur === 'number' && cur > 1000 ? cur.toLocaleString('en-US', {maximumFractionDigits:0}) : cur} <span class="sub-val">prev ${prev ?? '—'}  Δ ${dAbs != null ? (dAbs >= 0 ? '+' : '') + dAbs : '—'}${pctStr}${threeMStr}</span></span></div>`);
+        } else {
+          rows.push(`<div class="metric-row"><span>${label}</span><span class="metric-val">${v}</span></div>`);
+        }
+      }
+      get('labor-stats').innerHTML = rows.length ? rows.join('') : '<p style="opacity:0.6">No labor data</p>';
     } else {
       get('labor-stats').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
       console.error('No us_labor data');
@@ -317,49 +379,93 @@ fetch(`economyflow.json?t=${Date.now()}`)
       console.error('No recession_analysis data');
     }
 
-    // Global GDP - WITH FILTERING
+    // Commodities — unit, price, prev, change
+    if (d.commodities && Object.keys(d.commodities).length > 0) {
+      get('commodities-stats').innerHTML = Object.entries(d.commodities).map(([name, o]) => {
+        const unit = o.unit || ''; const price = o.price; const prev = o.prev; const ch = o.change;
+        const chStr = ch != null ? ` Δ ${ch >= 0 ? '+' : ''}${ch}%` : '';
+        return `<div class="metric-row"><span>${name} (${unit})</span><span class="metric-val">${price ?? '—'} <span class="sub-val">prev ${prev ?? '—'}${chStr}</span></span></div>`;
+      }).join('');
+    } else {
+      get('commodities-stats').innerHTML = '<p style="opacity:0.6">No commodities data</p>';
+    }
+
+    // Market Indexes — price, 30D ago, Δ 30D
+    if (d.market_indexes && Object.keys(d.market_indexes).length > 0) {
+      get('indexes-stats').innerHTML = Object.entries(d.market_indexes).map(([name, o]) => {
+        const price = o.price; const p30 = o.price_30d_ago; const c30 = o.change_30d;
+        const c30Str = c30 != null ? ` Δ 30D: ${c30 >= 0 ? '+' : ''}${c30}%` : '';
+        return `<div class="metric-row"><span>${name}</span><span class="metric-val">${price ?? '—'} <span class="sub-val">30D ago ${p30 ?? '—'}${c30Str}</span></span></div>`;
+      }).join('');
+    } else {
+      get('indexes-stats').innerHTML = '<p style="opacity:0.6">No index data</p>';
+    }
+
+    // Economic Calendar
+    if (d.economic_calendar && d.economic_calendar.length > 0) {
+      get('calendar-stats').innerHTML = d.economic_calendar.slice(0, 8).map(ev => 
+        `<div class="metric-row"><span>${ev.event || 'Event'}</span><span class="metric-val">${ev.date || '—'} <span class="sub-val">${ev.actual || ''}</span></span></div>`
+      ).join('');
+    } else {
+      get('calendar-stats').innerHTML = '<p style="opacity:0.6">No calendar data</p>';
+    }
+
+    // Global GDP — YoY, rank change, WITH FILTERING
     if (d.global && d.global.top_economies) {
-      const realCountries = d.global.top_economies.filter(c => isRealCountry(c.country)).slice(0, 5);
-      
+      const realCountries = d.global.top_economies.filter(c => isRealCountry(c.country)).slice(0, 8);
       if (realCountries.length > 0) {
-        get('global-gdp').innerHTML = `<table class="mini-table">` + 
-          realCountries.map((c, i) => `<tr><td><span class="rank-num">#${i+1}</span> ${c.country}</td><td>$${(c.gdp_billions/1000).toFixed(1)}T</td></tr>`).join("") + 
-          `</table>`;
-        console.log('Top economies shown:', realCountries.map(c => c.country));
+        get('global-gdp').innerHTML = `<table class="mini-table">` + realCountries.map((c, i) => {
+          const g = c.gdp_billions; const yoy = c.gdp_yoy_pct; const dr = c.gdp_delta_rank;
+          const rankChg = dr != null && dr !== 0 ? ` Δrank ${dr > 0 ? '+' : ''}${dr}` : ' rank stable';
+          const yoyStr = yoy != null ? ` Δ YoY ${yoy >= 0 ? '+' : ''}${yoy}%` : '';
+          return `<tr><td><span class="rank-num">#${(c.gdp_rank || i+1)}</span> ${c.country}</td><td>$${g != null ? (g/1000).toFixed(1) : '—'}T ${yoyStr} ${rankChg}</td></tr>`;
+        }).join("") + `</table>`;
       } else {
         get('global-gdp').innerHTML = '<p style="opacity:0.6; text-align:center">No real countries found</p>';
-        console.warn('All countries filtered out - check BAD_KEYWORDS');
       }
     } else {
       get('global-gdp').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
-      console.error('No global.top_economies data');
     }
 
-    // Global Jobs - WITH FILTERING
+    // Global Jobs — unemployment, Δ, Δ rank, WITH FILTERING
     if (d.global && d.global.best_for_jobs) {
-      const realJobCountries = d.global.best_for_jobs.filter(c => isRealCountry(c.country) && c.unemployment_rate).slice(0, 5);
-      
+      const realJobCountries = d.global.best_for_jobs.filter(c => isRealCountry(c.country) && c.unemployment_rate != null).slice(0, 8);
       if (realJobCountries.length > 0) {
-        get('global-jobs').innerHTML = `<table class="mini-table">` + 
-          realJobCountries.map((c, i) => `<tr><td><span class="rank-num">#${i+1}</span> ${c.country}</td><td>${c.unemployment_rate.toFixed(1)}%</td></tr>`).join("") + 
-          `</table>`;
-        console.log('Job markets shown:', realJobCountries.map(c => c.country));
+        get('global-jobs').innerHTML = `<table class="mini-table">` + realJobCountries.map((c, i) => {
+          const u = c.unemployment_rate; const dU = c.unemployment_delta; const dr = c.unemployment_delta_rank;
+          const dStr = dU != null ? ` Δ ${dU >= 0 ? '+' : ''}${dU}` : ''; const rankChg = dr != null && dr !== 0 ? ` Δrank ${dr > 0 ? '+' : ''}${dr}` : ' stable';
+          return `<tr><td><span class="rank-num">#${c.unemployment_rank || (i+1)}</span> ${c.country}</td><td>${u.toFixed(1)}% ${dStr} ${rankChg}</td></tr>`;
+        }).join("") + `</table>`;
       } else {
-        get('global-jobs').innerHTML = '<p style="opacity:0.6; text-align:center">No job data available</p>';
+        get('global-jobs').innerHTML = '<p style="opacity:0.6; text-align:center">No job data</p>';
       }
     } else {
       get('global-jobs').innerHTML = '<p style="opacity:0.6">Data unavailable</p>';
-      console.error('No global.best_for_jobs data');
     }
 
-    // FX
+    // FX — paginated (10 per page)
+    const FX_PAGE_SIZE = 10;
     if (d.fx_rates && Object.keys(d.fx_rates).length > 0) {
-      get('fx-stats').innerHTML = Object.entries(d.fx_rates).map(([k,v]) => 
-        `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`
-      ).join("");
+      const fxEntries = Object.entries(d.fx_rates);
+      let fxPage = 0;
+      const totalFxPages = Math.ceil(fxEntries.length / FX_PAGE_SIZE);
+      function renderFxPage() {
+        const start = fxPage * FX_PAGE_SIZE;
+        const slice = fxEntries.slice(start, start + FX_PAGE_SIZE);
+        get('fx-stats').innerHTML = slice.map(([k,v]) => `<div class="metric-row"><span>${k}</span><span class="metric-val">${v}</span></div>`).join("");
+        const pag = get('fx-pagination');
+        pag.innerHTML = `
+          <button type="button" ${fxPage === 0 ? 'disabled' : ''} onclick="window.prevFxPage()">← Prev</button>
+          <span class="fx-page-info">Page ${fxPage + 1} of ${totalFxPages} (${fxEntries.length} pairs)</span>
+          <button type="button" ${fxPage >= totalFxPages - 1 ? 'disabled' : ''} onclick="window.nextFxPage()">Next →</button>
+        `;
+      }
+      window.prevFxPage = () => { if (fxPage > 0) { fxPage--; renderFxPage(); } };
+      window.nextFxPage = () => { if (fxPage < totalFxPages - 1) { fxPage++; renderFxPage(); } };
+      renderFxPage();
     } else {
       get('fx-stats').innerHTML = '<p style="opacity:0.6">FX data unavailable</p>';
-      console.error('No fx_rates data');
+      get('fx-pagination').innerHTML = '';
     }
 
     console.log('✅ All data loaded successfully');
@@ -379,36 +485,3 @@ fetch(`economyflow.json?t=${Date.now()}`)
 </script>
 </body>
 </html>
-```
-
----
-
-## **What This Fixed HTML Does:**
-
-1. ✅ **Detailed console logging** - Shows exactly what's happening
-2. ✅ **Client-side aggregate filtering** - Filters out fake countries in the browser
-3. ✅ **Better error messages** - Shows WHAT failed
-4. ✅ **Safe fallbacks** - Doesn't crash if data is missing
-5. ✅ **Cache-busting** - `?t=${Date.now()}` forces fresh data
-
----
-
-## **Action Steps:**
-
-### **Step 1: Upload This New HTML**
-1. Save the code above as `economyflow.html`
-2. Upload it to your GitHub repo (replace the old one)
-3. Wait 2 minutes for GitHub Pages to update
-
-### **Step 2: Test Again**
-1. Open `https://thedailynewsflow.com/economyflow.html`
-2. Press **F12** → **Console** tab
-3. Look for the log messages
-
-**Tell me what you see in the console!** It will say things like:
-```
-Starting data fetch...
-Fetch response received: 200
-JSON parsed successfully: {timestamp: ...}
-Top economies shown: ["United States", "China", "Japan", ...]
-✅ All data loaded successfully
