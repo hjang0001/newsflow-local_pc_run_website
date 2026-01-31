@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-01-31T08:01:42.050832+00:00",
-  "last_updated_human": "2026-01-31 03:01:42 UTC",
+  "timestamp": "2026-01-31T08:02:08.426038+00:00",
+  "last_updated_human": "2026-01-31 03:02:08 UTC",
   "us_economy": {
     "gdp_growth": 1.08,
     "gdp_growth_prev": 0.95,
@@ -15,7 +15,18 @@
     "total_employment": 160448.0,
     "avg_hourly_earnings": 37.02
   },
-  "commodities": {},
+  "commodities": {
+    "Crude Oil": {
+      "price": 60.46,
+      "change": -0.4,
+      "trend": "down"
+    },
+    "Gold": {
+      "price": 121.03,
+      "change": 1.89,
+      "trend": "up"
+    }
+  },
   "economic_calendar": [
     {
       "event": "GDP (Real, Quarterly)",
@@ -407,18 +418,18 @@
     "recession_risk_level": "VERY LOW"
   },
   "ai": {
-    "connected_summary": "The US economy is experiencing a moderate growth phase, driven by a low unemployment rate and stable inflation. However, the yield curve is positive, indicating a normal interest rate environment. The global economy is also growing, with several countries experiencing strong GDP growth. The current macro environment suggests a stable and favorable business climate, with opportunities for growth and expansion.",
+    "connected_summary": "The US economy is experiencing a moderate growth phase, with a GDP growth rate of 1.08% and a low unemployment rate of 4.4%. However, inflation remains a concern at 2.7%, and the interest rate is at 3.72%. The yield curve is positive, indicating a normal economic environment. The global economy is also showing signs of growth, with the top economies experiencing moderate expansion. The recession risk level is very low, but the global economic calendar indicates potential risks in the coming months.",
     "what_matters_today": [
-      "The US unemployment rate has decreased to 4.4%, indicating a strong labor market and potential for wage growth.",
-      "The yield curve is positive, indicating a normal interest rate environment and potential for further economic growth.",
-      "The global economy is growing, with several countries experiencing strong GDP growth, creating opportunities for trade and investment."
+      "The US economy is experiencing a moderate growth phase, with a GDP growth rate of 1.08% and a low unemployment rate of 4.4%, indicating a strong labor market.",
+      "Inflation remains a concern at 2.7%, which may lead to further interest rate hikes and impact consumer spending.",
+      "The yield curve is positive, indicating a normal economic environment, but the global economic calendar indicates potential risks in the coming months."
     ],
     "what_to_do_next": [
-      "Policymakers should focus on maintaining a stable and favorable business climate, with a focus on supporting small and medium-sized enterprises.",
-      "Business leaders should consider investing in human capital and infrastructure to take advantage of the growing economy.",
-      "Governments should prioritize education and training programs to address potential labor shortages and ensure a skilled workforce."
+      "Policymakers should focus on addressing inflation concerns through targeted monetary policy measures.",
+      "Business leaders should prioritize investing in labor productivity and innovation to maintain competitiveness in a growing economy.",
+      "Operators should prepare for potential economic risks by diversifying their supply chains and managing cash flows."
     ],
-    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, driven by a strong labor market and stable inflation. The global economy is also expected to grow, with several countries experiencing strong GDP growth. However, policymakers and business leaders should remain vigilant and adapt to changing economic conditions to ensure continued growth and stability.",
-    "market_pulse": "The positive yield curve and stable inflation environment are supporting a strong commodities market, with prices expected to remain stable in the near term. The global indexes are also expected to remain stable, driven by the growing economy and favorable business climate."
+    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the GDP growth rate stabilizing around 1.2%. Inflation is likely to remain a concern, but the interest rate is expected to remain stable. The global economy is expected to experience moderate expansion, with the top economies continuing to grow. However, potential risks in the global economic calendar may impact the economic outlook.",
+    "market_pulse": "The positive yield curve and moderate growth phase are reflected in the commodities market, with crude oil prices stable and gold prices increasing. The indexes are also showing signs of stability, with the S&P 500, Nasdaq, and Dow Jones experiencing moderate growth."
   }
 }
