@@ -1,13 +1,15 @@
 {
-  "timestamp": "2026-01-31T06:40:25.379552+00:00",
-  "last_updated_human": "2026-01-31 06:40:25 UTC",
+  "timestamp": "2026-01-31T06:42:43.501240+00:00",
+  "last_updated_human": "2026-01-31 06:42:43 UTC",
   "us_economy": {
-    "gdp_growth": 0,
-    "gdp_growth_prev": 0,
-    "unemployment": 0,
-    "inflation": 0,
-    "interest_rate": 0,
-    "yield_curve": 0
+    "gdp_growth": 1.08,
+    "gdp_growth_prev": 0.95,
+    "unemployment": 4.4,
+    "unemployment_prev": 4.5,
+    "inflation": 2.7,
+    "interest_rate": 3.72,
+    "yield_curve": 0.74,
+    "consumer_sentiment": 52.9
   },
   "us_labor": {
     "total_employment": 160448.0,
@@ -29,10 +31,10 @@
     "BRL": 5.2
   },
   "recession_analysis": {
-    "risk_score": 0,
+    "risk_score": 10,
     "status": "VERY LOW",
     "in_recession": false,
-    "reason": "All indicators healthy"
+    "reason": "Low confidence (52.9)"
   },
   "global": {
     "top_economies": [
@@ -359,5 +361,20 @@
     "yield_curve_state": "positive",
     "in_recession": false,
     "recession_risk_level": "VERY LOW"
+  },
+  "ai": {
+    "connected_summary": "The US economy is experiencing a moderate growth phase, with a GDP growth rate of 1.08% and a low unemployment rate of 4.4%. However, inflation remains a concern at 2.7%, and the yield curve is positive, indicating a normal interest rate environment. The global economy is also growing, with the top economies experiencing moderate growth. The current macro environment suggests a stable, albeit slow, growth trajectory.",
+    "what_matters_today": [
+      "The yield curve is positive, indicating a normal interest rate environment, which supports moderate growth.",
+      "The US unemployment rate is low at 4.4%, indicating a strong labor market.",
+      "Inflation remains a concern at 2.7%, which may lead to rate hikes and impact growth."
+    ],
+    "what_to_do_next": [
+      "Policymakers should focus on maintaining a stable monetary policy to support moderate growth.",
+      "Business leaders should prioritize investing in labor and infrastructure to support the strong labor market.",
+      "Governments should implement policies to address inflation concerns and maintain price stability."
+    ],
+    "strategic_outlook": "Over the next 3-6 months, we expect the US economy to continue growing at a moderate pace, with the yield curve remaining positive. However, inflation concerns may lead to rate hikes, which could impact growth. The global economy is also expected to grow, with the top economies experiencing moderate growth. We recommend policymakers to maintain a stable monetary policy and business leaders to prioritize investing in labor and infrastructure.",
+    "market_pulse": "The positive yield curve and strong labor market are supporting a stable macro environment, which is reflected in the stable commodities and indexes. However, inflation concerns may lead to rate hikes, which could impact growth and lead to a shift in market dynamics."
   }
 }
