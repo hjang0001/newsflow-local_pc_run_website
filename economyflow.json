@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T04:49:01.235684+00:00",
-  "last_updated_human": "2026-02-05 23:49:01 UTC",
+  "timestamp": "2026-02-06T14:19:45.889325+00:00",
+  "last_updated_human": "2026-02-06 09:19:45 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -116,26 +116,26 @@
     },
     "yield_curve": {
       "today": 0.74,
-      "1_month_ago": 0.71,
-      "2_months_ago": 0.58,
+      "1_month_ago": 0.68,
+      "2_months_ago": 0.6,
       "3_months_ago": 0.56,
       "6_months_ago": 0.51,
-      "12_months_ago": 0.23,
+      "12_months_ago": 0.25,
       "2_years_ago": -0.34,
-      "3_years_ago": -0.72,
-      "5_years_ago": 1.33,
+      "3_years_ago": -0.73,
+      "5_years_ago": 1.4,
       "unit": "Percent"
     },
     "yield_10y": {
       "today": 4.29,
-      "1_month_ago": 4.18,
-      "2_months_ago": 4.14,
+      "1_month_ago": 4.15,
+      "2_months_ago": 4.17,
       "3_months_ago": 4.11,
       "6_months_ago": 4.27,
-      "12_months_ago": 4.51,
+      "12_months_ago": 4.54,
       "2_years_ago": 4.3,
-      "3_years_ago": 3.95,
-      "5_years_ago": 1.47,
+      "3_years_ago": 3.93,
+      "5_years_ago": 1.54,
       "unit": "Percent"
     },
     "consumer_sentiment": {
@@ -276,15 +276,16 @@
   "commodities": {
     "crude_oil": {
       "today": 61.6,
-      "1_month_ago": 56.97,
-      "2_months_ago": 60.23,
+      "1_month_ago": 56.01,
+      "2_months_ago": 59.04,
       "3_months_ago": 60.54,
       "6_months_ago": 64.94,
-      "12_months_ago": 72.73,
+      "12_months_ago": 73.67,
       "2_years_ago": 79.65,
-      "3_years_ago": 76.28,
-      "5_years_ago": 61.33,
-      "unit": "USD/barrel"
+      "3_years_ago": 73.95,
+      "5_years_ago": 63.81,
+      "unit": "USD/barrel",
+      "source": "FRED DCOILWTICO (daily spot)"
     },
     "copper": {
       "today": 11790.96409090909,
@@ -296,19 +297,21 @@
       "2_years_ago": 8304.950476190475,
       "3_years_ago": 8936.587,
       "5_years_ago": 8988.247826086958,
-      "unit": "USD/MT"
+      "unit": "USD/MT",
+      "source": "FRED PCOPPUSDM (monthly)"
     },
     "natural_gas": {
       "today": 4.4,
-      "1_month_ago": 2.85,
+      "1_month_ago": 3.1,
       "2_months_ago": 5.19,
       "3_months_ago": 3.76,
       "6_months_ago": 3.03,
-      "12_months_ago": 3.48,
+      "12_months_ago": 3.65,
       "2_years_ago": 1.55,
-      "3_years_ago": 2.12,
-      "5_years_ago": 2.86,
-      "unit": "USD/MMBtu"
+      "3_years_ago": 2.07,
+      "5_years_ago": 2.79,
+      "unit": "USD/MMBtu",
+      "source": "FRED DHHNGSP (daily)"
     }
   },
   "economic_calendar": [
@@ -346,38 +349,38 @@
   "market_indexes": {
     "S&P 500": {
       "today": 6798.4,
-      "1_month_ago": 6944.82,
-      "2_months_ago": 6870.4,
+      "1_month_ago": 6920.93,
+      "2_months_ago": 6846.51,
       "3_months_ago": 6728.8,
       "6_months_ago": 6389.45,
-      "12_months_ago": 6066.44,
+      "12_months_ago": 6068.5,
       "2_years_ago": 5005.57,
-      "3_years_ago": 3997.34,
-      "5_years_ago": 3819.72,
+      "3_years_ago": 3991.05,
+      "5_years_ago": 3768.47,
       "unit": "Index"
     },
     "Nasdaq": {
       "today": 22540.59,
-      "1_month_ago": 23547.17,
-      "2_months_ago": 23578.13,
+      "1_month_ago": 23584.27,
+      "2_months_ago": 23545.9,
       "3_months_ago": 23004.54,
       "6_months_ago": 21450.02,
-      "12_months_ago": 19714.27,
+      "12_months_ago": 19643.86,
       "2_years_ago": 15775.65,
-      "3_years_ago": 11492.3,
-      "5_years_ago": 12997.75,
+      "3_years_ago": 11507.07,
+      "5_years_ago": 12723.47,
       "unit": "Index"
     },
     "Dow Jones": {
       "today": 48908.72,
-      "1_month_ago": 49462.08,
-      "2_months_ago": 47954.99,
+      "1_month_ago": 48996.08,
+      "2_months_ago": 47739.32,
       "3_months_ago": 46987.1,
       "6_months_ago": 44175.61,
-      "12_months_ago": 44470.41,
+      "12_months_ago": 44593.65,
       "2_years_ago": 38627.99,
-      "3_years_ago": 33129.59,
-      "5_years_ago": 31270.09,
+      "3_years_ago": 33045.09,
+      "5_years_ago": 30924.14,
       "unit": "Index"
     }
   },
