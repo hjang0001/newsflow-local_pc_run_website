@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T22:17:16.300755+00:00",
-  "last_updated_human": "2026-02-06 17:17:16 UTC",
+  "timestamp": "2026-02-06T22:25:02.635863+00:00",
+  "last_updated_human": "2026-02-06 17:25:02 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -285,7 +285,17 @@
       "3_years_ago": 73.95,
       "5_years_ago": 63.81,
       "unit": "USD/barrel",
-      "source": "FRED DCOILWTICO (daily spot)"
+      "source": "FRED DCOILWTICO"
+    },
+    "silver": {
+      "today": 77.853,
+      "unit": "USD/oz",
+      "source": "Investing.com XAG/USD spot (live spot only)"
+    },
+    "palladium": {
+      "today": 1703.97,
+      "unit": "USD/oz",
+      "source": "Investing.com XPD/USD spot (live spot only)"
     },
     "copper": {
       "today": 11790.96409090909,
@@ -298,7 +308,7 @@
       "3_years_ago": 8936.587,
       "5_years_ago": 8988.247826086958,
       "unit": "USD/MT",
-      "source": "FRED PCOPPUSDM (monthly)"
+      "source": "FRED PCOPPUSDM"
     },
     "natural_gas": {
       "today": 4.4,
@@ -311,7 +321,7 @@
       "3_years_ago": 2.07,
       "5_years_ago": 2.79,
       "unit": "USD/MMBtu",
-      "source": "FRED DHHNGSP (daily)"
+      "source": "FRED DHHNGSP"
     }
   },
   "economic_calendar": [
