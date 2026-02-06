@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T21:56:32.023364+00:00",
-  "last_updated_human": "2026-02-06 16:56:32 UTC",
+  "timestamp": "2026-02-06T22:17:16.300755+00:00",
+  "last_updated_human": "2026-02-06 17:17:16 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -115,7 +115,7 @@
       "unit": "Percent"
     },
     "yield_curve": {
-      "today": 0.74,
+      "today": 0.72,
       "1_month_ago": 0.68,
       "2_months_ago": 0.6,
       "3_months_ago": 0.56,
