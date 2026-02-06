@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T22:36:03.283626+00:00",
-  "last_updated_human": "2026-02-06 17:36:03 UTC",
+  "timestamp": "2026-02-06T22:44:28.069064+00:00",
+  "last_updated_human": "2026-02-06 17:44:28 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -286,6 +286,11 @@
       "5_years_ago": 63.81,
       "unit": "USD/barrel",
       "source": "FRED DCOILWTICO"
+    },
+    "gold": {
+      "today": 4966.22,
+      "unit": "USD/oz",
+      "source": "Investing.com XAU/USD (live only)"
     },
     "silver": {
       "today": 77.853,
