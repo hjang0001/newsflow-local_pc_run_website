@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T04:23:26.572381+00:00",
-  "last_updated_human": "2026-02-05 23:23:26 UTC",
+  "timestamp": "2026-02-06T04:49:01.235684+00:00",
+  "last_updated_human": "2026-02-05 23:49:01 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -15,24 +15,9 @@
   ],
   "top_10_economies": [
     {
-      "country": "Late-demographic dividend",
-      "country_code": "LTE",
-      "gdp": 28934446547714.4
-    },
-    {
       "country": "United States",
       "country_code": "USA",
       "gdp": 27292170793214.4
-    },
-    {
-      "country": "East Asia & Pacific (excluding high income)",
-      "country_code": "EAP",
-      "gdp": 21644412635340.6
-    },
-    {
-      "country": "East Asia & Pacific (IDA & IBRD countries)",
-      "country_code": "TEA",
-      "gdp": 21617676926854.5
     },
     {
       "country": "China",
@@ -40,29 +25,44 @@
       "gdp": 18270356654533.2
     },
     {
-      "country": "Early-demographic dividend",
-      "country_code": "EAR",
-      "gdp": 14933453330998.3
+      "country": "Germany",
+      "country_code": "DEU",
+      "gdp": 4562207532490.28
     },
     {
-      "country": "Latin America & the Caribbean (IDA & IBRD countries)",
-      "country_code": "TLA",
-      "gdp": 6591336702938.76
+      "country": "Japan",
+      "country_code": "JPN",
+      "gdp": 4213167237905.83
     },
     {
-      "country": "Latin America & Caribbean (excluding high income)",
-      "country_code": "LAC",
-      "gdp": 6014673692976.05
+      "country": "India",
+      "country_code": "IND",
+      "gdp": 3638489096033.86
     },
     {
-      "country": "Europe & Central Asia (IDA & IBRD countries)",
-      "country_code": "TEC",
-      "gdp": 5562782514647.52
+      "country": "United Kingdom",
+      "country_code": "GBR",
+      "gdp": 3420796653789.08
     },
     {
-      "country": "Middle East, North Africa, Afghanistan & Pakistan",
-      "country_code": "MEA",
-      "gdp": 4905729965245.33
+      "country": "France",
+      "country_code": "FRA",
+      "gdp": 3056250648138.29
+    },
+    {
+      "country": "Italy",
+      "country_code": "ITA",
+      "gdp": 2316727999333.18
+    },
+    {
+      "country": "Central Europe and the Baltics",
+      "country_code": "CEB",
+      "gdp": 2273205742208.3
+    },
+    {
+      "country": "Brazil",
+      "country_code": "BRA",
+      "gdp": 2191131869706.02
     }
   ],
   "us_economy": {
@@ -357,7 +357,7 @@
       "unit": "Index"
     },
     "Nasdaq": {
-      "today": 22904.58,
+      "today": 22540.59,
       "1_month_ago": 23547.17,
       "2_months_ago": 23578.13,
       "3_months_ago": 23004.54,
@@ -384,7 +384,12 @@
   "fx_rates": {
     "currencies": {
       "USD": 1,
-      "CNY": 6.95
+      "CNY": 6.95,
+      "EUR": 0.848,
+      "JPY": 156.84,
+      "INR": 90.34,
+      "GBP": 0.738,
+      "BRL": 5.25
     },
     "unit": "Rate per 1 USD"
   }
