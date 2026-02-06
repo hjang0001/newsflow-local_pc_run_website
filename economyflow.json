@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T22:30:08.825123+00:00",
-  "last_updated_human": "2026-02-06 17:30:08 UTC",
+  "timestamp": "2026-02-06T22:36:03.283626+00:00",
+  "last_updated_human": "2026-02-06 17:36:03 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -287,28 +287,15 @@
       "unit": "USD/barrel",
       "source": "FRED DCOILWTICO"
     },
-    "gold": {
-      "today": 659.098,
-      "1_month_ago": 659.098,
-      "2_months_ago": 659.098,
-      "3_months_ago": 631.249,
-      "6_months_ago": 601.081,
-      "12_months_ago": 568.097,
-      "2_years_ago": 507.786,
-      "3_years_ago": 537.343,
-      "5_years_ago": 498.5,
-      "unit": "USD/oz",
-      "source": "All sources failed (live spot) + FRED (history)"
-    },
     "silver": {
       "today": 77.853,
       "unit": "USD/oz",
-      "source": "Investing.com XAG/USD spot (live spot only - no FRED history)"
+      "source": "Investing.com XAG/USD (live only)"
     },
     "palladium": {
       "today": 1703.97,
       "unit": "USD/oz",
-      "source": "Investing.com XPD/USD spot (live spot only - no FRED history)"
+      "source": "Investing.com XPD/USD (live only)"
     },
     "copper": {
       "today": 11790.96409090909,
