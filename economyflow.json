@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-06T23:17:17.883466+00:00",
-  "last_updated_human": "2026-02-06 18:17:17 UTC",
+  "timestamp": "2026-02-06T23:34:49.011279+00:00",
+  "last_updated_human": "2026-02-06 18:34:49 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -275,7 +275,7 @@
   },
   "commodities": {
     "crude_oil": {
-      "today": 61.6,
+      "today": 94.41,
       "1_month_ago": 56.01,
       "2_months_ago": 59.04,
       "3_months_ago": 60.54,
@@ -285,22 +285,26 @@
       "3_years_ago": 73.95,
       "5_years_ago": 63.81,
       "unit": "USD/barrel",
-      "source": "FRED DCOILWTICO"
+      "source": "Alpha Vantage GLOBAL_QUOTE + FRED",
+      "citizen_impact": "\u26fd Gas prices"
     },
     "gold": {
-      "today": 4988.6,
+      "today": 4809.69,
       "unit": "USD/oz",
-      "source": "yfinance (live only)"
+      "source": "Alpha Vantage GLOBAL_QUOTE",
+      "citizen_impact": "\ud83e\ude99 Inflation hedge"
     },
     "silver": {
-      "today": 77.525,
+      "today": 72.5625,
       "unit": "USD/oz",
-      "source": "yfinance (live only)"
+      "source": "Alpha Vantage GLOBAL_QUOTE",
+      "citizen_impact": "\ud83d\udd0b Solar & electronics"
     },
     "palladium": {
-      "today": 1712.0,
+      "today": 1639.2,
       "unit": "USD/oz",
-      "source": "yfinance (live only)"
+      "source": "Alpha Vantage GLOBAL_QUOTE",
+      "citizen_impact": "\ud83d\ude97 Catalytic converters"
     },
     "copper": {
       "today": 11790.96409090909,
@@ -313,7 +317,8 @@
       "3_years_ago": 8936.587,
       "5_years_ago": 8988.247826086958,
       "unit": "USD/MT",
-      "source": "FRED PCOPPUSDM"
+      "source": "FRED PCOPPUSDM",
+      "citizen_impact": "\ud83d\udcca Economy health"
     },
     "natural_gas": {
       "today": 4.4,
@@ -326,7 +331,8 @@
       "3_years_ago": 2.07,
       "5_years_ago": 2.79,
       "unit": "USD/MMBtu",
-      "source": "FRED DHHNGSP"
+      "source": "FRED DHHNGSP",
+      "citizen_impact": "\ud83d\udd25 Heating bills"
     }
   },
   "economic_calendar": [
