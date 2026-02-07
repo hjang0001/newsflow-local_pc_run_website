@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-07T01:42:54.589964+00:00",
-  "last_updated_human": "2026-02-06 20:42:54 UTC",
+  "timestamp": "2026-02-07T01:50:30.429785+00:00",
+  "last_updated_human": "2026-02-06 20:50:30 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -274,8 +274,25 @@
     }
   },
   "commodities": {
+    "gold": {
+      "today": 4809.69,
+      "1M": null,
+      "2M": null,
+      "3M": null,
+      "6M": null,
+      "1Y": null,
+      "2Y": null,
+      "3Y": null,
+      "5Y": null,
+      "10Y": null,
+      "unit": "USD/oz",
+      "source": "Alpha Vantage GLOBAL_QUOTE (spot, no historical)",
+      "citizen_impact": "\ud83e\ude99 Inflation hedge - protects your savings when dollar weakens",
+      "timestamp": "2026-02-07T01:49:21.287404+00:00",
+      "last_updated": "2026-02-06"
+    },
     "crude_oil": {
-      "today": 94.41,
+      "today": 61.6,
       "1M": 56.01,
       "2M": 59.04,
       "3M": 60.54,
@@ -286,13 +303,13 @@
       "5Y": 63.81,
       "10Y": 36.91,
       "unit": "USD/bbl",
-      "source": "Alpha Vantage GLOBAL_QUOTE (WTI futures) + FRED historical",
+      "source": "FRED WTI",
       "citizen_impact": "\u26fd Gas prices - directly affects your commute and travel costs",
-      "timestamp": "2026-02-07T01:41:45.894526+00:00",
-      "last_updated": "2026-02-06"
+      "timestamp": "2026-02-07T01:49:21.287404+00:00",
+      "last_updated": "2026-02-02"
     },
     "copper": {
-      "today": 29.7,
+      "today": 5.348297707046607,
       "1M": 5.348297707046607,
       "2M": 5.348297707046607,
       "3M": 4.904259237419601,
@@ -303,13 +320,13 @@
       "5Y": 4.077005482163347,
       "10Y": 2.2470074747791546,
       "unit": "USD/lb",
-      "source": "Alpha Vantage GLOBAL_QUOTE (futures) + FRED historical",
+      "source": "FRED (converted to USD/lb)",
       "citizen_impact": "\ud83d\udcca Economic health indicator - predicts construction & manufacturing activity",
-      "timestamp": "2026-02-07T01:41:45.894526+00:00",
-      "last_updated": "2026-02-06"
+      "timestamp": "2026-02-07T01:49:21.287404+00:00",
+      "last_updated": "2025-12-01"
     },
     "natural_gas": {
-      "today": 9.19,
+      "today": 4.4,
       "1M": 3.1,
       "2M": 5.19,
       "3M": 3.76,
@@ -320,10 +337,10 @@
       "5Y": 2.79,
       "10Y": 1.87,
       "unit": "USD/MMBtu",
-      "source": "Alpha Vantage GLOBAL_QUOTE (futures) + FRED historical",
+      "source": "FRED Henry Hub",
       "citizen_impact": "\ud83d\udd25 Heating bills - affects your winter home energy costs",
-      "timestamp": "2026-02-07T01:41:45.894526+00:00",
-      "last_updated": "2026-02-06"
+      "timestamp": "2026-02-07T01:49:21.287404+00:00",
+      "last_updated": "2026-02-02"
     }
   },
   "economic_calendar": [
