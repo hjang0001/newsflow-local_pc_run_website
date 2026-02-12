@@ -825,7 +825,8 @@
         <div class="commodity-label">Gold per Troy Ounce</div>
         <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="gold-impact">Inflation hedge</div>
         <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 12px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;">
-            <span id="gold-source">Source: --</span>
+            <span id="gold-source">Source: --</span><br>
+            <span id="gold-time">Last checked: --</span>
         </div>
     </div>
 
@@ -835,74 +836,88 @@
         <div class="commodity-label">Silver per Troy Ounce</div>
         <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="silver-impact">Solar & electronics</div>
         <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 12px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;">
-            <span id="silver-source">Source: --</span>
+            <span id="silver-source">Source: --</span><br>
+            <span id="silver-time">Last checked: --</span>
         </div>
     </div>
 </div>
         </section>
 
         <!-- ========== MARKET INDEXES ========== -->
-        <section id="markets-section">
-            <h2 class="section-header">Major Market Indexes</h2>
-            <div class="section-subheader">US equity market performance</div>
+        <!-- ========== MARKET INDEXES ========== -->
+<section id="markets-section">
+    <h2 class="section-header">Major Market Indexes</h2>
+    <div class="section-subheader">US equity market performance</div>
 
-            <div class="grid-3col">
-                <div class="card">
-                    <div class="card-header">
-                        <span>S&P 500</span>
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px 0;">
-                        <div class="hero-value" style="font-size: 3rem;">
-                            <span id="sp500-value">--</span>
-                        </div>
-                        <div class="metric-change" id="sp500-change">--</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <span>Nasdaq Composite</span>
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px 0;">
-                        <div class="hero-value" style="font-size: 3rem;">
-                            <span id="nasdaq-value">--</span>
-                        </div>
-                        <div class="metric-change" id="nasdaq-change">--</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <span>Dow Jones</span>
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px 0;">
-                        <div class="hero-value" style="font-size: 3rem;">
-                            <span id="dow-value">--</span>
-                        </div>
-                        <div class="metric-change" id="dow-change">--</div>
-                    </div>
-                </div>
+    <div class="grid-3col">
+        <div class="card">
+            <div class="card-header">
+                <span>S&P 500</span>
+                <span class="badge badge-updated">Snapshot</span>
             </div>
-        </section>
+            <div style="text-align: center; padding: 20px 0;">
+                <div class="hero-value" style="font-size: 3rem;">
+                    <span id="sp500-value">--</span>
+                </div>
+                <div class="metric-change" id="sp500-change">--</div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; text-align: center; color: var(--text-tertiary); opacity: 0.8; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 10px;">
+                <span id="sp500-time">Last checked: --</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>Nasdaq Composite</span>
+                <span class="badge badge-updated">Snapshot</span>
+            </div>
+            <div style="text-align: center; padding: 20px 0;">
+                <div class="hero-value" style="font-size: 3rem;">
+                    <span id="nasdaq-value">--</span>
+                </div>
+                <div class="metric-change" id="nasdaq-change">--</div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; text-align: center; color: var(--text-tertiary); opacity: 0.8; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 10px;">
+                <span id="nasdaq-time">Last checked: --</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>Dow Jones</span>
+                <span class="badge badge-updated">Snapshot</span>
+            </div>
+            <div style="text-align: center; padding: 20px 0;">
+                <div class="hero-value" style="font-size: 3rem;">
+                    <span id="dow-value">--</span>
+                </div>
+                <div class="metric-change" id="dow-change">--</div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; text-align: center; color: var(--text-tertiary); opacity: 0.8; border-top: 1px solid var(--border-color); padding-top: 10px; margin-top: 10px;">
+                <span id="dow-time">Last checked: --</span>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- ========== FOREIGN EXCHANGE ========== -->
         <section id="fx-section">
-            <h2 class="section-header">Foreign Exchange Rates</h2>
-            <div class="section-subheader">Exchange rates per 1 USD</div>
+    <h2 class="section-header">Foreign Exchange Rates</h2>
+    <div class="section-subheader">Exchange rates per 1 USD</div>
 
-            <div class="card">
-                <div class="card-header">
-                    <span>Major Currencies</span>
-                    <span class="badge badge-source">Live Rates</span>
-                </div>
-                <div id="fx-rates-container">
-                    <div class="loading">Loading exchange rates</div>
-                </div>
-            </div>
-        </section>
+    <div class="card">
+        <div class="card-header">
+            <span>Major Currencies</span>
+            <span class="badge badge-updated">Snapshot</span>
+        </div>
+        <div id="fx-rates-container">
+            <div class="loading">Loading exchange rates</div>
+        </div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; text-align: center; color: var(--text-tertiary); opacity: 0.8; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 15px;">
+            <span id="fx-time">Last checked: --</span>
+        </div>
+    </div>
+</section>
 
         <!-- ========== ECONOMIC CALENDAR ========== -->
         <section id="calendar-section">
@@ -1221,10 +1236,11 @@
         }
 
         // ========== UPDATE COMMODITIES ==========
-        function updateCommodities() {
+        // ========== UPDATE COMMODITIES ==========
+function updateCommodities() {
     const commodities = economyData.commodities || {};
 
-    // Gold with Source Transparency
+    // Gold with Source & Timestamp
     if (commodities.gold) {
         document.getElementById('gold-price').textContent = formatNumber(commodities.gold.today, 2);
         
@@ -1234,9 +1250,12 @@
         
         const goldSource = commodities.gold.source || 'gold-api.com';
         document.getElementById('gold-source').textContent = 'Source: ' + goldSource;
+        
+        const timestamp = economyData.last_updated_human || 'Unknown';
+        document.getElementById('gold-time').textContent = 'Last checked: ' + timestamp;
     }
 
-    // Silver with Source Transparency
+    // Silver with Source & Timestamp
     if (commodities.silver) {
         document.getElementById('silver-price').textContent = formatNumber(commodities.silver.today, 2);
         
@@ -1246,73 +1265,89 @@
         
         const silverSource = commodities.silver.source || 'gold-api.com';
         document.getElementById('silver-source').textContent = 'Source: ' + silverSource;
+        
+        const timestamp = economyData.last_updated_human || 'Unknown';
+        document.getElementById('silver-time').textContent = 'Last checked: ' + timestamp;
     }
 }
 
         // ========== UPDATE MARKET INDEXES ==========
-        function updateMarketIndexes() {
-            const markets = economyData.market_indexes || {};
+        // ========== UPDATE MARKET INDEXES ==========
+function updateMarketIndexes() {
+    const markets = economyData.market_indexes || {};
 
-            // S&P 500
-            if (markets['S&P 500']) {
-                const sp = markets['S&P 500'];
-                document.getElementById('sp500-value').textContent = formatNumber(sp.today, 2);
-                const change = calculateChange(sp.today, sp['1_month_ago']);
-                if (change) {
-                    document.getElementById('sp500-change').innerHTML = renderChange(change) + ' (1M)';
-                }
-            }
-
-            // Nasdaq
-            if (markets['Nasdaq']) {
-                const nasdaq = markets['Nasdaq'];
-                document.getElementById('nasdaq-value').textContent = formatNumber(nasdaq.today, 2);
-                const change = calculateChange(nasdaq.today, nasdaq['1_month_ago']);
-                if (change) {
-                    document.getElementById('nasdaq-change').innerHTML = renderChange(change) + ' (1M)';
-                }
-            }
-
-            // Dow Jones
-            if (markets['Dow Jones']) {
-                const dow = markets['Dow Jones'];
-                document.getElementById('dow-value').textContent = formatNumber(dow.today, 2);
-                const change = calculateChange(dow.today, dow['1_month_ago']);
-                if (change) {
-                    document.getElementById('dow-change').innerHTML = renderChange(change) + ' (1M)';
-                }
-            }
+    // S&P 500
+    if (markets['S&P 500']) {
+        const sp = markets['S&P 500'];
+        document.getElementById('sp500-value').textContent = formatNumber(sp.today, 2);
+        const change = calculateChange(sp.today, sp['1_month_ago']);
+        if (change) {
+            document.getElementById('sp500-change').innerHTML = renderChange(change) + ' (1M)';
         }
+        // Add timestamp - assuming it's in the JSON at the same level
+        const timestamp = economyData.last_updated_human || 'Unknown';
+        document.getElementById('sp500-time').textContent = 'Last checked: ' + timestamp;
+    }
+
+    // Nasdaq
+    if (markets['Nasdaq']) {
+        const nasdaq = markets['Nasdaq'];
+        document.getElementById('nasdaq-value').textContent = formatNumber(nasdaq.today, 2);
+        const change = calculateChange(nasdaq.today, nasdaq['1_month_ago']);
+        if (change) {
+            document.getElementById('nasdaq-change').innerHTML = renderChange(change) + ' (1M)';
+        }
+        const timestamp = economyData.last_updated_human || 'Unknown';
+        document.getElementById('nasdaq-time').textContent = 'Last checked: ' + timestamp;
+    }
+
+    // Dow Jones
+    if (markets['Dow Jones']) {
+        const dow = markets['Dow Jones'];
+        document.getElementById('dow-value').textContent = formatNumber(dow.today, 2);
+        const change = calculateChange(dow.today, dow['1_month_ago']);
+        if (change) {
+            document.getElementById('dow-change').innerHTML = renderChange(change) + ' (1M)';
+        }
+        const timestamp = economyData.last_updated_human || 'Unknown';
+        document.getElementById('dow-time').textContent = 'Last checked: ' + timestamp;
+    }
+}
 
         // ========== UPDATE FX RATES ==========
-        function updateFXRates() {
-            const fx = economyData.fx_rates || {};
-            const currencies = fx.currencies || {};
-            const container = document.getElementById('fx-rates-container');
+        // ========== UPDATE FX RATES ==========
+function updateFXRates() {
+    const fx = economyData.fx_rates || {};
+    const currencies = fx.currencies || {};
+    const container = document.getElementById('fx-rates-container');
 
-            const currencyNames = {
-                'CNY': 'Chinese Yuan',
-                'EUR': 'Euro',
-                'JPY': 'Japanese Yen',
-                'INR': 'Indian Rupee',
-                'CAD': 'Canadian Dollar',
-                'BRL': 'Brazilian Real',
-                'AUD': 'Australian Dollar'
-            };
+    const currencyNames = {
+        'CNY': 'Chinese Yuan',
+        'EUR': 'Euro',
+        'JPY': 'Japanese Yen',
+        'INR': 'Indian Rupee',
+        'CAD': 'Canadian Dollar',
+        'BRL': 'Brazilian Real',
+        'AUD': 'Australian Dollar'
+    };
 
-            let html = '';
-            Object.entries(currencies).forEach(([code, rate]) => {
-                const name = currencyNames[code] || code;
-                html += `
-                    <div class="metric-row">
-                        <span class="metric-label">${name} (${code})</span>
-                        <span class="metric-value">${formatNumber(rate, 4)}</span>
-                    </div>
-                `;
-            });
+    let html = '';
+    Object.entries(currencies).forEach(function(entry) {
+        const code = entry[0];
+        const rate = entry[1];
+        const name = currencyNames[code] || code;
+        html += '<div class="metric-row">';
+        html += '<span class="metric-label">' + name + ' (' + code + ')</span>';
+        html += '<span class="metric-value">' + formatNumber(rate, 4) + '</span>';
+        html += '</div>';
+    });
 
-            container.innerHTML = html || '<div class="loading">No FX data available</div>';
-        }
+    container.innerHTML = html || '<div class="loading">No FX data available</div>';
+    
+    // Add timestamp
+    const timestamp = economyData.last_updated_human || 'Unknown';
+    document.getElementById('fx-time').textContent = 'Last checked: ' + timestamp;
+}
 
         // ========== UPDATE ECONOMIC CALENDAR ==========
         function updateEconomicCalendar() {
