@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T03:27:20.406603+00:00",
-  "last_updated_human": "2026-02-11 22:27:20 UTC",
+  "timestamp": "2026-02-12T03:34:10.739650+00:00",
+  "last_updated_human": "2026-02-11 22:34:10 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -273,7 +273,20 @@
       "unit": "dollars"
     }
   },
-  "commodities": {},
+  "commodities": {
+    "gold": {
+      "today": 5063.9,
+      "unit": "USD/oz",
+      "source": "gold-api.com",
+      "citizen_impact": "\ud83e\udd47 Inflation hedge"
+    },
+    "silver": {
+      "today": 84.09,
+      "unit": "USD/oz",
+      "source": "gold-api.com",
+      "citizen_impact": "\ud83e\udd48 Solar & electronics"
+    }
+  },
   "economic_calendar": [
     {
       "indicator": "GDP (Real, Quarterly)",
