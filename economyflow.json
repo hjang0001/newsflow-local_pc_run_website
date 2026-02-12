@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T13:51:40.869774+00:00",
-  "last_updated_human": "2026-02-12 08:51:40 UTC",
+  "timestamp": "2026-02-12T17:37:18.342621+00:00",
+  "last_updated_human": "2026-02-12 12:37:18 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -21,8 +21,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -32,8 +32,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -43,8 +43,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -54,8 +54,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -65,8 +65,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -76,8 +76,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -87,8 +87,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -98,8 +98,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -109,8 +109,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     },
     {
@@ -120,97 +120,12 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
-      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "fetched_at_est": "2026-02-12 12:37:08 PM EST",
+      "fetched_at_utc": "2026-02-12 17:37:08 UTC",
       "freshness": "Unknown"
     }
   ],
-  "us_economy": {
-    "gdp": {
-      "today": 24026.834,
-      "1_month_ago": 24026.834,
-      "2_months_ago": 24026.834,
-      "3_months_ago": 24026.834,
-      "6_months_ago": 24026.834,
-      "12_months_ago": 23548.21,
-      "2_years_ago": 23082.119,
-      "3_years_ago": 22439.607,
-      "5_years_ago": 21082.134,
-      "unit": "Billions of Chained 2017 Dollars"
-    },
-    "unemployment": {
-      "today": 4.3,
-      "1_month_ago": 4.3,
-      "2_months_ago": 4.4,
-      "3_months_ago": 4.5,
-      "6_months_ago": 4.3,
-      "12_months_ago": 4.2,
-      "2_years_ago": 3.9,
-      "3_years_ago": 3.6,
-      "5_years_ago": 6.1,
-      "unit": "Percent"
-    },
-    "cpi": {
-      "today": 326.03,
-      "1_month_ago": 326.03,
-      "2_months_ago": 326.03,
-      "3_months_ago": 325.031,
-      "6_months_ago": 323.364,
-      "12_months_ago": 319.775,
-      "2_years_ago": 311.022,
-      "3_years_ago": 301.476,
-      "5_years_ago": 264.847,
-      "unit": "Index 1982-1984=100"
-    },
-    "interest_rate": {
-      "today": 3.64,
-      "1_month_ago": 3.64,
-      "2_months_ago": 3.72,
-      "3_months_ago": 3.88,
-      "6_months_ago": 4.33,
-      "12_months_ago": 4.33,
-      "2_years_ago": 5.33,
-      "3_years_ago": 4.57,
-      "5_years_ago": 0.07,
-      "unit": "Percent"
-    },
-    "yield_curve": {
-      "today": 0.66,
-      "1_month_ago": 0.65,
-      "2_months_ago": 0.67,
-      "3_months_ago": 0.52,
-      "6_months_ago": 0.58,
-      "12_months_ago": NaN,
-      "2_years_ago": -0.41,
-      "3_years_ago": -0.89,
-      "5_years_ago": 1.37,
-      "unit": "Percent"
-    },
-    "yield_10y": {
-      "today": 4.16,
-      "1_month_ago": 4.18,
-      "2_months_ago": 4.19,
-      "3_months_ago": 4.14,
-      "6_months_ago": 4.33,
-      "12_months_ago": NaN,
-      "2_years_ago": 4.26,
-      "3_years_ago": 3.92,
-      "5_years_ago": 1.53,
-      "unit": "Percent"
-    },
-    "consumer_sentiment": {
-      "today": 52.9,
-      "1_month_ago": 52.9,
-      "2_months_ago": 52.9,
-      "3_months_ago": 51.0,
-      "6_months_ago": 58.2,
-      "12_months_ago": 64.7,
-      "2_years_ago": 76.9,
-      "3_years_ago": 66.9,
-      "5_years_ago": 84.9,
-      "unit": "Index 1966:Q1=100"
-    }
-  },
+  "us_economy": {},
   "us_labor": {
     "total_employment": {
       "today": 156714.0,
@@ -335,13 +250,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 5079.7,
+      "today": 4968.7,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 83.16,
+      "today": 77.72,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
@@ -386,7 +301,7 @@
       "2_months_ago": 6827.41,
       "3_months_ago": 6734.11,
       "6_months_ago": 6449.8,
-      "12_months_ago": NaN,
+      "12_months_ago": 6114.63,
       "2_years_ago": 5088.8,
       "3_years_ago": 3970.15,
       "5_years_ago": 3898.81,
@@ -398,7 +313,7 @@
       "2_months_ago": 23195.17,
       "3_months_ago": 22900.59,
       "6_months_ago": 21622.98,
-      "12_months_ago": NaN,
+      "12_months_ago": 20026.77,
       "2_years_ago": 15996.82,
       "3_years_ago": 11455.54,
       "5_years_ago": 13068.83,
@@ -410,7 +325,7 @@
       "2_months_ago": 48458.05,
       "3_months_ago": 47147.48,
       "6_months_ago": 44946.12,
-      "12_months_ago": NaN,
+      "12_months_ago": 44546.08,
       "2_years_ago": 39131.53,
       "3_years_ago": 32656.7,
       "5_years_ago": 32297.02,
