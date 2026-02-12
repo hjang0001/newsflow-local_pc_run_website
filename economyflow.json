@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T17:50:04.827156+00:00",
-  "last_updated_human": "2026-02-12 12:50:04 UTC",
+  "timestamp": "2026-02-12T17:55:26.840605+00:00",
+  "last_updated_human": "2026-02-12 12:55:26 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -20,7 +20,7 @@
       "gdp": 31003826557365,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -29,7 +29,7 @@
       "gdp": 19497115588443.6,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -38,7 +38,7 @@
       "gdp": 18743803170827.2,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -47,7 +47,7 @@
       "gdp": 4685592577804.69,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -56,7 +56,7 @@
       "gdp": 4027597523550.58,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -65,7 +65,7 @@
       "gdp": 3909891533858.08,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -74,7 +74,7 @@
       "gdp": 3160442622465.08,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -83,7 +83,7 @@
       "gdp": 2380825077243.59,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -92,7 +92,7 @@
       "gdp": 2243636826633.76,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -101,7 +101,7 @@
       "gdp": 2185821648943.86,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
+      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
       "freshness": "Unknown"
     }
   ],
@@ -119,9 +119,8 @@
       "unit": "Billions of Chained 2017 Dollars",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/GDPC1",
-      "fetched_at_est": "2026-02-12 12:49:55 PM EST",
-      "freshness": "Unknown",
-      "api_id": "GDPC1"
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "unemployment": {
       "today": 4.3,
@@ -133,7 +132,11 @@
       "2_years_ago": 3.9,
       "3_years_ago": 3.6,
       "5_years_ago": 6.1,
-      "unit": "Percent"
+      "unit": "Percent",
+      "source": "Federal Reserve (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/UNRATE",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "cpi": {
       "today": 326.03,
@@ -145,7 +148,11 @@
       "2_years_ago": 311.022,
       "3_years_ago": 301.476,
       "5_years_ago": 264.847,
-      "unit": "Index 1982-1984=100"
+      "unit": "Index 1982-1984=100",
+      "source": "Federal Reserve (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "interest_rate": {
       "today": 3.64,
@@ -157,7 +164,11 @@
       "2_years_ago": 5.33,
       "3_years_ago": 4.57,
       "5_years_ago": 0.07,
-      "unit": "Percent"
+      "unit": "Percent",
+      "source": "Federal Reserve (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "yield_curve": {
       "today": 0.66,
@@ -169,7 +180,11 @@
       "2_years_ago": -0.41,
       "3_years_ago": -0.89,
       "5_years_ago": 1.37,
-      "unit": "Percent"
+      "unit": "Percent",
+      "source": "Federal Reserve (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "yield_10y": {
       "today": 4.16,
@@ -181,7 +196,11 @@
       "2_years_ago": 4.26,
       "3_years_ago": 3.92,
       "5_years_ago": 1.53,
-      "unit": "Percent"
+      "unit": "Percent",
+      "source": "Federal Reserve (FRED)",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     },
     "consumer_sentiment": {
       "today": 52.9,
@@ -193,7 +212,11 @@
       "2_years_ago": 76.9,
       "3_years_ago": 66.9,
       "5_years_ago": 84.9,
-      "unit": "Index 1966:Q1=100"
+      "unit": "Index 1966:Q1=100",
+      "source": "FRED / Univ. of Michigan",
+      "source_url": "https://fred.stlouisfed.org/series/UMCSENT",
+      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "freshness": "Unknown"
     }
   },
   "us_labor": {
@@ -320,13 +343,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 4959.0,
+      "today": 4948.4,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 76.87,
+      "today": 75.97,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
