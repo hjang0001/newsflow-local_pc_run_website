@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T03:34:10.739650+00:00",
-  "last_updated_human": "2026-02-11 22:34:10 UTC",
+  "timestamp": "2026-02-12T13:51:40.869774+00:00",
+  "last_updated_human": "2026-02-12 08:51:40 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -15,54 +15,114 @@
   ],
   "top_10_economies": [
     {
-      "country": "United States",
-      "country_code": "USA",
-      "gdp": 27292170793214.4
-    },
-    {
       "country": "China",
       "country_code": "CHN",
-      "gdp": 18270356654533.2
+      "gdp": 18743803170827.2,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Middle East, North Africa, Afghanistan & Pakistan",
+      "country_code": "MEA",
+      "gdp": 5094721946852.29,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "Germany",
       "country_code": "DEU",
-      "gdp": 4562207532490.28
+      "gdp": 4685592577804.69,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "Japan",
       "country_code": "JPN",
-      "gdp": 4213167237905.83
+      "gdp": 4027597523550.58,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "India",
       "country_code": "IND",
-      "gdp": 3638489096033.86
-    },
-    {
-      "country": "United Kingdom",
-      "country_code": "GBR",
-      "gdp": 3420796653789.08
+      "gdp": 3909891533858.08,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "France",
       "country_code": "FRA",
-      "gdp": 3056250648138.29
-    },
-    {
-      "country": "Italy",
-      "country_code": "ITA",
-      "gdp": 2316727999333.18
+      "gdp": 3160442622465.08,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "Central Europe and the Baltics",
       "country_code": "CEB",
-      "gdp": 2273205742208.3
+      "gdp": 2462005273603.48,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Italy",
+      "country_code": "ITA",
+      "gdp": 2380825077243.59,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Canada",
+      "country_code": "CAN",
+      "gdp": 2243636826633.76,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     },
     {
       "country": "Brazil",
       "country_code": "BRA",
-      "gdp": 2191131869706.02
+      "gdp": 2185821648943.86,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 08:51:33 AM EST",
+      "fetched_at_utc": "2026-02-12 13:51:33 UTC",
+      "freshness": "Unknown"
     }
   ],
   "us_economy": {
@@ -118,24 +178,24 @@
       "today": 0.66,
       "1_month_ago": 0.65,
       "2_months_ago": 0.67,
-      "3_months_ago": 0.53,
+      "3_months_ago": 0.52,
       "6_months_ago": 0.58,
-      "12_months_ago": 0.21,
-      "2_years_ago": -0.36,
-      "3_years_ago": -0.86,
-      "5_years_ago": 1.38,
+      "12_months_ago": NaN,
+      "2_years_ago": -0.41,
+      "3_years_ago": -0.89,
+      "5_years_ago": 1.37,
       "unit": "Percent"
     },
     "yield_10y": {
       "today": 4.16,
-      "1_month_ago": 4.19,
+      "1_month_ago": 4.18,
       "2_months_ago": 4.19,
-      "3_months_ago": 4.11,
+      "3_months_ago": 4.14,
       "6_months_ago": 4.33,
-      "12_months_ago": 4.47,
-      "2_years_ago": 4.33,
+      "12_months_ago": NaN,
+      "2_years_ago": 4.26,
       "3_years_ago": 3.92,
-      "5_years_ago": 1.55,
+      "5_years_ago": 1.53,
       "unit": "Percent"
     },
     "consumer_sentiment": {
@@ -275,13 +335,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 5063.9,
+      "today": 5079.7,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 84.09,
+      "today": 83.16,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
@@ -322,49 +382,48 @@
   "market_indexes": {
     "S&P 500": {
       "today": 6941.47,
-      "1_month_ago": 6977.27,
+      "1_month_ago": 6963.74,
       "2_months_ago": 6827.41,
-      "3_months_ago": 6737.49,
+      "3_months_ago": 6734.11,
       "6_months_ago": 6449.8,
-      "12_months_ago": 6114.63,
-      "2_years_ago": 5087.03,
-      "3_years_ago": 3982.24,
-      "5_years_ago": 3875.44,
+      "12_months_ago": NaN,
+      "2_years_ago": 5088.8,
+      "3_years_ago": 3970.15,
+      "5_years_ago": 3898.81,
       "unit": "Index"
     },
     "Nasdaq": {
-      "today": 23102.47,
-      "1_month_ago": 23733.9,
+      "today": 23066.47,
+      "1_month_ago": 23709.87,
       "2_months_ago": 23195.17,
-      "3_months_ago": 22870.36,
+      "3_months_ago": 22900.59,
       "6_months_ago": 21622.98,
-      "12_months_ago": 20026.77,
-      "2_years_ago": 16041.62,
-      "3_years_ago": 11466.98,
-      "5_years_ago": 13073.82,
+      "12_months_ago": NaN,
+      "2_years_ago": 15996.82,
+      "3_years_ago": 11455.54,
+      "5_years_ago": 13068.83,
       "unit": "Index"
     },
     "Dow Jones": {
       "today": 50121.4,
-      "1_month_ago": 49590.2,
+      "1_month_ago": 49191.99,
       "2_months_ago": 48458.05,
-      "3_months_ago": 47457.22,
+      "3_months_ago": 47147.48,
       "6_months_ago": 44946.12,
-      "12_months_ago": 44546.08,
-      "2_years_ago": 39069.11,
-      "3_years_ago": 32889.09,
-      "5_years_ago": 31832.74,
+      "12_months_ago": NaN,
+      "2_years_ago": 39131.53,
+      "3_years_ago": 32656.7,
+      "5_years_ago": 32297.02,
       "unit": "Index"
     }
   },
   "fx_rates": {
     "currencies": {
-      "USD": 1,
       "CNY": 6.92,
       "EUR": 0.842,
       "JPY": 153.32,
       "INR": 90.74,
-      "GBP": 0.733,
+      "CAD": 1.36,
       "BRL": 5.19
     },
     "unit": "Rate per 1 USD"
