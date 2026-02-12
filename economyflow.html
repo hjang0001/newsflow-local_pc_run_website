@@ -3,196 +3,1356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EconomyFlow | Global Macro Insights</title>
+    <title>EconomyFlow | Global Economic Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Merriweather:wght@300;400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* ========== CSS VARIABLES - NEWSPAPER THEME ========== */
         :root {
-            --bg: #f8f9fa; --card: #ffffff; --text: #1a1a1a;
-            --highlight: #2563eb; --border: #e5e7eb;
-            --success: #059669; --warning: #d97706; --danger: #dc2626;
+            /* Light Mode - Classic Newspaper */
+            --bg-primary: #f8f7f4;
+            --bg-secondary: #f5f5f0;
+            --bg-accent: #fef6e7;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-tertiary: #737373;
+            --border-color: #d4d4d4;
+            --accent-red: #c1121f;
+            --accent-blue: #003049;
+            --accent-gold: #d4a574;
+            --success: #2d6a4f;
+            --warning: #f77f00;
+            --danger: #c1121f;
+            --chart-positive: #2d6a4f;
+            --chart-negative: #c1121f;
         }
+
         body.dark-mode {
-            --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
-            --border: #334155; --highlight: #3b82f6;
+            /* Dark Mode - Night Edition Newspaper */
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-accent: #252525;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b8b8b8;
+            --text-tertiary: #888888;
+            --border-color: #333333;
+            --accent-red: #ff4757;
+            --accent-blue: #5f9ea0;
+            --accent-gold: #d4a574;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding: 20px; transition: 0.3s; }
-        
-        .container { max-width: 1200px; margin: auto; }
-        
-        /* Header & Navigation */
-        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid var(--border); padding-bottom: 20px; }
-        h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; }
-        .subtitle { color: var(--highlight); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        #timestamp { font-size: 0.8rem; opacity: 0.6; margin-top: 8px; }
 
-        /* Main Dashboard Grid */
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
-        
-        /* Cards */
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .card-title { font-size: 0.85rem; font-weight: 700; color: var(--highlight); text-transform: uppercase; margin-bottom: 15px; display: flex; justify-content: space-between; }
-        
-        /* Metric Styling */
-        .metric-group { margin-bottom: 15px; }
-        .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
-        .metric-row:last-child { border-bottom: none; }
-        .metric-label { font-size: 0.95rem; opacity: 0.9; }
-        .metric-value { font-family: 'Courier New', monospace; font-weight: 700; font-size: 1.1rem; }
+        /* ========== GLOBAL RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Status Badges */
-        .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-        .bg-success { background: #d1fae5; color: #065f46; }
-        .bg-warning { background: #fef3c7; color: #92400e; }
-        .bg-danger { background: #fee2e2; color: #991b1b; }
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
 
-        /* AI Insight Box */
-        .ai-box { background: linear-gradient(135deg, var(--highlight), #4f46e5); color: white; border-radius: 12px; padding: 25px; margin-bottom: 30px; }
-        .ai-box h2 { font-size: 1.2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        /* ========== TYPOGRAPHY - NEWSPAPER STYLE ========== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
 
-        /* Search Bar */
-        .search-container { margin-bottom: 25px; }
-        #global-search { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 1rem; }
+        .mono {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) { h1 { font-size: 1.8rem; } }
+        /* ========== LAYOUT STRUCTURE ========== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ========== MASTHEAD - NEWSPAPER HEADER ========== */
+        .masthead {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 3px double var(--border-color);
+            margin-bottom: 40px;
+            background: var(--bg-secondary);
+        }
+
+        .masthead-date {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .masthead-title {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .masthead-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            margin: 15px auto;
+            max-width: 600px;
+        }
+
+        .masthead-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 15px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* ========== THEME TOGGLE ========== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-accent);
+            transform: scale(1.05);
+        }
+
+        /* ========== SEARCH BAR ========== */
+        .search-section {
+            margin-bottom: 30px;
+            background: var(--bg-secondary);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        /* ========== SECTION HEADERS ========== */
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--accent-red);
+            padding-bottom: 10px;
+            margin: 50px 0 30px;
+            letter-spacing: -1px;
+        }
+
+        .section-subheader {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ========== GRID LAYOUTS ========== */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .grid-4col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* ========== CARDS - NEWSPAPER ARTICLE STYLE ========== */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-badge {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* ========== METRICS DISPLAY ========== */
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s ease;
+        }
+
+        .metric-row:hover {
+            background: var(--bg-accent);
+            padding-left: 10px;
+            margin-left: -10px;
+            padding-right: 10px;
+            margin-right: -10px;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .metric-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .metric-change {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .metric-change.positive {
+            color: var(--chart-positive);
+        }
+
+        .metric-change.negative {
+            color: var(--chart-negative);
+        }
+
+        .metric-change.neutral {
+            color: var(--text-tertiary);
+        }
+
+        /* ========== HERO STAT CARD ========== */
+        .hero-stat {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-secondary);
+            border: 3px solid var(--border-color);
+            border-top: 5px solid var(--accent-red);
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-tertiary);
+            margin-bottom: 15px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .hero-value {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .hero-unit {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ========== TABLE STYLES ========== */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .data-table thead {
+            background: var(--bg-accent);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .data-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-accent);
+        }
+
+        .data-table .rank-cell {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+        }
+
+        /* ========== TIMELINE - HISTORICAL DATA ========== */
+        .timeline-container {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 200px repeat(9, 100px);
+            gap: 15px;
+            min-width: 1100px;
+        }
+
+        .timeline-label {
+            font-weight: 600;
+            padding: 10px;
+            background: var(--bg-accent);
+            font-size: 0.85rem;
+        }
+
+        .timeline-value {
+            font-family: 'IBM Plex Mono', monospace;
+            padding: 10px;
+            text-align: center;
+            background: var(--bg-primary);
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-header {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--text-tertiary);
+            padding: 8px;
+            font-weight: 600;
+        }
+
+        /* ========== BADGES & INDICATORS ========== */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+        }
+
+        .badge-live {
+            background: var(--success);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .badge-updated {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+        }
+
+        .badge-source {
+            background: var(--bg-accent);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* ========== SPARKLINE PLACEHOLDER ========== */
+        .sparkline {
+            display: flex;
+            align-items: flex-end;
+            height: 40px;
+            gap: 2px;
+            margin-top: 10px;
+        }
+
+        .sparkline-bar {
+            flex: 1;
+            background: var(--accent-blue);
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .sparkline-bar:hover {
+            opacity: 1;
+        }
+
+        /* ========== COMMODITY CARDS ========== */
+        .commodity-card {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue));
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border: none;
+        }
+
+        .commodity-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .commodity-price {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .commodity-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            margin-top: 60px;
+            padding: 30px 20px;
+            border-top: 3px double var(--border-color);
+            text-align: center;
+            background: var(--bg-secondary);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .masthead-title {
+                font-size: 2.5rem;
+            }
+
+            .section-header {
+                font-size: 1.8rem;
+            }
+
+            .grid-2col,
+            .grid-3col,
+            .grid-4col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-value {
+                font-size: 3rem;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 150px repeat(9, 80px);
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ========== LOADING ANIMATION ========== */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--text-tertiary);
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        /* ========== HIDDEN CLASS ========== */
+        .hidden {
+            display: none !important;
+        }
+
+        /* ========== HIGHLIGHT ON SEARCH ========== */
+        .highlight {
+            background: yellow;
+            color: black;
+            padding: 2px 4px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="subtitle">Economy Flow Engine v2.0</div>
-        <h1>Global Market Intelligence</h1>
-        <div id="timestamp">Syncing with live data...</div>
-    </header>
-
-    <div class="search-container">
-        <input type="text" id="global-search" placeholder="Quick find (e.g. 'India', 'INR', 'Inflation')...">
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span> <span id="theme-text">Dark Mode</span>
     </div>
 
-    <div class="ai-box" id="ai-container">
-        <h2>🤖 AI Strategic Briefing</h2>
-        <p id="ai-summary">Analyzing current macro signals...</p>
-        <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.9rem;">
-            <div>
-                <strong>Key Risks:</strong>
-                <ul id="ai-risks" style="padding-left: 20px; margin-top: 5px;"></ul>
+    <div class="container">
+
+        <!-- ========== MASTHEAD ========== -->
+        <header class="masthead">
+            <div class="masthead-date" id="current-date">LOADING...</div>
+            <h1 class="masthead-title">EconomyFlow</h1>
+            <div class="masthead-subtitle">Global Economic Intelligence & Market Analysis</div>
+            <div class="masthead-meta">
+                <span id="last-updated">Last Updated: --</span>
+                <span>|</span>
+                <span>Powered by FRED, World Bank & Gold API</span>
             </div>
-            <div>
-                <strong>Recommended Moves:</strong>
-                <ul id="ai-actions" style="padding-left: 20px; margin-top: 5px;"></ul>
+        </header>
+
+        <!-- ========== SEARCH SECTION ========== -->
+        <section class="search-section">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="global-search" 
+                placeholder="Search metrics, countries, or indicators..."
+                autocomplete="off"
+            >
+        </section>
+
+        <!-- ========== TOP 10 ECONOMIES ========== -->
+        <section id="economies-section">
+            <h2 class="section-header">World's Leading Economies</h2>
+            <div class="section-subheader">GDP Rankings by Current Market Values (2024)</div>
+            
+            <div class="card">
+                <table class="data-table" id="economies-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Country</th>
+                            <th>Code</th>
+                            <th>GDP (USD)</th>
+                            <th>Data Year</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody id="economies-tbody">
+                        <tr>
+                            <td colspan="6" class="loading">Loading global economies</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </section>
+
+        <!-- ========== US ECONOMY OVERVIEW ========== -->
+        <section id="us-economy-section">
+            <h2 class="section-header">United States Economy</h2>
+            <div class="section-subheader">Key macroeconomic indicators with historical trends</div>
+
+            <div class="grid-4col">
+    <div class="hero-stat">
+        <div class="hero-label">Real GDP</div>
+        <div class="hero-value">
+            <span id="us-gdp-value">--</span>
+            <span class="hero-unit">B</span>
+        </div>
+        <div class="hero-description" id="us-gdp-unit">Billions of Chained 2017 Dollars</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 10px; color: var(--text-tertiary); opacity: 0.8;">
+            <span id="us-gdp-source">Source: --</span><br>
+            <span id="us-gdp-time">--</span>
         </div>
     </div>
 
-    <div class="dashboard-grid">
-        <div class="card">
-            <div class="card-title">🇺🇸 US Economy <span class="badge bg-success">Live</span></div>
-            <div id="us-economy-data">
-                <div class="metric-row">
-                    <span class="metric-label">Real GDP Growth</span>
-                    <span class="metric-value" id="val-gdp">--</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Unemployment</span>
-                    <span class="metric-value" id="val-unemployment">--</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Annual Inflation</span>
-                    <span class="metric-value" id="val-inflation">--</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Fed Interest Rate</span>
-                    <span class="metric-value" id="val-rates">--</span>
-                </div>
-            </div>
+    <div class="hero-stat">
+        <div class="hero-label">Unemployment</div>
+        <div class="hero-value">
+            <span id="us-unemployment-value">--</span>
+            <span class="hero-unit">%</span>
         </div>
-
-        <div class="card" style="border-top: 5px solid var(--danger);">
-            <div class="card-title">📉 Recession Monitor</div>
-            <div style="text-align: center; padding: 20px 0;">
-                <div style="font-size: 0.8rem; opacity: 0.7;">RISK SCORE</div>
-                <div id="risk-score" style="font-size: 3.5rem; font-weight: 900;">--</div>
-                <div id="risk-status" class="badge">Checking...</div>
-            </div>
-            <p id="risk-reason" style="font-size: 0.85rem; font-style: italic; text-align: center; border-top: 1px solid var(--border); padding-top: 10px;"></p>
+        <div class="hero-description" id="us-unemployment-change">--</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 10px; color: var(--text-tertiary); opacity: 0.8;">
+            <span id="us-unemployment-source">Source: --</span><br>
+            <span id="us-unemployment-time">--</span>
         </div>
+    </div>
 
-        <div class="card">
-            <div class="card-title">💱 Key FX Rates (1 USD)</div>
-            <div id="fx-list">
-                </div>
+    <div class="hero-stat">
+        <div class="hero-label">Inflation (CPI)</div>
+        <div class="hero-value">
+            <span id="us-cpi-value">--</span>
+        </div>
+        <div class="hero-description" id="us-cpi-unit">Index 1982-1984=100</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 10px; color: var(--text-tertiary); opacity: 0.8;">
+            <span id="us-cpi-source">Source: --</span><br>
+            <span id="us-cpi-time">--</span>
+        </div>
+    </div>
+
+    <div class="hero-stat">
+        <div class="hero-label">Fed Funds Rate</div>
+        <div class="hero-value">
+            <span id="us-rate-value">--</span>
+            <span class="hero-unit">%</span>
+        </div>
+        <div class="hero-description" id="us-rate-change">--</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 10px; color: var(--text-tertiary); opacity: 0.8;">
+            <span id="us-rate-source">Source: --</span><br>
+            <span id="us-rate-time">--</span>
         </div>
     </div>
 </div>
 
-<script>
-    // Theme Toggle Logic
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark-mode');
-    }
+            <!-- Historical Timeline for US Economy -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Historical Data Timeline</span>
+                    <span class="badge badge-live">Live</span>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-grid" id="us-economy-timeline">
+                        <div class="timeline-label">Loading...</div>
+                    </div>
+                </div>
+            </div>
 
-    // DATA FETCHING ENGINE
-    async function loadEconomyData() {
-        try {
-            const response = await fetch('economyflow.json');
-            if (!response.ok) throw new Error("Could not find economyflow.json");
-            const data = await response.json();
+            <!-- Additional US Economy Metrics -->
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Yield Curve & Treasuries</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Yield Curve (10Y-2Y)</span>
+                        <span class="metric-value"><span id="us-yield-curve">--</span>%</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">10-Year Treasury</span>
+                        <span class="metric-value"><span id="us-yield-10y">--</span>%</span>
+                    </div>
+                </div>
 
-            updateDashboard(data);
-        } catch (err) {
-            console.error(err);
-            document.getElementById('timestamp').innerHTML = `<span style="color:red">⚠️ Error: ${err.message}. Ensure JSON is in the same folder.</span>`;
-        }
-    }
+                <div class="card">
+                    <div class="card-header">
+                        <span>Consumer Sentiment</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Sentiment Index</span>
+                        <span class="metric-value" id="us-sentiment">--</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">vs 1 Year Ago</span>
+                        <span class="metric-value" id="us-sentiment-change">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    function updateDashboard(data) {
-        // Update Timestamp
-        document.getElementById('timestamp').innerText = `Last Updated: ${data.last_updated_human || 'Just Now'}`;
+        <!-- ========== US LABOR MARKET ========== -->
+        <section id="labor-section">
+            <h2 class="section-header">Labor Market Dynamics</h2>
+            <div class="section-subheader">Employment, wages, and sector-specific trends</div>
 
-        // US Stats
-        const us = data.us_economy || {};
-        document.getElementById('val-gdp').innerText = us.gdp_growth ? us.gdp_growth + '%' : '--';
-        document.getElementById('val-unemployment').innerText = us.unemployment ? us.unemployment + '%' : '--';
-        document.getElementById('val-inflation').innerText = us.inflation ? us.inflation + '%' : '--';
-        document.getElementById('val-rates').innerText = us.interest_rate ? us.interest_rate + '%' : '--';
+            <div class="grid-3col">
+                <div class="hero-stat">
+                    <div class="hero-label">Total Employment</div>
+                    <div class="hero-value">
+                        <span id="labor-total-value">--</span>
+                        <span class="hero-unit">K</span>
+                    </div>
+                    <div class="hero-description">Thousands of workers</div>
+                </div>
 
-        // Recession Risk
-        const risk = data.recession_analysis || {};
-        const score = risk.risk_score || 0;
-        const scoreEl = document.getElementById('risk-score');
-        scoreEl.innerText = score + '/100';
-        
-        const statusEl = document.getElementById('risk-status');
-        statusEl.innerText = risk.status || 'Unknown';
-        if(score < 30) statusEl.className = 'badge bg-success';
-        else if(score < 60) statusEl.className = 'badge bg-warning';
-        else statusEl.className = 'badge bg-danger';
+                <div class="hero-stat">
+                    <div class="hero-label">Avg Hourly Earnings</div>
+                    <div class="hero-value">
+                        <span>$</span><span id="labor-earnings-value">--</span>
+                    </div>
+                    <div class="hero-description" id="labor-earnings-change">--</div>
+                </div>
 
-        document.getElementById('risk-reason').innerText = risk.reason || 'Stability confirmed.';
+                <div class="hero-stat">
+                    <div class="hero-label">Job Openings</div>
+                    <div class="hero-value">
+                        <span id="labor-openings-value">--</span>
+                        <span class="hero-unit">K</span>
+                    </div>
+                    <div class="hero-description">JOLTS Survey</div>
+                </div>
+            </div>
 
-        // AI Briefing
-        if(data.ai) {
-            document.getElementById('ai-summary').innerText = data.ai.connected_summary || "Markets are currently processing live data feeds.";
-            document.getElementById('ai-risks').innerHTML = (data.ai.what_matters_today || []).map(r => `<li>${r}</li>`).join('');
-            document.getElementById('ai-actions').innerHTML = (data.ai.what_to_do_next || []).map(a => `<li>${a}</li>`).join('');
-        }
+            <!-- Sector Employment Breakdown -->
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Employment by Sector</span>
+                        <span class="badge badge-updated">Updated</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Financial Services</span>
+                        <span class="metric-value"><span id="labor-financial">--</span>K</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Trade & Transport</span>
+                        <span class="metric-value"><span id="labor-trade">--</span>K</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Professional Services</span>
+                        <span class="metric-value"><span id="labor-professional">--</span>K</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Leisure & Hospitality</span>
+                        <span class="metric-value"><span id="labor-leisure">--</span>K</span>
+                    </div>
+                </div>
 
-        // FX Rates (Show Top 5)
-        const fx = data.fx_rates || {};
-        const commonCodes = ['EUR', 'GBP', 'INR', 'JPY', 'CAD'];
-        let fxHtml = '';
-        commonCodes.forEach(code => {
-            if(fx[code]) {
-                fxHtml += `<div class="metric-row"><span>${code}</span><span class="metric-value">${fx[code]}</span></div>`;
+                <div class="card">
+                    <div class="card-header">
+                        <span>Wage Growth by Sector</span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Retail Hourly Earnings</span>
+                        <span class="metric-value">$<span id="labor-retail-wage">--</span></span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Financial Hourly Earnings</span>
+                        <span class="metric-value">$<span id="labor-financial-wage">--</span></span>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Avg Weekly Hours</span>
+                        <span class="metric-value"><span id="labor-weekly-hours">--</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== COMMODITIES ========== -->
+        <section id="commodities-section">
+            <h2 class="section-header">Precious Metals</h2>
+            <div class="section-subheader">Real-time commodity prices</div>
+
+            <div class="grid-2col">
+                <div class="commodity-card">
+                    <div class="commodity-icon">🥇</div>
+                    <div class="commodity-price">$<span id="gold-price">--</span></div>
+                    <div class="commodity-label">Gold per Troy Ounce</div>
+                    <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="gold-impact">Inflation hedge</div>
+                </div>
+
+                <div class="commodity-card" style="background: linear-gradient(135deg, #94a3b8, #475569);">
+                    <div class="commodity-icon">🥈</div>
+                    <div class="commodity-price">$<span id="silver-price">--</span></div>
+                    <div class="commodity-label">Silver per Troy Ounce</div>
+                    <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="silver-impact">Solar & electronics</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MARKET INDEXES ========== -->
+        <section id="markets-section">
+            <h2 class="section-header">Major Market Indexes</h2>
+            <div class="section-subheader">US equity market performance</div>
+
+            <div class="grid-3col">
+                <div class="card">
+                    <div class="card-header">
+                        <span>S&P 500</span>
+                        <span class="badge badge-live">Live</span>
+                    </div>
+                    <div style="text-align: center; padding: 20px 0;">
+                        <div class="hero-value" style="font-size: 3rem;">
+                            <span id="sp500-value">--</span>
+                        </div>
+                        <div class="metric-change" id="sp500-change">--</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Nasdaq Composite</span>
+                        <span class="badge badge-live">Live</span>
+                    </div>
+                    <div style="text-align: center; padding: 20px 0;">
+                        <div class="hero-value" style="font-size: 3rem;">
+                            <span id="nasdaq-value">--</span>
+                        </div>
+                        <div class="metric-change" id="nasdaq-change">--</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Dow Jones</span>
+                        <span class="badge badge-live">Live</span>
+                    </div>
+                    <div style="text-align: center; padding: 20px 0;">
+                        <div class="hero-value" style="font-size: 3rem;">
+                            <span id="dow-value">--</span>
+                        </div>
+                        <div class="metric-change" id="dow-change">--</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FOREIGN EXCHANGE ========== -->
+        <section id="fx-section">
+            <h2 class="section-header">Foreign Exchange Rates</h2>
+            <div class="section-subheader">Exchange rates per 1 USD</div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>Major Currencies</span>
+                    <span class="badge badge-source">Live Rates</span>
+                </div>
+                <div id="fx-rates-container">
+                    <div class="loading">Loading exchange rates</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ECONOMIC CALENDAR ========== -->
+        <section id="calendar-section">
+            <h2 class="section-header">Economic Calendar</h2>
+            <div class="section-subheader">Recent major indicator releases</div>
+
+            <div class="card">
+                <table class="data-table" id="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Release Date</th>
+                            <th>Value</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-tbody">
+                        <tr>
+                            <td colspan="4" class="loading">Loading calendar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <div>© 2026 EconomyFlow • Data sources: Federal Reserve (FRED), World Bank, Gold-API.com</div>
+            <div style="margin-top: 10px; opacity: 0.7;">
+                This dashboard provides economic data for informational purposes only. Not financial advice.
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ========== GLOBAL STATE ==========
+        let economyData = null;
+
+        // ========== THEME MANAGEMENT ==========
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.textContent = '☀️';
+                text.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
             }
-        });
-        document.getElementById('fx-list').innerHTML = fxHtml;
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-icon').textContent = '☀️';
+                document.getElementById('theme-text').textContent = 'Light Mode';
+            }
+        }
+
+        // ========== UTILITY FUNCTIONS ==========
+        function formatNumber(num, decimals = 2) {
+            if (num === null || num === undefined || isNaN(num)) return '--';
+            return num.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+        }
+
+        function formatLargeNumber(num) {
+            if (num === null || num === undefined || isNaN(num)) return '--';
+            if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
+            if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+            if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+            if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+            return num.toFixed(2);
+        }
+
+        function calculateChange(current, previous) {
+            if (!current || !previous || isNaN(current) || isNaN(previous)) return null;
+            const change = current - previous;
+            const changePercent = ((change / previous) * 100).toFixed(2);
+            return {
+                absolute: change,
+                percent: changePercent,
+                isPositive: change > 0,
+                isNegative: change < 0
+            };
+        }
+
+        function renderChange(change) {
+            if (!change) return '<span class="metric-change neutral">--</span>';
+            const symbol = change.isPositive ? '▲' : change.isNegative ? '▼' : '●';
+            const className = change.isPositive ? 'positive' : change.isNegative ? 'negative' : 'neutral';
+            return `<span class="metric-change ${className}">${symbol} ${Math.abs(change.percent)}%</span>`;
+        }
+
+        // ========== DATA LOADING ==========
+        async function loadEconomyData() {
+            try {
+                const response = await fetch('economyflow.json');
+                if (!response.ok) throw new Error('Failed to load economyflow.json');
+                
+                economyData = await response.json();
+                
+                // Update UI
+                updateMasthead();
+                updateTopEconomies();
+                updateUSEconomy();
+                updateLaborMarket();
+                updateCommodities();
+                updateMarketIndexes();
+                updateFXRates();
+                updateEconomicCalendar();
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                alert('Failed to load economic data. Please ensure economyflow.json is in the same directory.');
+            }
+        }
+
+        // ========== UPDATE MASTHEAD ==========
+        function updateMasthead() {
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('current-date').textContent = currentDate.toUpperCase();
+            document.getElementById('last-updated').textContent = `Last Updated: ${economyData.last_updated_human}`;
+        }
+
+        // ========== UPDATE TOP 10 ECONOMIES ==========
+        function updateTopEconomies() {
+            const tbody = document.getElementById('economies-tbody');
+            const economies = economyData.top_10_economies || [];
+            
+            if (economies.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6">No data available</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = economies.map((economy, index) => `
+                <tr>
+                    <td class="rank-cell">${index + 1}</td>
+                    <td><strong>${economy.country}</strong></td>
+                    <td class="mono">${economy.country_code}</td>
+                    <td class="mono">$${formatLargeNumber(economy.gdp)}</td>
+                    <td>${economy.data_year}</td>
+                    <td><span class="badge badge-source">${economy.source}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // ========== UPDATE US ECONOMY ==========
+        function updateUSEconomy() {
+    const us = economyData.us_economy || {};
+    
+    // GDP with Source Transparency
+    if (us.gdp) {
+        document.getElementById('us-gdp-value').textContent = formatNumber(us.gdp.today, 0);
+        const gdpSource = us.gdp.source || 'FRED';
+        const gdpTime = us.gdp.fetched_at_est || '--';
+        document.getElementById('us-gdp-source').textContent = 'Source: ' + gdpSource;
+        document.getElementById('us-gdp-time').textContent = gdpTime;
+        
+        const gdpChange = calculateChange(us.gdp.today, us.gdp['12_months_ago']);
+        if (gdpChange) {
+            document.getElementById('us-gdp-unit').innerHTML = renderChange(gdpChange) + ' vs last year';
+        }
     }
 
-    // Run on load
-    loadEconomyData();
-</script>
+    // Unemployment with Source Transparency
+    if (us.unemployment) {
+        document.getElementById('us-unemployment-value').textContent = formatNumber(us.unemployment.today, 1);
+        const unempSource = us.unemployment.source || 'FRED';
+        const unempTime = us.unemployment.fetched_at_est || '--';
+        document.getElementById('us-unemployment-source').textContent = 'Source: ' + unempSource;
+        document.getElementById('us-unemployment-time').textContent = unempTime;
+        
+        const unempChange = calculateChange(us.unemployment.today, us.unemployment['12_months_ago']);
+        if (unempChange) {
+            document.getElementById('us-unemployment-change').innerHTML = renderChange(unempChange) + ' vs last year';
+        }
+    }
+
+    // CPI with Source Transparency
+    if (us.cpi) {
+        document.getElementById('us-cpi-value').textContent = formatNumber(us.cpi.today, 2);
+        const cpiSource = us.cpi.source || 'FRED';
+        const cpiTime = us.cpi.fetched_at_est || '--';
+        document.getElementById('us-cpi-source').textContent = 'Source: ' + cpiSource;
+        document.getElementById('us-cpi-time').textContent = cpiTime;
+    }
+
+    // Interest Rate with Source Transparency
+    if (us.interest_rate) {
+        document.getElementById('us-rate-value').textContent = formatNumber(us.interest_rate.today, 2);
+        const rateSource = us.interest_rate.source || 'FRED';
+        const rateTime = us.interest_rate.fetched_at_est || '--';
+        document.getElementById('us-rate-source').textContent = 'Source: ' + rateSource;
+        document.getElementById('us-rate-time').textContent = rateTime;
+        
+        const rateChange = calculateChange(us.interest_rate.today, us.interest_rate['12_months_ago']);
+        if (rateChange) {
+            document.getElementById('us-rate-change').innerHTML = renderChange(rateChange) + ' vs last year';
+        }
+    }
+
+    // Yield Curve
+    if (us.yield_curve) {
+        document.getElementById('us-yield-curve').textContent = formatNumber(us.yield_curve.today, 2);
+    }
+
+    // 10-Year Treasury
+    if (us.yield_10y) {
+        document.getElementById('us-yield-10y').textContent = formatNumber(us.yield_10y.today, 2);
+    }
+
+    // Consumer Sentiment
+    if (us.consumer_sentiment) {
+        document.getElementById('us-sentiment').textContent = formatNumber(us.consumer_sentiment.today, 1);
+        const sentimentChange = calculateChange(us.consumer_sentiment.today, us.consumer_sentiment['12_months_ago']);
+        if (sentimentChange) {
+            document.getElementById('us-sentiment-change').innerHTML = renderChange(sentimentChange);
+        }
+    }
+
+    // Historical Timeline
+    renderUSTimeline(us);
+}
+
+        // ========== RENDER US TIMELINE ==========
+        function renderUSTimeline(us) {
+            const timeline = document.getElementById('us-economy-timeline');
+            const periods = economyData.historical_periods || [];
+            
+            const metrics = [
+                { label: 'GDP', data: us.gdp, format: (v) => formatNumber(v, 0) },
+                { label: 'Unemployment', data: us.unemployment, format: (v) => formatNumber(v, 1) + '%' },
+                { label: 'CPI', data: us.cpi, format: (v) => formatNumber(v, 2) },
+                { label: 'Fed Rate', data: us.interest_rate, format: (v) => formatNumber(v, 2) + '%' }
+            ];
+
+            let html = '<div class="timeline-label"></div>';
+            periods.forEach(period => {
+                html += `<div class="timeline-header">${period.replace('_', ' ').toUpperCase()}</div>`;
+            });
+
+            metrics.forEach(metric => {
+                if (!metric.data) return;
+                html += `<div class="timeline-label">${metric.label}</div>`;
+                periods.forEach(period => {
+                    const value = metric.data[period];
+                    html += `<div class="timeline-value">${metric.format(value)}</div>`;
+                });
+            });
+
+            timeline.innerHTML = html;
+        }
+
+        // ========== UPDATE LABOR MARKET ==========
+        function updateLaborMarket() {
+            const labor = economyData.us_labor || {};
+
+            // Total Employment
+            if (labor.total_employment) {
+                document.getElementById('labor-total-value').textContent = formatNumber(labor.total_employment.today, 0);
+            }
+
+            // Avg Hourly Earnings
+            if (labor.avg_hourly_earnings) {
+                document.getElementById('labor-earnings-value').textContent = formatNumber(labor.avg_hourly_earnings.today, 2);
+                const earningsChange = calculateChange(labor.avg_hourly_earnings.today, labor.avg_hourly_earnings['12_months_ago']);
+                if (earningsChange) {
+                    document.getElementById('labor-earnings-change').innerHTML = `${renderChange(earningsChange)} vs last year`;
+                }
+            }
+
+            // Job Openings
+            if (labor.job_openings) {
+                document.getElementById('labor-openings-value').textContent = formatNumber(labor.job_openings.today, 0);
+            }
+
+            // Sector Employment
+            if (labor.financial_employment) {
+                document.getElementById('labor-financial').textContent = formatNumber(labor.financial_employment.today, 0);
+            }
+            if (labor.trade_transport_employment) {
+                document.getElementById('labor-trade').textContent = formatNumber(labor.trade_transport_employment.today, 0);
+            }
+            if (labor.professional_employment) {
+                document.getElementById('labor-professional').textContent = formatNumber(labor.professional_employment.today, 0);
+            }
+            if (labor.leisure_employment) {
+                document.getElementById('labor-leisure').textContent = formatNumber(labor.leisure_employment.today, 0);
+            }
+
+            // Wages
+            if (labor.retail_hourly_earnings) {
+                document.getElementById('labor-retail-wage').textContent = formatNumber(labor.retail_hourly_earnings.today, 2);
+            }
+            if (labor.financial_hourly_earnings) {
+                document.getElementById('labor-financial-wage').textContent = formatNumber(labor.financial_hourly_earnings.today, 2);
+            }
+            if (labor.avg_weekly_hours) {
+                document.getElementById('labor-weekly-hours').textContent = formatNumber(labor.avg_weekly_hours.today, 1);
+            }
+        }
+
+        // ========== UPDATE COMMODITIES ==========
+        function updateCommodities() {
+            const commodities = economyData.commodities || {};
+
+            if (commodities.gold) {
+                document.getElementById('gold-price').textContent = formatNumber(commodities.gold.today, 2);
+                if (commodities.gold.citizen_impact) {
+                    document.getElementById('gold-impact').textContent = commodities.gold.citizen_impact;
+                }
+            }
+
+            if (commodities.silver) {
+                document.getElementById('silver-price').textContent = formatNumber(commodities.silver.today, 2);
+                if (commodities.silver.citizen_impact) {
+                    document.getElementById('silver-impact').textContent = commodities.silver.citizen_impact;
+                }
+            }
+        }
+
+        // ========== UPDATE MARKET INDEXES ==========
+        function updateMarketIndexes() {
+            const markets = economyData.market_indexes || {};
+
+            // S&P 500
+            if (markets['S&P 500']) {
+                const sp = markets['S&P 500'];
+                document.getElementById('sp500-value').textContent = formatNumber(sp.today, 2);
+                const change = calculateChange(sp.today, sp['1_month_ago']);
+                if (change) {
+                    document.getElementById('sp500-change').innerHTML = renderChange(change) + ' (1M)';
+                }
+            }
+
+            // Nasdaq
+            if (markets['Nasdaq']) {
+                const nasdaq = markets['Nasdaq'];
+                document.getElementById('nasdaq-value').textContent = formatNumber(nasdaq.today, 2);
+                const change = calculateChange(nasdaq.today, nasdaq['1_month_ago']);
+                if (change) {
+                    document.getElementById('nasdaq-change').innerHTML = renderChange(change) + ' (1M)';
+                }
+            }
+
+            // Dow Jones
+            if (markets['Dow Jones']) {
+                const dow = markets['Dow Jones'];
+                document.getElementById('dow-value').textContent = formatNumber(dow.today, 2);
+                const change = calculateChange(dow.today, dow['1_month_ago']);
+                if (change) {
+                    document.getElementById('dow-change').innerHTML = renderChange(change) + ' (1M)';
+                }
+            }
+        }
+
+        // ========== UPDATE FX RATES ==========
+        function updateFXRates() {
+            const fx = economyData.fx_rates || {};
+            const currencies = fx.currencies || {};
+            const container = document.getElementById('fx-rates-container');
+
+            const currencyNames = {
+                'CNY': 'Chinese Yuan',
+                'EUR': 'Euro',
+                'JPY': 'Japanese Yen',
+                'INR': 'Indian Rupee',
+                'CAD': 'Canadian Dollar',
+                'BRL': 'Brazilian Real',
+                'AUD': 'Australian Dollar'
+            };
+
+            let html = '';
+            Object.entries(currencies).forEach(([code, rate]) => {
+                const name = currencyNames[code] || code;
+                html += `
+                    <div class="metric-row">
+                        <span class="metric-label">${name} (${code})</span>
+                        <span class="metric-value">${formatNumber(rate, 4)}</span>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html || '<div class="loading">No FX data available</div>';
+        }
+
+        // ========== UPDATE ECONOMIC CALENDAR ==========
+        function updateEconomicCalendar() {
+            const calendar = economyData.economic_calendar || [];
+            const tbody = document.getElementById('calendar-tbody');
+
+            if (calendar.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No calendar data available</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = calendar.map(event => `
+                <tr>
+                    <td><strong>${event.indicator}</strong></td>
+                    <td>${event.date}</td>
+                    <td class="mono">${formatNumber(event.value, 2)}</td>
+                    <td>${event.unit}</td>
+                </tr>
+            `).join('');
+        }
+
+        // ========== SEARCH FUNCTIONALITY ==========
+        function setupSearch() {
+            const searchInput = document.getElementById('global-search');
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                
+                // Search through all text content
+                const allElements = document.querySAll('.metric-label, .metric-value, td, .card-header, .hero-label');
+                
+                allElements.forEach(el => {
+                    // Remove previous highlights
+                    el.innerHTML = el.innerHTML.replace(/<mark class="highlight">|<\/mark>/g, '');
+                    
+                    if (query.length > 2 && el.textContent.toLowerCase().includes(query)) {
+                        // Highlight matching text
+                        const regex = new RegExp(`(${query})`, 'gi');
+                        el.innerHTML = el.innerHTML.replace(regex, '<mark class="highlight">$1</mark>');
+                        
+                        // Scroll to first match
+                        if (document.querySelector('.highlight')) {
+                            document.querySelector('.highlight').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                });
+            });
+        }
+
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            loadEconomyData();
+            setupSearch();
+        });
+    </script>
 
 </body>
 </html>
