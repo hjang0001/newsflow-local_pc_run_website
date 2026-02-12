@@ -819,20 +819,26 @@
             <div class="section-subheader">Real-time commodity prices</div>
 
             <div class="grid-2col">
-                <div class="commodity-card">
-                    <div class="commodity-icon">🥇</div>
-                    <div class="commodity-price">$<span id="gold-price">--</span></div>
-                    <div class="commodity-label">Gold per Troy Ounce</div>
-                    <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="gold-impact">Inflation hedge</div>
-                </div>
+    <div class="commodity-card">
+        <div class="commodity-icon">🥇</div>
+        <div class="commodity-price">$<span id="gold-price">--</span></div>
+        <div class="commodity-label">Gold per Troy Ounce</div>
+        <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="gold-impact">Inflation hedge</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 12px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;">
+            <span id="gold-source">Source: --</span>
+        </div>
+    </div>
 
-                <div class="commodity-card" style="background: linear-gradient(135deg, #94a3b8, #475569);">
-                    <div class="commodity-icon">🥈</div>
-                    <div class="commodity-price">$<span id="silver-price">--</span></div>
-                    <div class="commodity-label">Silver per Troy Ounce</div>
-                    <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="silver-impact">Solar & electronics</div>
-                </div>
-            </div>
+    <div class="commodity-card" style="background: linear-gradient(135deg, #94a3b8, #475569);">
+        <div class="commodity-icon">🥈</div>
+        <div class="commodity-price">$<span id="silver-price">--</span></div>
+        <div class="commodity-label">Silver per Troy Ounce</div>
+        <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;" id="silver-impact">Solar & electronics</div>
+        <div style="font-family: 'IBM Plex Mono'; font-size: 0.65rem; margin-top: 12px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px;">
+            <span id="silver-source">Source: --</span>
+        </div>
+    </div>
+</div>
         </section>
 
         <!-- ========== MARKET INDEXES ========== -->
@@ -1216,22 +1222,32 @@
 
         // ========== UPDATE COMMODITIES ==========
         function updateCommodities() {
-            const commodities = economyData.commodities || {};
+    const commodities = economyData.commodities || {};
 
-            if (commodities.gold) {
-                document.getElementById('gold-price').textContent = formatNumber(commodities.gold.today, 2);
-                if (commodities.gold.citizen_impact) {
-                    document.getElementById('gold-impact').textContent = commodities.gold.citizen_impact;
-                }
-            }
-
-            if (commodities.silver) {
-                document.getElementById('silver-price').textContent = formatNumber(commodities.silver.today, 2);
-                if (commodities.silver.citizen_impact) {
-                    document.getElementById('silver-impact').textContent = commodities.silver.citizen_impact;
-                }
-            }
+    // Gold with Source Transparency
+    if (commodities.gold) {
+        document.getElementById('gold-price').textContent = formatNumber(commodities.gold.today, 2);
+        
+        if (commodities.gold.citizen_impact) {
+            document.getElementById('gold-impact').textContent = commodities.gold.citizen_impact;
         }
+        
+        const goldSource = commodities.gold.source || 'gold-api.com';
+        document.getElementById('gold-source').textContent = 'Source: ' + goldSource;
+    }
+
+    // Silver with Source Transparency
+    if (commodities.silver) {
+        document.getElementById('silver-price').textContent = formatNumber(commodities.silver.today, 2);
+        
+        if (commodities.silver.citizen_impact) {
+            document.getElementById('silver-impact').textContent = commodities.silver.citizen_impact;
+        }
+        
+        const silverSource = commodities.silver.source || 'gold-api.com';
+        document.getElementById('silver-source').textContent = 'Source: ' + silverSource;
+    }
+}
 
         // ========== UPDATE MARKET INDEXES ==========
         function updateMarketIndexes() {
