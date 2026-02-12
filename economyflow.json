@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T17:39:17.056440+00:00",
-  "last_updated_human": "2026-02-12 12:39:17 UTC",
+  "timestamp": "2026-02-12T17:47:25.416013+00:00",
+  "last_updated_human": "2026-02-12 12:47:25 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -21,19 +21,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
-      "freshness": "Unknown"
-    },
-    {
-      "country": "Middle East, North Africa, Afghanistan & Pakistan",
-      "country_code": "MEA",
-      "gdp": 5094721946852.29,
-      "data_year": "2024",
-      "source": "World Bank",
-      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -43,8 +32,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -54,8 +43,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -65,8 +54,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -76,19 +65,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
-      "freshness": "Unknown"
-    },
-    {
-      "country": "Central Europe and the Baltics",
-      "country_code": "CEB",
-      "gdp": 2462005273603.48,
-      "data_year": "2024",
-      "source": "World Bank",
-      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -98,8 +76,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -109,8 +87,8 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     },
     {
@@ -120,8 +98,30 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 12:39:07 PM EST",
-      "fetched_at_utc": "2026-02-12 17:39:07 UTC",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Australia",
+      "country_code": "AUS",
+      "gdp": 1757022451652.83,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Fragile and conflict affected situations",
+      "country_code": "FCS",
+      "gdp": 1652895518697.74,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 12:47:15 PM EST",
+      "fetched_at_utc": "2026-02-12 17:47:15 UTC",
       "freshness": "Unknown"
     }
   ],
@@ -139,7 +139,7 @@
       "unit": "Billions of Chained 2017 Dollars",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/GDPC1",
-      "fetched_at_est": "2026-02-12 12:39:08 PM EST",
+      "fetched_at_est": "2026-02-12 12:47:16 PM EST",
       "freshness": "Unknown",
       "api_id": "GDPC1"
     },
@@ -340,13 +340,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 4965.5,
+      "today": 4956.8,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 77.33,
+      "today": 76.72,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
@@ -429,7 +429,8 @@
       "JPY": 153.32,
       "INR": 90.74,
       "CAD": 1.36,
-      "BRL": 5.19
+      "BRL": 5.19,
+      "AUD": 1.4
     },
     "unit": "Rate per 1 USD"
   }
