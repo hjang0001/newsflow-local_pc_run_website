@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T19:38:18.201592+00:00",
-  "last_updated_human": "2026-02-12 14:38:18 UTC",
+  "timestamp": "2026-02-12T19:45:50.796738+00:00",
+  "last_updated_human": "2026-02-12 14:45:50 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -21,7 +21,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -31,7 +31,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -41,7 +41,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -51,7 +51,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -61,7 +61,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -71,7 +71,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -81,7 +81,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -91,7 +91,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -101,7 +101,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -111,7 +111,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-12 02:38:07 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:40 PM EST",
       "freshness": "Unknown"
     }
   ],
@@ -129,7 +129,7 @@
       "unit": "Billions of Chained 2017 Dollars",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/GDPC1",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "unemployment": {
@@ -145,7 +145,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/UNRATE",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "cpi": {
@@ -161,7 +161,7 @@
       "unit": "Index 1982-1984=100",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "interest_rate": {
@@ -177,7 +177,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "yield_curve": {
@@ -193,7 +193,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "yield_10y": {
@@ -209,7 +209,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     },
     "consumer_sentiment": {
@@ -225,7 +225,7 @@
       "unit": "Index 1966:Q1=100",
       "source": "FRED / Univ. of Michigan",
       "source_url": "https://fred.stlouisfed.org/series/UMCSENT",
-      "fetched_at_est": "2026-02-12 02:38:08 PM EST",
+      "fetched_at_est": "2026-02-12 02:45:41 PM EST",
       "freshness": "Unknown"
     }
   },
@@ -353,13 +353,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 4948.2,
+      "today": 4947.1,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 76.6,
+      "today": 76.62,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
