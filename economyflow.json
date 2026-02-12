@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-12T17:55:26.840605+00:00",
-  "last_updated_human": "2026-02-12 12:55:26 UTC",
+  "timestamp": "2026-02-12T18:05:23.466806+00:00",
+  "last_updated_human": "2026-02-12 13:05:23 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -15,30 +15,13 @@
   ],
   "top_10_economies": [
     {
-      "country": "North America",
-      "country_code": "NAC",
-      "gdp": 31003826557365,
-      "data_year": "2024",
-      "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
-      "freshness": "Unknown"
-    },
-    {
-      "country": "European Union",
-      "country_code": "EUU",
-      "gdp": 19497115588443.6,
-      "data_year": "2024",
-      "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
-      "freshness": "Unknown"
-    },
-    {
       "country": "China",
       "country_code": "CHN",
       "gdp": 18743803170827.2,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -47,7 +30,8 @@
       "gdp": 4685592577804.69,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -56,7 +40,8 @@
       "gdp": 4027597523550.58,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -65,7 +50,8 @@
       "gdp": 3909891533858.08,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -74,7 +60,8 @@
       "gdp": 3160442622465.08,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -83,7 +70,8 @@
       "gdp": 2380825077243.59,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -92,7 +80,8 @@
       "gdp": 2243636826633.76,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -101,7 +90,28 @@
       "gdp": 2185821648943.86,
       "data_year": "2024",
       "source": "World Bank",
-      "fetched_at_est": "2026-02-12 12:55:15 PM EST",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Australia",
+      "country_code": "AUS",
+      "gdp": 1757022451652.83,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
+      "freshness": "Unknown"
+    },
+    {
+      "country": "Least developed countries: UN classification",
+      "country_code": "LDC",
+      "gdp": 1536272727812.71,
+      "data_year": "2024",
+      "source": "World Bank",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fetched_at_est": "2026-02-12 01:05:13 PM EST",
       "freshness": "Unknown"
     }
   ],
@@ -119,7 +129,7 @@
       "unit": "Billions of Chained 2017 Dollars",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/GDPC1",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "unemployment": {
@@ -135,7 +145,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/UNRATE",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "cpi": {
@@ -151,7 +161,7 @@
       "unit": "Index 1982-1984=100",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "interest_rate": {
@@ -167,7 +177,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "yield_curve": {
@@ -183,7 +193,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "yield_10y": {
@@ -199,7 +209,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     },
     "consumer_sentiment": {
@@ -215,7 +225,7 @@
       "unit": "Index 1966:Q1=100",
       "source": "FRED / Univ. of Michigan",
       "source_url": "https://fred.stlouisfed.org/series/UMCSENT",
-      "fetched_at_est": "2026-02-12 12:55:16 PM EST",
+      "fetched_at_est": "2026-02-12 01:05:14 PM EST",
       "freshness": "Unknown"
     }
   },
@@ -343,13 +353,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 4948.4,
+      "today": 4934.9,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 75.97,
+      "today": 75.3,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
@@ -432,7 +442,8 @@
       "JPY": 153.32,
       "INR": 90.74,
       "CAD": 1.36,
-      "BRL": 5.19
+      "BRL": 5.19,
+      "AUD": 1.4
     },
     "unit": "Rate per 1 USD"
   }
