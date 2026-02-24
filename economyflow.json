@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-23T04:06:07.210370+00:00",
-  "last_updated_human": "2026-02-22 23:06:07 UTC",
+  "timestamp": "2026-02-24T03:26:15.821821+00:00",
+  "last_updated_human": "2026-02-23 22:26:15 UTC",
   "note": "All data is RAW VALUES ONLY - no calculations or derived metrics",
   "historical_periods": [
     "today",
@@ -21,7 +21,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -31,7 +31,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -41,7 +41,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -51,7 +51,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -61,7 +61,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -71,7 +71,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -81,7 +81,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -91,7 +91,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -101,7 +101,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     },
     {
@@ -111,7 +111,7 @@
       "data_year": "2024",
       "source": "World Bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
-      "fetched_at_est": "2026-02-22 11:05:57 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:06 PM EST",
       "freshness": "Unknown"
     }
   ],
@@ -129,7 +129,7 @@
       "unit": "Billions of Chained 2017 Dollars",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/GDPC1",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "unemployment": {
@@ -145,7 +145,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/UNRATE",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "cpi": {
@@ -161,7 +161,7 @@
       "unit": "Index 1982-1984=100",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "interest_rate": {
@@ -177,7 +177,7 @@
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "yield_curve": {
@@ -186,30 +186,30 @@
       "2_months_ago": 0.68,
       "3_months_ago": 0.58,
       "6_months_ago": 0.65,
-      "12_months_ago": 0.22,
-      "2_years_ago": -0.39,
+      "12_months_ago": 0.25,
+      "2_years_ago": -0.41,
       "3_years_ago": -0.9,
       "5_years_ago": 1.58,
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "yield_10y": {
       "today": 4.08,
       "1_month_ago": 4.24,
       "2_months_ago": 4.15,
-      "3_months_ago": 4.04,
-      "6_months_ago": 4.26,
-      "12_months_ago": 4.29,
-      "2_years_ago": 4.22,
+      "3_months_ago": 4.01,
+      "6_months_ago": 4.24,
+      "12_months_ago": 4.24,
+      "2_years_ago": 4.13,
       "3_years_ago": 3.7,
       "5_years_ago": 1.74,
       "unit": "Percent",
       "source": "Federal Reserve (FRED)",
       "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     },
     "consumer_sentiment": {
@@ -225,7 +225,7 @@
       "unit": "Index 1966:Q1=100",
       "source": "FRED / Univ. of Michigan",
       "source_url": "https://fred.stlouisfed.org/series/UMCSENT",
-      "fetched_at_est": "2026-02-22 11:05:58 PM EST",
+      "fetched_at_est": "2026-02-23 10:26:07 PM EST",
       "freshness": "Unknown"
     }
   },
@@ -353,13 +353,13 @@
   },
   "commodities": {
     "gold": {
-      "today": 5165.1,
+      "today": 5187.8,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd47 Inflation hedge"
     },
     "silver": {
-      "today": 87.4,
+      "today": 87.62,
       "unit": "USD/oz",
       "source": "gold-api.com",
       "citizen_impact": "\ud83e\udd48 Solar & electronics"
@@ -399,13 +399,13 @@
   ],
   "market_indexes": {
     "S&P 500": {
-      "today": 6909.51,
+      "today": 6837.75,
       "1_month_ago": 6915.61,
       "2_months_ago": 6932.05,
-      "3_months_ago": 6705.12,
-      "6_months_ago": 6465.94,
-      "12_months_ago": 5861.57,
-      "2_years_ago": 5130.95,
+      "3_months_ago": 6765.88,
+      "6_months_ago": 6481.4,
+      "12_months_ago": 5954.5,
+      "2_years_ago": 5078.65,
       "3_years_ago": 3861.59,
       "5_years_ago": 3913.1,
       "unit": "Index"
@@ -414,22 +414,22 @@
       "today": 22886.07,
       "1_month_ago": 23501.24,
       "2_months_ago": 23613.31,
-      "3_months_ago": 22872.01,
-      "6_months_ago": 21544.27,
-      "12_months_ago": 18544.42,
-      "2_years_ago": 16207.51,
+      "3_months_ago": 23025.59,
+      "6_months_ago": 21590.14,
+      "12_months_ago": 18847.28,
+      "2_years_ago": 15939.59,
       "3_years_ago": 11138.89,
       "5_years_ago": 13215.24,
       "unit": "Index"
     },
     "Dow Jones": {
-      "today": 49625.97,
+      "today": 48804.06,
       "1_month_ago": 49098.71,
       "2_months_ago": 48731.16,
-      "3_months_ago": 46448.27,
-      "6_months_ago": 45418.07,
-      "12_months_ago": 43239.5,
-      "2_years_ago": 38989.83,
+      "3_months_ago": 47112.45,
+      "6_months_ago": 45565.23,
+      "12_months_ago": 43840.91,
+      "2_years_ago": 38585.19,
       "3_years_ago": 31909.64,
       "5_years_ago": 32627.97,
       "unit": "Index"
@@ -437,13 +437,13 @@
   },
   "fx_rates": {
     "currencies": {
-      "CNY": 6.91,
-      "EUR": 0.847,
-      "JPY": 154.64,
-      "INR": 90.87,
+      "CNY": 6.92,
+      "EUR": 0.848,
+      "JPY": 154.59,
+      "INR": 90.97,
       "CAD": 1.37,
-      "BRL": 5.2,
-      "AUD": 1.41
+      "BRL": 5.18,
+      "AUD": 1.42
     },
     "unit": "Rate per 1 USD"
   }
